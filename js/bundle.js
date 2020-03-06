@@ -17924,6 +17924,10 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol").on("click", "img", function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggle()
+    });
+
     /*BTN TOP*/
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".footer_top_navbar_profile").on("click", "a", function (event) {
         event.preventDefault();
