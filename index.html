@@ -14,16 +14,19 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <nav class="navbar navbar-expand-lg navbar-light header_navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark header_navbar">
           <a class="navbar-brand header_navbar_brand_logo" href="/">
             <img src="./img/logo.png" alt="logo">
           </a>
-
           <div class="collapse navbar-collapse header_navbar_collapse" id="navbarHeaderContent">
+            <div class="header_navbar_collapse_absolute"></div>
             <ul class="navbar-nav header_navbar_collapse_nav">
+              <li class="header_navbar_collapse_nav_close">
+                <button type="button" class="header_navbar_collapse_nav_close_btn">&times;</button>
+              </li>
               <li class="header_navbar_collapse_nav_item">
                 <div class="header_navbar_collapse_nav_item_pad">
-                  <a class="header_navbar_collapse_nav_item_link" href="#">Горящие туры</a>
+                  <a class="header_navbar_collapse_nav_item_link" href="/tours-pages.html">Горящие туры</a>
                 </div>
               </li>
               <li class="header_navbar_collapse_nav_item">
@@ -36,23 +39,34 @@
                   <a class="header_navbar_collapse_nav_item_link" href="#">Совместные путешествия</a>
                 </div>
               </li>
-              <li class="header_navbar_collapse_nav_item header_navbar_collapse_nav_item_white order-lg-2">
+              <li class="header_navbar_collapse_nav_item header_navbar_collapse_nav_pad-btn">
                 <div class="header_navbar_collapse_nav_item_pad">
-                  <a class="header_navbar_collapse_nav_item_link" href="#">Добавить объявление</a>
+                  <a class="header_navbar_collapse_nav_item_btn btn" href="#" data-toggle="modal" data-target="#exampleModalCenter">Заказать тур</a>
                 </div>
               </li>
-              <li class="header_navbar_collapse_nav_item header_navbar_collapse_nav_pad-btn order-lg-1">
+              <li class="header_navbar_collapse_nav_item header_navbar_collapse_nav_item_white">
                 <div class="header_navbar_collapse_nav_item_pad">
-                  <a class="header_navbar_collapse_nav_item_btn btn" href="#">Заказать тур</a>
+                  <a class="header_navbar_collapse_nav_item_link" href="/add-page.html">Добавить объявление</a>
                 </div>
               </li>
             </ul>
           </div>
           <div class="header_navbar_profile">
-            <a class="btn" type="submit" href="#" data-toggle="modal"
-               data-target="#RegistrModalCenter">
-              <img src="./img/icon/profile-min.png" alt="profile-min">
-            </a>
+            <ul class="nav">
+              <div class="d-flex align-items-center dropdown">
+                <a class="btn nav-link" type="submit" href="#" data-toggle="dropdown"
+                   href="#" role="button"
+                   aria-haspopup="true" aria-expanded="false">
+                  <span class="icon-profile"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right header_navbar_lang_menu_dropdown">
+                  <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Мои обьявление</a>
+                  <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Сообщение</a>
+                  <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Настройки</a>
+                  <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Выход</a>
+                </div>
+              </div>
+            </ul>
           </div>
           <div class="header_navbar_lang">
             <ul class="nav">
@@ -61,14 +75,13 @@
                    aria-haspopup="true" aria-expanded="false">
                   <span class="header_navbar_lang_menu_link-text">Ru</span>
                 </a>
-                <div class="dropdown-menu header_navbar_lang_menu_dropdown">
+                <div class="dropdown-menu dropdown-menu-right header_navbar_lang_menu_dropdown">
                   <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Uz</a>
                   <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">En</a>
                 </div>
               </div>
             </ul>
           </div>
-
           <button class="navbar-toggler order-lg-1" type="button" data-toggle="collapse"
                   data-target="#navbarHeaderContent"
                   aria-controls="navbarHeaderContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +97,7 @@
 <main>
   <section class="content">
     <div class="content_top">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
         <ol class="carousel-indicators content_top_indicators">
           <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleControls" data-slide-to="1"></li>
@@ -92,61 +105,61 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="content_top_info">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <div class="content_top_info_block">
-                      <div class="content_top_info_block_header">
-                        <h1>Путешествуй весело - найди попутчиков!</h1>
+            <div class="content_top_img">
+              <img src="./img/Slider1.png" alt="content-top-img">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="content_top_img">
+              <img src="./img/Slider1.png" alt="content-top-img">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="content_top_img">
+              <img src="./img/Slider1.png" alt="content-top-img">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content_top_info">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 col-xl-8">
+              <div class="content_top_info_block">
+                <div class="content_top_info_block_header">
+                  <h1>Путешествуй весело - найди попутчиков!</h1>
+                </div>
+                <div class="content_top_info_block_content">
+                  <form class="content_top_info_block_content_form">
+                    <div class="form-row content_top_info_block_content_form_row">
+                      <div class="form-group col-sm-6">
+                        <div class="content_top_info_block_content_form_row_group">
+                          <label class="content_top_info_block_content_form_row_group_icon" for="inputType">
+                            <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                          </label>
+                          <select class="js-example-basic-single js-states form-control" id="inputType">
+                            <option hidden></option>
+                            <option>Горящие туры</option>
+                            <option>Туры в Узбекистан</option>
+                            <option>Совместные путешествия</option>
+                          </select>
+                        </div>
                       </div>
-                      <div class="content_top_info_block_content">
-                        <form class="content_top_info_block_content_form">
-                          <div class="form-row content_top_info_block_content_form_row">
-                            <div class="form-group col-sm-6">
-                              <div class="content_top_info_block_content_form_row_group">
-                                <label class="content_top_info_block_content_form_row_group_icon" for="inputType">
-                                  <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
-                                </label>
-                                <select id="inputType" class="form-control">
-                                  <option selected>Выберите тип</option>
-                                  <option>самолет</option>
-                                  <option>поезд</option>
-                                  <option>корабль</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="form-group col-sm-6">
-                              <div class="content_top_info_block_content_form_row_group">
-                                <label class="content_top_info_block_content_form_row_group_icon" for="inputWhere">
-                                  <img src="./img/icon/maps-icon-min.png" alt="maps-icon-min">
-                                </label>
-                                <input type="text" class="form-control" id="inputWhere" placeholder="Куда">
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="content_top_info_block_bottom">
-                        <a href="#" class="btn btn-orange">Найти поездку</a>
+                      <div class="form-group col-sm-6">
+                        <div class="content_top_info_block_content_form_row_group">
+                          <label class="content_top_info_block_content_form_row_group_icon" for="inputWhere">
+                            <img src="./img/icon/maps-icon-min.png" alt="maps-icon-min">
+                          </label>
+                          <input type="text" class="form-control" id="inputWhere" placeholder="Куда">
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </form>
+                </div>
+                <div class="content_top_info_block_bottom">
+                  <a href="#" class="btn btn-orange">Найти поездку</a>
                 </div>
               </div>
-            </div>
-            <div class="content_top_img">
-              <img src="./img/Slider1.png" alt="content-top-img">
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="content_top_img">
-              <img src="./img/Slider1.png" alt="content-top-img">
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="content_top_img">
-              <img src="./img/Slider1.png" alt="content-top-img">
             </div>
           </div>
         </div>
@@ -169,9 +182,14 @@
                 <div class="content_tours_block_left">
                   <img src="./img/hot-tours-img.png" alt="hot-tours-img">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_tours_block_center">
@@ -180,13 +198,21 @@
                       <h3>Весенние каникулы</h3>
                     </div>
                     <div class="content_tours_block_center_navigation">
-                      <p>Ташкент</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Баку</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Турция</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Ташкент</p>
+                      <div class="d-flex align-items-center">
+                        <p>Ташкент</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Баку</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Турция</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Ташкент</p>
+                      </div>
                     </div>
                   </div>
                   <div class="content_tours_block_center_info">
@@ -195,16 +221,31 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-0">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Культура, история..</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-1">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>Каждая суббота</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-2">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Длительность тура</p>
+                        </div>
+                      </div>
                       <p>6 дней/5 ночей</p>
                     </div>
                   </div>
@@ -235,9 +276,14 @@
                 <div class="content_tours_block_left">
                   <img src="./img/hot-tours-img-second.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_tours_block_center">
@@ -246,17 +292,25 @@
                       <h3>Великая Китайская стена 2020</h3>
                       <div class="content_tours_block_center_title_sale">
                         <img src="./img/icon/sale-icon-min.png" alt="sale-icon-min">
-                        <p>-15% скидка на ранее бронирование</p>
+                        <p>-15% скидка на раннее бронирование</p>
                       </div>
                     </div>
                     <div class="content_tours_block_center_navigation">
-                      <p>Узбекистан</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Китай</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Корея</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Узбекистан</p>
+                      <div class="d-flex align-items-center">
+                        <p>Узбекистан</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Китай</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Корея</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Узбекистан</p>
+                      </div>
                     </div>
                   </div>
                   <div class="content_tours_block_center_info">
@@ -265,21 +319,41 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Экскурсионный тур</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>15.02.2020</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Длительность тура</p>
+                        </div>
+                      </div>
                       <p>10 дней / 9 ночей</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>6 из 12</p>
                     </div>
                   </div>
@@ -304,9 +378,14 @@
                 <div class="content_tours_block_left">
                   <img src="./img/hot-tours-img-third.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_tours_block_center">
@@ -315,29 +394,55 @@
                       <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
                     </div>
                     <div class="content_tours_block_center_navigation">
-                      <p>Узбекистан</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Франция</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Узбекистан</p>
+                      <div class="d-flex align-items-center">
+                        <p>Узбекистан</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Франция</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Узбекистан</p>
+                      </div>
                     </div>
                   </div>
                   <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Экскурсионный тур</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>03.02.2020</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Длительность тура</p>
+                        </div>
+                      </div>
                       <p>8 дней / 7 ночей</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>6 из 10</p>
                     </div>
                   </div>
@@ -376,9 +481,14 @@
                 <div class="content_tours_block_left">
                   <img src="./img/uzb-tours-img.png" alt="hot-tours-img">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_tours_block_center">
@@ -387,28 +497,49 @@
                       <h3>Великолепный Узбекистан</h3>
                       <div class="content_tours_block_center_title_sale">
                         <img src="./img/icon/sale-icon-min.png" alt="sale-icon-min">
-                        <p>-15% скидка на ранее бронирование</p>
+                        <p>-15% скидка на раннее бронирование</p>
                       </div>
                     </div>
                     <div class="content_tours_block_center_navigation">
-                      <p>Ташкент</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Бухара</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Самарканд</p>
+                      <div class="d-flex align-items-center">
+                        <p>Ташкент</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Бухара</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Самарканд</p>
+                      </div>
                     </div>
                   </div>
                   <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-0">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Культура, история..</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-1">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>Каждая суббота</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-2">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Длительность тура</p>
+                        </div>
+                      </div>
                       <p>6 дней/5 ночей</p>
                     </div>
                   </div>
@@ -439,9 +570,14 @@
                 <div class="content_tours_block_left">
                   <img src="./img/uzb-tours-img-second.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_tours_block_center">
@@ -450,11 +586,17 @@
                       <h3>Оазис Средневекового Востока</h3>
                     </div>
                     <div class="content_tours_block_center_navigation">
-                      <p>Самарканд</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Бухара</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Хива</p>
+                      <div class="d-flex align-items-center">
+                        <p>Самарканд</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Бухара</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Хива</p>
+                      </div>
                     </div>
                   </div>
                   <div class="content_tours_block_center_info">
@@ -463,21 +605,41 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Экскурсионный тур</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>15.02.2020</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Длительность тура</p>
+                        </div>
+                      </div>
                       <p>10 дней / 9 ночей</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>6 из 12</p>
                     </div>
                   </div>
@@ -502,9 +664,14 @@
                 <div class="content_tours_block_left">
                   <img src="./img/uzb-tours-img-third.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_tours_block_center">
@@ -513,27 +680,51 @@
                       <h3>Шелковый путь от Ферганы до Хивы</h3>
                     </div>
                     <div class="content_tours_block_center_navigation">
-                      <p>Фергана</p>
-                      <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
-                      <p>Хива</p>
+                      <div class="d-flex align-items-center">
+                        <p>Фергана</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/plane-icon-min-second.png" alt="plane-icon-min-second"></span>
+                        <p>Хива</p>
+                      </div>
                     </div>
                   </div>
                   <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Экскурсионный тур</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>03.02.2020</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/clock-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Длительность тура</p>
+                        </div>
+                      </div>
                       <p>8 дней / 7 ночей</p>
                     </div>
-                    <div class="content_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>6 из 10</p>
                     </div>
                   </div>
@@ -572,41 +763,72 @@
                 <div class="content_joint_tours_block_left">
                   <img src="./img/joint-tours-img.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
                     <div class="content_joint_tours_block_center_navigation">
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Китай,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Малайзия,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>ОАЭ</p>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
                     <div class="content_joint_tours_block_center_who">
                       <p>Светлана Сорокина, 30 лет</p>
                     </div>
                   </div>
                   <div class="content_joint_tours_block_center_date">
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Паломничество</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>Компанию</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>10.04.2020</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/pay-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/pay-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
                       <p>Каждый платит за себя</p>
                     </div>
                   </div>
@@ -627,47 +849,84 @@
                 <div class="content_joint_tours_block_left">
                   <img src="./img/joint-tours-img-second.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
                     <div class="content_joint_tours_block_center_navigation">
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Австрия, </p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Великобритания,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Испания,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Китай,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Малайзия,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>ОАЭ</p>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Австрия, </p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Великобритания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Испания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
                     <div class="content_joint_tours_block_center_who">
                       <p>Олег Маями, 33 года</p>
                     </div>
                   </div>
                   <div class="content_joint_tours_block_center_date">
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Паломничество</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>Кто угодно</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>10.04.2020</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/pay-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/pay-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
                       <p>Финансы по договоренности</p>
                     </div>
                   </div>
@@ -688,41 +947,72 @@
                 <div class="content_joint_tours_block_left">
                   <img src="./img/joint-tours-img-third.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
-                    <button type="button" class="content_tours_block_left_absol_child">
-                      <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
-                    </button>
+                    <div class="content_tours_block_center_date_block_img">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <img src="./img/icon/star-icon-min.png" alt=star-icon-min"">
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
                     <div class="content_joint_tours_block_center_navigation">
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Китай,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>Малайзия,</p>
-                      <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
-                      <p>ОАЭ</p>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span><img src="./img/icon/maps-icon-min.png" alt="maps-icon-min"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
                     <div class="content_joint_tours_block_center_who">
                       <p>Alexander Belenkiy, 32 года</p>
                     </div>
                   </div>
                   <div class="content_joint_tours_block_center_date">
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/plane-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
                       <p>Автопутешествие..</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                      <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
                       <p>Компанию</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/calendar-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
                       <p>Когда угодно</p>
                     </div>
-                    <div class="content_joint_tours_block_center_date_block">
-                      <img src="./img/icon/pay-icon-min.png" alt="plane-icon-min">
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/pay-icon-min.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
                       <p>Каждый платит за себя</p>
                     </div>
                   </div>
@@ -748,7 +1038,7 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-4 order-1">
         <div class="footer_logo">
           <img src="./img/logo.png" alt="logo">
           <div class="footer_logo_info">
@@ -757,11 +1047,11 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-6 col-sm-8 col-xl-5 order-2">
         <div class="footer_center">
           <div class="footer_center_left">
             <div class="footer_center_left_title">
-              <a class="footer_center_left_title_url" href="#">О компании</a>
+              <p class="footer_center_left_title_url">О компании</p>
             </div>
             <a class="footer_center_left_url" href="#">Часто задаваемые вопросы</a>
             <a class="footer_center_left_url" href="#">О проекте</a>
@@ -769,7 +1059,7 @@
           </div>
           <div class="footer_center_right">
             <div class="footer_center_right_title">
-              <a class="footer_center_right_title_url" href="#">Туроператрам</a>
+              <p class="footer_center_right_title_url">Туроператрам</p>
             </div>
             <a class="footer_center_right_url" href="#">Условия использования</a>
             <a class="footer_center_right_url" href="#">Реклама на сайте</a>
@@ -777,13 +1067,13 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3 col-xl-4 order-3">
         <div class="footer_store">
           <div class="footer_store_url">
-            <a href="#" >
+            <a href="#">
               <img src="./img/icon/app-store.png" alt="app-store">
             </a>
-            <a href="#" >
+            <a href="#">
               <img src="./img/icon/play-market.png" alt="play-market">
             </a>
           </div>
@@ -819,50 +1109,44 @@
        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered send_message_modal_dialog" role="document">
       <div class="modal-content send_message_modal_dialog_content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.03138 0L23.4847 20.5306L21.4533 22.6988L0 2.16823L2.03138 0Z" fill="#EDF5F8"/>
-              <path d="M21.9686 0.301153L0.515305 20.8318L2.54668 23L24 2.46939L21.9686 0.301153Z" fill="#EDF5F8"/>
-            </svg>
-          </span>
-        </button>
         <div class="modal-header send_message_modal_dialog_content_header">
-          <img src="./img/.png" alt="call-modal">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Получить бесплатную консультацию</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle">ВХОД</h5>
         </div>
         <div class="modal-body send_message_modal_dialog_content_body">
-          <div class="dropdown">
-            <a class="btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-               aria-expanded="false">
-              <span>
-                <svg width="17" height="17" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                      d="M1 18C1 14.8125 5.25 14.8125 7.375 12.6875C8.4375 11.625 5.25 11.625 5.25 6.3125C5.25 2.77119 6.66631 1 9.5 1C12.3337 1 13.75 2.77119 13.75 6.3125C13.75 11.625 10.5625 11.625 11.625 12.6875C13.75 14.8125 18 14.8125 18 18"
-                      stroke="#FF861E" stroke-linecap="square"/>
-                </svg>
-              </span>
-              Жасурбек толипов
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Жасурбек толипов</a>
-              <a class="dropdown-item" href="#">Жасурбек толипов</a>
-            </div>
+          <div class="login send_message_modal_dialog_content_body_control">
+            <input type="text" class="form-control" placeholder="Логин или электронная почта">
           </div>
-          <div class="telephone">
-            <input type="tel" class="form-control" placeholder="+998(__) ___ - __ - __" id="tel" name='client-phone'>
-            <span>
-              <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                  d="M6 17.5H5.5V18.5H6V17.5ZM8 18.5H8.5V17.5H8V18.5ZM12.5 2V20H13.5V2H12.5ZM12.5 20C12.5 20.2761 12.2761 20.5 12 20.5V21.5C12.8284 21.5 13.5 20.8284 13.5 20H12.5ZM12 20.5H2V21.5H12V20.5ZM2 20.5C1.72386 20.5 1.5 20.2761 1.5 20H0.5C0.5 20.8284 1.17157 21.5 2 21.5V20.5ZM1.5 20V2H0.5V20H1.5ZM1.5 2C1.5 1.72386 1.72386 1.5 2 1.5V0.5C1.17157 0.5 0.5 1.17157 0.5 2H1.5ZM2 1.5H12V0.5H2V1.5ZM12 1.5C12.2761 1.5 12.5 1.72386 12.5 2H13.5C13.5 1.17157 12.8284 0.5 12 0.5V1.5ZM6 18.5H8V17.5H6V18.5Z"
-                  fill="#CECECE"/>
-              </svg>
-            </span>
+          <div class="telephone send_message_modal_dialog_content_body_control">
+            <input type="password" class="form-control" placeholder="Пароль" id="password">
+          </div>
+          <div class="send_message_modal_dialog_content_body_check">
+            <div class="form-check custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" type="checkbox" id="customCheck1"
+                     name="customCheckbox"
+                     required>
+              <label class="custom-control-label" for="customCheck1">
+                Запомнить пароль
+              </label>
+            </div>
+            <a class="send_message_modal_dialog_content_body_check_btn" href="#">
+              Забыли пароль?
+            </a>
+          </div>
+          <div class="send_message_modal_dialog_content_body_btn">
+            <button type="button" class="btn btn-orange">Войти</button>
+            <p>или продолжить через</p>
+            <div class="send_message_modal_dialog_content_body_btn_social">
+              <a href="#" class="btn btn-fb"><span class="icon-fb"></span></a>
+              <a href="#" class="btn btn-gl"><span class="icon-fb"></span></a>
+            </div>
           </div>
         </div>
         <div class="modal-footer send_message_modal_dialog_content_footer">
-          <button type="button" class="btn btn-blue">Жду звонка</button>
+          <a href="/registr-page.html">Зарегистрироваться</a>
+          <p>
+            При входе вы подтверждаете согласие с условиями
+            использования Clicktour и политикой о данных пользователей.
+          </p>
         </div>
       </div>
     </div>
