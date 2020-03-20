@@ -24043,17 +24043,39 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol").on("click", "img", function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggle()
+    /* Start Tabs Profile*/
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol").on("click", function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".content_tours_block_left_absol_child_img").toggle();
+        let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol_child_img").is(':hidden') ? 'Убрать из избранных' : 'Добавить в избранное';
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.content_tours_block_center_date_block_popup').html(`<p>${text}</p>`);
     });
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_message_name_nav_item_link, .profile_chat_header_name_nav_item_link, .profile_content_right_tabs_header_nav_item_link").click(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("active");
+    });
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_content_left_transition_url").click(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_header_right_url").removeClass("active");
+    });
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_header_right_url").click(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_content_left_transition_url").removeClass("active");
+    });
+
+    /* End Tabs Profile */
+
+    /* Start Modal */
 
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").addClass("modal-open");
     })
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header_navbar_collapse_absolute, .header_navbar_collapse_nav_close_btn").click( function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header_navbar_collapse_absolute, .header_navbar_collapse_nav_close_btn").click(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click();
         jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("modal-open");
     });
+
+    /* End Modal */
 
     /*BTN TOP*/
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".footer_top_navbar_profile").on("click", "a", function (event) {
@@ -24062,7 +24084,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
             top = jquery__WEBPACK_IMPORTED_MODULE_0___default()(id).offset().top;
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('body,html').animate({scrollTop: top}, 1500);
     });
-    /*END BTN TOP*/
+    /*END BTN TOP */
 
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#RegistrModalCenter').on('shown.bs.modal', function () {
         // $('#customRadioInline1').prop('indeterminate', true);
@@ -24076,26 +24098,28 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').prop('checked', true);
     });
 
-    /*INPUT REGISTR*/
+    /* INPUT REGISTR */
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".prevBtn").click(function () {
         nextPrev(-1);
     });
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".nextBtn").click(function () {
         nextPrev(1);
     });
-    /*END INPUT REGISTR*/
+    /* END INPUT REGISTR */
 
-    /*INPUT PHONE*/
+    /* INPUT PHONE */
     // $("[name='client-phone']").mask("+998 (zz) zzz-zz-zz");
 
-    /*END INPUT PHONE*/
+    /* END INPUT PHONE */
 
+    /* Popup-carousel Start */
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".image").click(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeIn(800);
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel_bg").click(function () {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeOut(800);
         });
     });
+    /* END Popup-carousel */
 
     /*Select2 Start*/
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-example-basic-single").select2({
@@ -24126,42 +24150,107 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         placeholder: "USD",
         minimumResultsForSearch: -1,
     });
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-disable").select2({
+        disabled: true,
+    });
+    jQuery(function ($) {
+        $.fn.select2.amd.require([
+            'select2/selection/single',
+            'select2/selection/placeholder',
+            'select2/selection/allowClear',
+            'select2/dropdown',
+            'select2/dropdown/search',
+            'select2/dropdown/attachBody',
+            'select2/utils'
+        ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
+
+            var SelectionAdapter = Utils.Decorate(
+                SingleSelection,
+                Placeholder
+            );
+
+            SelectionAdapter = Utils.Decorate(
+                SelectionAdapter,
+                AllowClear
+            );
+
+            var DropdownAdapter = Utils.Decorate(
+                Utils.Decorate(
+                    Dropdown,
+                    DropdownSearch
+                ),
+                AttachBody
+            );
+
+            var base_element = $('.select2-multiple2')
+            $(base_element).select2({
+                placeholder: 'Вид деятельности в лицензии',
+                selectionAdapter: SelectionAdapter,
+                dropdownAdapter: DropdownAdapter,
+                allowClear: true,
+                templateResult: function (data) {
+
+                    if (!data.id) {
+                        return data.text;
+                    }
+
+                    var $res = $('<div></div>');
+
+                    $res.text(data.text);
+                    $res.addClass('wrap');
+
+                    return $res;
+                },
+                templateSelection: function (data) {
+                    if (!data.id) {
+                        return data.text;
+                    }
+                    var selected = ($(base_element).val() || []).length;
+                    var total = $('option', $(base_element)).length;
+                    return "Выбранно " + selected + " из " + total;
+                }
+            })
+
+        });
+
+    });
 
     /* END Select2 */
 
     /* Download file Start */
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').focus(function() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').focus(function () {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').addClass('focus');
     })
-    .focusout(function() {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').removeClass('focus');
-    });
+        .focusout(function () {
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').removeClass('focus');
+        });
     var dropZone = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.registr_content_left_form_row_file');
-    dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function(){
+    dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function () {
         return false;
     });
-    dropZone.on('dragover dragenter', function() {
+    dropZone.on('dragover dragenter', function () {
         dropZone.addClass('dragover');
     });
 
-    dropZone.on('dragleave', function(e) {
+    dropZone.on('dragleave', function (e) {
         dropZone.removeClass('dragover');
     });
-    dropZone.on('dragleave', function(e) {
+    dropZone.on('dragleave', function (e) {
         let dx = e.pageX - dropZone.offset().left;
         let dy = e.pageY - dropZone.offset().top;
         if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
             dropZone.removeClass('dragover');
-        };
+        }
+        ;
     });
 
     /* END Download file */
 
     /* Password Start*/
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control').click( function(){
-        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type') == 'password'){
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control').click(function () {
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type') == 'password') {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('view');
             jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type', 'text');
         } else {
@@ -24171,8 +24260,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         return false;
     });
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control-repeat').click( function(){
-        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type') == 'password'){
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control-repeat').click(function () {
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type') == 'password') {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('view');
             jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type', 'text');
         } else {
@@ -24187,21 +24276,17 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 });
 
-var datepicker = new js_datepicker__WEBPACK_IMPORTED_MODULE_3___default.a('#datepicker',{
-    time: true
-});
-
 var currentTab = 0;
 showTab(currentTab);
 
 function showTab(n) {
-    var x = document.getElementsByClassName("registr_content_left_form");
+    var x = document.getElementsByClassName("needs-validation");
     x[n].style.display = "block";
     fixStepIndicator(n)
 }
 
 function nextPrev(n) {
-    var x = document.getElementsByClassName("registr_content_left_form");
+    var x = document.getElementsByClassName("needs-validation");
     if (n == 1 && !validateForm()) return false;
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
@@ -24214,7 +24299,7 @@ function nextPrev(n) {
 
 function validateForm() {
     var x, y, i, valid = true;
-    x = document.getElementsByClassName("registr_content_left_form");
+    x = document.getElementsByClassName("needs-validation");
     y = x[currentTab].getElementsByTagName("input");
     for (i = 0; i < y.length; i++) {
         if (y[i].value == "") {
@@ -24427,14 +24512,14 @@ function fixStepIndicator(n) {
     });
 });
 
-(function() {
+(function () {
     'use strict';
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
         // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
                     event.preventDefault();
                     event.stopPropagation();
@@ -24444,6 +24529,10 @@ function fixStepIndicator(n) {
         });
     }, false);
 })();
+
+var datepicker = new js_datepicker__WEBPACK_IMPORTED_MODULE_3___default.a('#datepicker', {
+    time: true
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

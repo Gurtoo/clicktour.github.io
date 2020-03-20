@@ -95,592 +95,820 @@
 
 
 <main>
-  <section class="add-page">
+  <section class="profile">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="add-page_header">
-            <h2>Добавить новое объявление</h2>
+          <div class="profile_header">
+            <div class="profile_header_left">
+              <h2>Настройки профиля</h2>
+            </div>
+            <div class="profile_header_right">
+              <ul class="nav profile_content_left_transition_nav" role="tablist">
+                <li class="nav-item profile_content_left_transition_nav_item">
+                  <a class="nav-link profile_header_right_url"
+                     id="favour-tabs"
+                     data-toggle="pill" href="#favour-tab" role="tab" aria-controls="favour-tab"
+                     aria-selected="false">
+                    <span class="icon-add"></span>
+                    Избранное
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="add-page_pad">
-            <div class="add-page_content">
-              <form id="regForm" class="needs-validation" action="/" novalidate>
-                <div class="needs-validation add-page_content_form" novalidate>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-lg-8 col-md-6 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <label for="inputType">Выберите раздел</label>
-                        <select class="tours-pages-select js-example-basic-single js-states form-control"
-                                id="inputType">
-                          <option hidden></option>
-                          <option>Горящие туры</option>
-                          <option>Туры в Узбекистан</option>
-                          <option>Совместные путешествия</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 mb-3">
-                      <div class="form-check custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck"
-                               name="customCheckbox">
-                        <label class="custom-control-label" for="customCheck">
-                          Групповой на
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <input type="text" class="form-control" placeholder="человек"
-                               oninput="this.className = ''" name="name" required>
-                        <div class="invalid-feedback">
-                          Заполните поля
-                        </div>
-                      </div>
-                    </div>
+          <div class="profile_pad">
+            <div class="profile_content">
+              <div class="profile_content_left">
+                <div class="profile_content_left_top">
+                  <div class="profile_content_left_top_img">
+                    <span class="icon-photo_image"></span>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input add-page_content_form_row_input_second">
-                        <label>Название тура</label>
-                        <input type="text" class="form-control" placeholder="Горящие туры"
-                               oninput="this.className = ''" name="nameTours" required>
-                        <div class="invalid-feedback">
-                          Заполните поля
-                        </div>
-                      </div>
-                    </div>
+                  <div class="profile_content_left_top_name">
+                    <h2>Дмитрий Иванов</h2>
+                    <p>dimitritest@mail.ru</p>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group add-page_content_form_row_check">
-                        <div class="add-page_content_form_row_group_label p-0">
-                          <label>Тип тура</label>
-                          <p>
-                            Можно выбрать несколько пунктов
-                          </p>
-                        </div>
-                        <div class="add-page_content_form_row_group_check">
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckBeachTour"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckBeachTour">
-                              Пляжные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckHotTour"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckHotTour">
-                              Горящие туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckEarly"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckEarly">
-                              Раннее бронирование
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSki"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSki">
-                              Горнолыжные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckKinder"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckKinder">
-                              Детские лагеря
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckExcurs"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckExcurs">
-                              Экскурсии
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckDiving"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckDiving">
-                              Дайвинг
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckHike"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckHike">
-                              Поход
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckPilgrimage"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckPilgrimage">
-                              Паломничество
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckVip"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckVip">
-                              VIP туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWeekend"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWeekend">
-                              Туры на выходные
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckNewyear"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckNewyear">
-                              Новогодние туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWeekKinder"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWeekKinder">
-                              Отдых с детьми
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckBus"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckBus">
-                              Автобусные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWintering"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWintering">
-                              Зимовка
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckAuto"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckAuto">
-                              Автопутешествие
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWater"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWater">
-                              Водный туризм
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckLearn"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckLearn">
-                              Образование, работа
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckExcursions"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckExcursions">
-                              Экскурсионные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWedding"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWedding">
-                              Свадебные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckСredit"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckСredit">
-                              Туры в кредит
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSea"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSea">
-                              Морские круизы
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckHoliday"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckHoliday">
-                              Пляжный отдых
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckFitnes"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckFitnes">
-                              Здоровье, фитнес
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSkid"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSkid">
-                              Лыжи, сноуборд
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSurfing"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSurfing">
-                              Серфинг
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                </div>
+                <div class="profile_content_left_transition">
+                  <ul class="nav profile_content_left_transition_nav" role="tablist">
+                    <li class="nav-item profile_content_left_transition_nav_item">
+                      <a class="nav-link profile_content_left_transition_url"
+                         id="advert-tabs"
+                         data-toggle="pill" href="#advert-tab" role="tab" aria-controls="advert-tab"
+                         aria-selected="true">
+                        <span class="icon-profile_menu"></span>
+                        Мои объявления
+                        <span class="notification"></span>
+                      </a>
+                    </li>
+                    <li class="nav-item profile_content_left_transition_nav_item">
+                      <a class="nav-link profile_content_left_transition_url profile_content_left_transition_url_message"
+                         id="message-tabs"
+                         data-toggle="pill" href="#message-tab" role="tab" aria-controls="message-tab"
+                         aria-selected="false">
+                        <span class="icon-envelope"></span>
+                        Сообщения
+                        <span class="notification">1</span>
+                      </a>
+                    </li>
+                    <li class="nav-item profile_content_left_transition_nav_item">
+                      <a class="nav-link profile_content_left_transition_url"
+                         id="setting-tabs"
+                         data-toggle="pill" href="#setting-tab" role="tab" aria-controls="setting-tab"
+                         aria-selected="false">
+                        <span class="icon-settings"></span>
+                        Настройки
+                        <span class="notification"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="profile_content_right">
+                <div class="profile_content_right_header">
+                  <div class="profile_content_right_header_price">
+                    <p>Баланс</p>
+                    <h4>12 000 UZS</h4>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Маршрут</label>
-                          <p>
-                            Выберите страну и город
-                          </p>
-                        </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
-                          <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
-                            <option hidden></option>
-                            <option>Австрия</option>
-                            <option>Автралия</option>
-                            <option>Алжир</option>
-                          </select>
-                          <div class="add-page_content_form_row_group_route_input">
-                            <input type="text" class="form-control" placeholder="Город"
-                                   oninput="this.className = ''" name="name">
-                            <div class="invalid-feedback">
-                              Заполните поля
+                  <div class="profile_content_right_header_btn">
+                    <a href="#" class="btn btn-orange">
+                      Пополнить счет
+                    </a>
+                  </div>
+                  <div class="profile_content_right_header_btn_info">
+                    <a href="#" class="">
+                      <span class="icon-info"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="profile_content_right_tabs">
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active profile_content_right_tabs_content"
+                         id="advert-tab"
+                         role="tabpanel"
+                         aria-labelledby="advert-tabs">
+                      <div class="profile_content_right_tabs_header">
+                        <ul class="nav profile_content_right_tabs_header_nav" role="tablist">
+                          <li class="nav-item profile_content_right_tabs_header_nav_item">
+                            <a class="nav-link profile_content_right_tabs_header_nav_item_link active" id="active-tabs"
+                               data-toggle="pill" href="#active-tab" role="tab" aria-controls="active-tab"
+                               aria-selected="true">
+                              Активные
+                            </a>
+                          </li>
+                          <li class="nav-item profile_content_right_tabs_header_nav_item">
+                            <a class="nav-link profile_content_right_tabs_header_nav_item_link" id="noactive-tabs"
+                               data-toggle="pill" href="#noactive-tab" role="tab" aria-controls="noactive-tab"
+                               aria-selected="false">
+                              Неактивные
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="profile_content_right_tabs_content">
+                        <div class="tab-content">
+                          <div class="tab-pane fade show text-center active"
+                               id="active-tab" role="tabpanel"
+                               aria-labelledby="active-tabs">
+                            <div class="profile_content_right_tabs_content_block">
+                              <div class="profile_content_right_tabs_content_block_img">
+                                <img src="./img/spring-break-img.jpg" alt="tabs-img">
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_info">
+                                <div class="profile_content_right_tabs_content_block_info_add">
+                                  <p>Добавлено: 10.02.2020</p>
+                                  |
+                                  <p>Активен до: 20.02.2020</p>
+                                </div>
+                                <h3>7 дневный тур в Париж</h3>
+                                <div class="profile_content_right_tabs_content_block_info_message">
+                                  <div class="profile_content_right_tabs_content_block_info_message_img">
+                                    <span class="icon-envelope"></span>
+                                    <span class="notification">1</span>
+                                  </div>
+                                  <p>Сообщение</p>
+                                </div>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_edit">
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-edit"></span>Редактировать</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-on_off"></span>Отключить</a>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_right">
+                                <div class="profile_content_right_tabs_content_block_right_market">
+                                  <a href="#" class="btn btn-orange">Рекламировать</a>
+                                </div>
+                                <div class="profile_content_right_tabs_content_block_right_view">
+                                  <span class="icon-eye_view"></span>
+                                  <p>Просмотры 7546 </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="profile_content_right_tabs_content_block">
+                              <div class="profile_content_right_tabs_content_block_img">
+                                <img src="./img/spring-break-img.jpg" alt="tabs-img">
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_info">
+                                <div class="profile_content_right_tabs_content_block_info_add">
+                                  <p>Добавлено: 10.02.2020</p>
+                                  |
+                                  <p>Активен до: 20.02.2020</p>
+                                </div>
+                                <h3>7 дневный тур в Париж</h3>
+                                <div class="profile_content_right_tabs_content_block_info_message">
+                                  <div class="profile_content_right_tabs_content_block_info_message_img">
+                                    <span class="icon-envelope"></span>
+                                    <span class="notification">1</span>
+                                  </div>
+                                  <p>Сообщение</p>
+                                </div>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_edit">
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-edit"></span>Редактировать</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-on_off"></span>Отключить</a>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_right">
+                                <div class="profile_content_right_tabs_content_block_right_market">
+                                  <a href="#" class="btn btn-orange">Рекламировать</a>
+                                </div>
+                                <div class="profile_content_right_tabs_content_block_right_view">
+                                  <span class="icon-eye_view"></span>
+                                  <p>Просмотры 7546 </p>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route_dash"></div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
-                          <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
-                            <option hidden></option>
-                            <option>Австрия</option>
-                            <option>Автралия</option>
-                            <option>Алжир</option>
-                          </select>
-                          <div class="add-page_content_form_row_group_route_input">
-                            <input type="text" class="form-control" placeholder="Город"
-                                   oninput="this.className = ''" name="name" required>
-                            <div class="invalid-feedback">
-                              Заполните поля
+                          <div class="tab-pane fade text-center"
+                               id="noactive-tab"
+                               role="tabpanel"
+                               aria-labelledby="noactive-tabs">
+                            <div class="profile_content_right_tabs_content_block">
+                              <div class="profile_content_right_tabs_content_block_img">
+                                <img src="./img/spring-break-img.jpg" alt="tabs-img">
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_info">
+                                <div class="profile_content_right_tabs_content_block_info_add">
+                                  <p>Добавлено: 10.02.2020</p>
+                                  |
+                                  <p>Активен до: 20.02.2020</p>
+                                </div>
+                                <h3>7 дневный тур в Париж</h3>
+                                <div class="profile_content_right_tabs_content_block_info_message">
+                                  <div class="profile_content_right_tabs_content_block_info_message_img">
+                                    <span class="icon-envelope"></span>
+                                  </div>
+                                  <p>Сообщение</p>
+                                </div>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_edit">
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-edit"></span>Редактировать</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-on_off"></span>Отключить</a>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_right">
+                                <div class="profile_content_right_tabs_content_block_right_market">
+                                  <a href="#" class="btn btn-gray">Рекламировать</a>
+                                </div>
+                                <div class="profile_content_right_tabs_content_block_right_view">
+                                  <span class="icon-eye_view"></span>
+                                  <p>Просмотры 7546 </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="profile_content_right_tabs_content_block">
+                              <div class="profile_content_right_tabs_content_block_img">
+                                <img src="./img/spring-break-img.jpg" alt="tabs-img">
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_info">
+                                <div class="profile_content_right_tabs_content_block_info_add">
+                                  <p>Добавлено: 10.02.2020</p>
+                                  |
+                                  <p>Активен до: 20.02.2020</p>
+                                </div>
+                                <h3>7 дневный тур в Париж</h3>
+                                <div class="profile_content_right_tabs_content_block_info_message">
+                                  <div class="profile_content_right_tabs_content_block_info_message_img">
+                                    <span class="icon-envelope"></span>
+                                  </div>
+                                  <p>Сообщение</p>
+                                </div>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_edit">
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-edit"></span>Редактировать</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                                <a href="#" class="profile_content_right_tabs_content_block_edit_url"><span
+                                    class="icon-on_off"></span>Отключить</a>
+                              </div>
+                              <div class="profile_content_right_tabs_content_block_right">
+                                <div class="profile_content_right_tabs_content_block_right_market">
+                                  <a href="#" class="btn btn-gray">Рекламировать</a>
+                                </div>
+                                <div class="profile_content_right_tabs_content_block_right_view">
+                                  <span class="icon-eye_view"></span>
+                                  <p>Просмотры 7546 </p>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label"></div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
-                          <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
-                            <option hidden></option>
-                            <option>Австрия</option>
-                            <option>Автралия</option>
-                            <option>Алжир</option>
-                          </select>
-                          <div class="add-page_content_form_row_group_route_input">
-                            <input type="text" class="form-control" placeholder="Город"
-                                   oninput="this.className = ''" name="name" required>
-                            <div class="invalid-feedback">
-                              Заполните поля
+                    </div>
+                    <div class="tab-pane fade profile_content_right_tabs_content" id="message-tab"
+                         role="tabpanel"
+                         aria-labelledby="message-tabs">
+                      <div class="profile_content_right_tabs_header">
+                        <ul class="nav profile_content_right_tabs_header_nav" role="tablist">
+                          <li class="nav-item profile_content_right_tabs_header_nav_item">
+                            <a class="nav-link profile_content_right_tabs_header_nav_item_link active"
+                               id="active-tabs-second"
+                               data-toggle="pill" href="#active-tab-second" role="tab" aria-controls="active-tab"
+                               aria-selected="true">
+                              Входящие
+                            </a>
+                          </li>
+                          <li class="nav-item profile_content_right_tabs_header_nav_item">
+                            <a class="nav-link profile_content_right_tabs_header_nav_item_link"
+                               id="noactive-tabs-second"
+                               data-toggle="pill" href="#noactive-tab-second" role="tab" aria-controls="noactive-tab"
+                               aria-selected="false">
+                              Исходящие
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="profile_content_right_tabs_content">
+                        <div class="tab-content">
+                          <div class="tab-pane fade show text-center active profile_content_right_tabs_content"
+                               id="active-tab-second" role="tabpanel"
+                               aria-labelledby="active-tabs-second">
+                            <div class="profile_message">
+                              <div class="profile_message_from">
+                                <span class="icon-from_to"></span>
+                                <p>Дмитрий Иванов</p>
+                              </div>
+                              <div
+                                  class="profile_message_name profile_message_name_active">
+                                <a href="#">7 дневный тур в Париж</a>
+                                <span class="notification">1</span>
+                              </div>
+                              <div class="profile_message_edit">
+                                <a href="#" class="profile_message_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                              </div>
+                              <div class="profile_message_right">
+                                <p>Получено</p>
+                                <p>10.02.2020 в 15:32</p>
+                              </div>
+                            </div>
+                            <div class="profile_message">
+                              <div class="profile_message_from">
+                                <span class="icon-from_to"></span>
+                                <p>Дмитрий Иванов</p>
+                              </div>
+                              <div class="profile_message_name">
+                                <a href="#">Великолепный Век Наследие Турции</a>
+                              </div>
+                              <div class="profile_message_edit">
+                                <a href="#" class="profile_message_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                              </div>
+                              <div class="profile_message_right">
+                                <p>Получено</p>
+                                <p>10.02.2020 в 15:32</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade text-center profile_content_right_tabs_content"
+                               id="noactive-tab-second"
+                               role="tabpanel"
+                               aria-labelledby="noactive-tabs-second">
+                            <div class="profile_message">
+                              <div class="profile_message_from">
+                                <span class="icon-from_to icon-from-out"></span>
+                                <p>Дмитрий Иванов</p>
+                              </div>
+                              <div class="profile_message_name">
+                                <ul class="nav profile_message_name_nav" role="tablist">
+                                  <li class="nav-item profile_message_name_nav_item">
+                                    <a class="nav-link profile_message_name_nav_item_link"
+                                       id="chat-tabs"
+                                       data-toggle="pill" href="#chat-tab" role="tab" aria-controls="chat-tab"
+                                       aria-selected="true">
+                                      7 дневный тур в Париж
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="profile_message_edit">
+                                <a href="#" class="profile_message_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                              </div>
+                              <div class="profile_message_right">
+                                <p>Получено</p>
+                                <p>10.02.2020 в 15:32</p>
+                              </div>
+                            </div>
+                            <div class="profile_message">
+                              <div class="profile_message_from">
+                                <span class="icon-from_to icon-from-out"></span>
+                                <p>Дмитрий Иванов</p>
+                              </div>
+                              <div class="profile_message_name">
+                                <ul class="nav profile_message_name_nav" role="tablist">
+                                  <li class="nav-item profile_message_name_nav_item">
+                                    <a class="nav-link profile_message_name_nav_item_link"
+                                       id="chat-second-tabs"
+                                       data-toggle="pill" href="#chat-second-tab" role="tab" aria-controls="chat-second-tab"
+                                       aria-selected="true">
+                                      Великолепный Век Наследие Турции
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="profile_message_edit">
+                                <a href="#" class="profile_message_edit_url"><span
+                                    class="icon-delete"></span>Удалить</a>
+                              </div>
+                              <div class="profile_message_right">
+                                <p>Получено</p>
+                                <p>10.02.2020 в 15:32</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade text-center profile_content_right_tabs_content"
+                               id="chat-tab"
+                               role="tabpanel"
+                               aria-labelledby="chat-tabs">
+                            <div class="profile_chat">
+                              <div class="profile_chat_header">
+                                <div class="profile_chat_header_from">
+                                  <a class="profile_chat_header_name_nav_item_link"
+                                     id="chat-tab-1" data-toggle="pill" href="#noactive-tab-second" role="tab"
+                                     aria-controls="chat-tabs"
+                                     aria-selected="true"><span class="icon-arrow_down"></span>Назад</a>
+                                </div>
+                                <div class="profile_chat_header_name">
+                                  <a href="#">7 дневный тур в Париж <span class="icon-link"></span></a>
+                                </div>
+                                <div class="profile_chat_header_edit">
+                                  <a href="#" class="profile_chat_header_edit_url"><span
+                                      class="icon-delete"></span>Удалить</a>
+                                </div>
+                              </div>
+                              <div class="profile_chat_content">
+                                <div class="profile_chat_content_client">
+                                  <div class="profile_chat_content_client_header">
+                                    <h5>Дмитрий Иванов</h5>
+                                  </div>
+                                  <div class="profile_chat_content_client_content">
+                                    <p>Здравствуйте, Дмитрий Иванов, прощу забронировать тур на меня.</p>
+                                  </div>
+                                  <div class="profile_chat_content_client_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="profile_chat_content_own">
+                                  <div class="profile_chat_content_own_header">
+                                    <h5>Ваше сообщение</h5>
+                                  </div>
+                                  <div class="profile_chat_content_own_content">
+                                    <p>Здравствуйте, сейчас невозможно бронировать тур,
+                                      потому что сайт еще не работает.</p>
+                                  </div>
+                                  <div class="profile_chat_content_own_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="profile_chat_content_client">
+                                  <div class="profile_chat_content_client_header">
+                                    <h5>Дмитрий Иванов</h5>
+                                  </div>
+                                  <div class="profile_chat_content_client_content">
+                                    <p>Хорошо, понятно...</p>
+                                  </div>
+                                  <div class="profile_chat_content_client_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="profile_chat_content_own">
+                                  <div class="profile_chat_content_own_header">
+                                    <h5>Ваше сообщение</h5>
+                                  </div>
+                                  <div class="profile_chat_content_own_content">
+                                    <p>Счастливо</p>
+                                  </div>
+                                  <div class="profile_chat_content_own_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="profile_chat_content_answer">
+                                  <div class="profile_chat_content_answer_text-area">
+                                    <textarea cols="1" rows="8" placeholder="Напишите ответ"></textarea>
+                                    <label class="max-words">Максимум 1000 символов</label>
+                                  </div>
+                                  <div class="profile_chat_content_answer_bottom">
+                                    <div class="profile_chat_content_answer_bottom_file">
+                                      <input type="file" id="files">
+                                      <label for="files"><span class="icon-add_file"></span>Прикрепить файл</label>
+                                      <p>Максимальный размер файла 3 мб</p>
+                                    </div>
+                                    <div class="profile_chat_content_answer_bottom_url">
+                                      <a href="#" class="btn btn-orange">Опубликовать</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade text-center profile_content_right_tabs_content"
+                               id="chat-second-tab"
+                               role="tabpanel"
+                               aria-labelledby="chat-tabs">
+                            <div class="chat">
+                              <div class="chat_header">
+                                <div class="chat_header_from">
+                                  <a class="chat_header_name_nav_item_link"
+                                     id="chat-tab-2" data-toggle="pill" href="#noactive-tab-second" role="tab"
+                                     aria-controls="chat-second-tabs"
+                                     aria-selected="true"><span class="icon-arrow_down"></span>Назад</a>
+                                </div>
+                                <div class="chat_header_name">
+                                  <a href="#">Великолепный Век Наследие Турции <span class="icon-link"></span></a>
+                                </div>
+                                <div class="chat_header_edit">
+                                  <a href="#" class="chat_header_edit_url"><span
+                                      class="icon-delete"></span>Удалить</a>
+                                </div>
+                              </div>
+                              <div class="chat_content">
+                                <div class="chat_content_client">
+                                  <div class="chat_content_client_header">
+                                    <h5>Дмитрий Иванов</h5>
+                                  </div>
+                                  <div class="chat_content_client_content">
+                                    <p>Здравствуйте, Дмитрий Иванов, прощу забронировать тур на меня.</p>
+                                  </div>
+                                  <div class="chat_content_client_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="chat_content_own">
+                                  <div class="chat_content_own_header">
+                                    <h5>Ваше сообщение</h5>
+                                  </div>
+                                  <div class="chat_content_own_content">
+                                    <p>Здравствуйте, сейчас невозможно бронировать тур,
+                                      потому что сайт еще не работает.</p>
+                                  </div>
+                                  <div class="chat_content_own_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="chat_content_client">
+                                  <div class="chat_content_client_header">
+                                    <h5>Дмитрий Иванов</h5>
+                                  </div>
+                                  <div class="chat_content_client_content">
+                                    <p>Хорошо, понятно...</p>
+                                  </div>
+                                  <div class="chat_content_client_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="chat_content_own">
+                                  <div class="chat_content_own_header">
+                                    <h5>Ваше сообщение</h5>
+                                  </div>
+                                  <div class="chat_content_own_content">
+                                    <p>Счастливо</p>
+                                  </div>
+                                  <div class="chat_content_own_date">
+                                    <p>Получено 10.02.2020 в 15:32</p>
+                                  </div>
+                                </div>
+                                <div class="chat_content_answer">
+                                  <div class="chat_content_answer_text-area">
+                                    <textarea cols="1" rows="8" placeholder="Напишите ответ"></textarea>
+                                    <label class="max-words">Максимум 1000 символов</label>
+                                  </div>
+                                  <div class="chat_content_answer_bottom">
+                                    <div class="chat_content_answer_bottom_file">
+                                      <input type="file" id="files-second">
+                                      <label for="files-second"><span class="icon-add_file"></span>Прикрепить файл</label>
+                                      <p>Максимальный размер файла 3 мб</p>
+                                    </div>
+                                    <div class="chat_content_answer_bottom_url">
+                                      <a href="#" class="btn btn-orange">Опубликовать</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route_dash"></div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
-                          <div class="add-page_content_form_row_group_route_input_btn">
-                            <a href="#" class="btn">Добавить еще</a>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade profile_content_right_tabs_content" id="setting-tab"
+                         role="tabpanel"
+                         aria-labelledby="setting-tabs">
+                      <div class="profile_setting">
+                        <div class="profile_setting_header">
+                          <p>Изменить данные</p>
+                        </div>
+                        <div class="profile_setting_contact">
+                          <div class="profile_setting_contact_header">
+                            <h4>Контактные данные</h4>
+                          </div>
+                          <div class="profile_setting_contact_right">
+                            <div class="profile_setting_contact_right_input">
+                              <input type="text" id="setting-email" placeholder="E-mail" value="test@gmail.com">
+                              <label for="setting-email">E-mail</label>
+                            </div>
+                            <div class="profile_setting_contact_right_input">
+                              <input type="text" id="setting-phone" placeholder="+998 99 999 9999" value="+998 99 999 9999">
+                              <label for="setting-phone">Телефон номер</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="profile_setting_contact">
+                          <div class="profile_setting_contact_header">
+                            <h4>Персональные </br> данные</h4>
+                          </div>
+                          <div class="profile_setting_contact_right">
+                            <fieldset disabled>
+                              <div class="profile_setting_contact_right_input">
+                                <input type="text" value="Дмитрий">
+                                <label>Имя</label>
+                              </div>
+                              <div class="profile_setting_contact_right_input">
+                                <input type="text" value="Иванов">
+                                <label>Фамилия</label>
+                              </div>
+                              <div class="profile_setting_contact_right_input">
+                                <div class="registr_content_left_form_row_input form-input-log">
+                                  <select class="tours-pages-select js-add-pages-select-disable">
+                                    <option>Мужской</option>
+                                    <option>Женский</option>
+                                  </select>
+                                </div>
+                                <label>Пол</label>
+                              </div>
+                              <div class="profile_setting_contact_right_input">
+                                <div class="registr_content_left_form_row_input form-input-log">
+                                  <select class="tours-pages-select js-add-pages-select-disable">
+                                    <option>Узбекистан</option>
+                                    <option>Казахстан</option>
+                                  </select>
+                                </div>
+                                <label>Страна</label>
+                              </div>
+                              <div class="profile_setting_contact_right_input">
+                                <input type="text" value="Ташкент">
+                                <label>Город</label>
+                              </div>
+                              <div class="profile_setting_contact_right_input">
+                                <div class="registr_content_left_form_row_input">
+                                  <input type="text"
+                                         oninput="this.className = ''" name="calendar" id="datepicker"
+                                         autocomplete="off"
+                                         name="date-data" value="17.03.2018" required>
+                                  <label class="registr_content_left_form_row_input_datepicker">
+                                    <span class="icon-calendar"></span>
+                                  </label>
+                                </div>
+                                <label>Дата рождения</label>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                        <div class="profile_setting_contact">
+                          <div class="profile_setting_contact_header">
+                            <h4>Сменить пароль</h4>
+                          </div>
+                          <div class="profile_setting_contact_right">
+                            <div class="profile_setting_contact_right_input">
+                              <div class="registr_content_left_form_row_input registr_content_left_form_row_input_password">
+                                <input type="password" class="form-control" placeholder="Новый пароль"  id="password-input"
+                                       name=password" required>
+                                <a href="#" class="password-control registr_content_left_form_row_input_password_control registr_content_left_form_row_input_password_control_top">
+                                  <span class="icon-eye_input"></span>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="profile_setting_contact_right_input">
+                              <div class="registr_content_left_form_row_input registr_content_left_form_row_input_password">
+                                <input type="password" class="form-control" placeholder="Повторите новый пароль"  id="password-input-repeat"
+                                       name=password" required>
+                                <a href="#" class="password-control-repeat registr_content_left_form_row_input_password_control registr_content_left_form_row_input_password_control_top">
+                                  <span class="icon-eye_input"></span>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="profile_setting_contact_right_btn">
+                              <a href="#" class="btn btn-orange">Сохранить</a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Описание</label>
+                    <div class="tab-pane fade profile_content_right_tabs_content" id="favour-tab"
+                         role="tabpanel"
+                         aria-labelledby="favour-tabs">
+                      <div class="profile_setting">
+                        <div class="profile_setting_header">
+                          <p>Избранное</p>
                         </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Описание"></textarea>
-                          <label class="max-words">Максимум 1000 символов</label>
+                        <div class="profile_setting_favour">
+                          <div class="profile_content_right_tabs_content_block_img">
+                            <img src="./img/spring-break-img.jpg" alt="tabs-img">
+                          </div>
+                          <div class="content_tours_block_center">
+                            <div class="content_tours_block_center_top">
+                              <div class="content_tours_block_center_title">
+                                <h3>7 дневный тур в Париж</h3>
+                              </div>
+                              <div class="content_tours_block_center_navigation">
+                                <div class="d-flex align-items-center">
+                                  <p>Ташкент</p>
+                                </div>
+                                <div class="d-flex align-items-baseline">
+                                  <span class="icon-plane"></span>
+                                  <p>Баку</p>
+                                </div>
+                                <div class="d-flex align-items-baseline">
+                                  <span class="icon-plane"></span>
+                                  <p>Турция</p>
+                                </div>
+                                <div class="d-flex align-items-baseline">
+                                  <span class="icon-plane"></span>
+                                  <p>Ташкент</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content_tours_block_center_date">
+                              <div class="content_tours_block_center_date_block order-1">
+                                <div class="content_tours_block_center_date_block_img">
+                                  <span class="icon-time"></span>
+                                  <div class="content_tours_block_center_date_block_popup">
+                                    <p>Длительность тура</p>
+                                  </div>
+                                </div>
+                                <p>6 дней/5 ночей</p>
+                              </div>
+                              <div class="content_tours_block_center_date_block order-2">
+                                <div class="content_tours_block_center_date_block_img">
+                                  <span class="icon-calendar"></span>
+                                  <div class="content_tours_block_center_date_block_popup">
+                                    <p>Дата отправления</p>
+                                  </div>
+                                </div>
+                                <p>Каждая суббота</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="profile_setting_favour_right">
+                            <div class="profile_setting_favour_right_top">
+                              <div class="content_tours_block_right_price">
+                                <div class="content_tours_block_right_price_main">
+                                  <p>820 USD</p>
+                                </div>
+                              </div>
+                              <div class="content_tours_block_right_calculated">
+                                <p>2 взрослых</p>
+                              </div>
+                            </div>
+                            <div class="profile_setting_favour_right_delete">
+                              <a href="#" class="profile_setting_favour_right_delete_url">
+                                <span class="icon-delete"></span>
+                                Удалить из избранных
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="profile_setting_favour">
+                          <div class="profile_content_right_tabs_content_block_img">
+                            <img src="./img/spring-break-img.jpg" alt="tabs-img">
+                          </div>
+                          <div class="content_tours_block_center">
+                            <div class="content_tours_block_center_top">
+                              <div class="content_tours_block_center_title">
+                                <h3>7 дневный тур в Париж</h3>
+                              </div>
+                              <div class="content_tours_block_center_navigation">
+                                <div class="d-flex align-items-center">
+                                  <p>Ташкент</p>
+                                </div>
+                                <div class="d-flex align-items-baseline">
+                                  <span class="icon-plane"></span>
+                                  <p>Баку</p>
+                                </div>
+                                <div class="d-flex align-items-baseline">
+                                  <span class="icon-plane"></span>
+                                  <p>Турция</p>
+                                </div>
+                                <div class="d-flex align-items-baseline">
+                                  <span class="icon-plane"></span>
+                                  <p>Ташкент</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content_tours_block_center_date">
+                              <div class="content_tours_block_center_date_block order-1">
+                                <div class="content_tours_block_center_date_block_img">
+                                  <span class="icon-time"></span>
+                                  <div class="content_tours_block_center_date_block_popup">
+                                    <p>Длительность тура</p>
+                                  </div>
+                                </div>
+                                <p>6 дней/5 ночей</p>
+                              </div>
+                              <div class="content_tours_block_center_date_block order-2">
+                                <div class="content_tours_block_center_date_block_img">
+                                  <span class="icon-calendar"></span>
+                                  <div class="content_tours_block_center_date_block_popup">
+                                    <p>Дата отправления</p>
+                                  </div>
+                                </div>
+                                <p>15.02.2020</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="profile_setting_favour_right">
+                            <div class="profile_setting_favour_right_top">
+                              <div class="content_tours_block_right_price">
+                                <div class="content_tours_block_right_price_main">
+                                  <p>820 USD</p>
+                                </div>
+                              </div>
+                              <div class="content_tours_block_right_calculated">
+                                <p>2 взрослых</p>
+                              </div>
+                            </div>
+                            <div class="profile_setting_favour_right_delete">
+                              <a href="#" class="profile_setting_favour_right_delete_url">
+                                <span class="icon-delete"></span>
+                                Удалить из избранных
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Фото</label>
-                          <p>Прикрепите фотографии</p>
-                        </div>
-                        <div class="add-page_content_form_row_group_block_upload">
-                          <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <label>Длительность</label>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_duration">
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <label>дней</label>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_duration">
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <label>ночей</label>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_duration_second">
-                          <label>Дата отправления</label>
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Программа тура</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Программа"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Проживание</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Отель"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input add-page_content_form_row_input_price">
-                        <label>Цена</label>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_price">
-                          <input type="text" class="form-control" placeholder="Цена"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_price_second">
-                          <input type="text" class="form-control" placeholder="Старая цена"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_price_third">
-                          <input type="text" class="form-control" placeholder="Скидка на ранее бронирование"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_price_select">
-                          <select class="tours-pages-select js-add-pages-select-money js-states form-control">
-                            <option hidden></option>
-                            <option>USD</option>
-                            <option>UZS</option>
-                            <option>EURO</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <label>Примечание </br> для цены</label>
-                        <input type="text" class="form-control" placeholder="Цена указана"
-                               oninput="this.className = ''" name="nameTours" required>
-                        <div class="invalid-feedback">
-                          Заполните поля
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Включено в </br> стоимость</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Программа"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Оплачивается </br> отдельно</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Трансфер"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <label>Период действия </br>предложения</label>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_acts">
-                          <label>от</label>
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_acts">
-                          <label class="add-page_content_form_row_group_acts_label">до</label>
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_acts_block"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Примечание</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="6" placeholder="Дополнительные услуги"></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <label>Контакты</label>
-                        <input type="text" class="form-control" placeholder="+998 90 123 45 67"
-                               oninput="this.className = ''" name="nameTours" required>
-                        <div class="invalid-feedback">
-                          Заполните поля
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row_second">
-                    <div class="add-page_content_form_row_second_group_btn">
-                      <button type="submit" class="btn btn-gray">Предпросмотр</button>
-                      <button type="submit" class="btn btn-orange">Опубликовать</button>
                     </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
