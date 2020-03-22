@@ -15234,7 +15234,420 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(e,t){ true?module.exports=t():undefined}(window,(function(){return function(e){var t={};function n(a){if(t[a])return t[a].exports;var r=t[a]={i:a,l:!1,exports:{}};return e[a].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,a){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:a})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var a=Object.create(null);if(n.r(a),Object.defineProperty(a,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(a,r,function(t){return e[t]}.bind(null,r));return a},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){n(1);var a=[],r=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],i=["January","February","March","April","May","June","July","August","September","October","November","December"],s={t:"top",r:"right",b:"bottom",l:"left",c:"centered"};function o(){}var l=["click","focusin","keydown","input"];function c(e){return Array.isArray(e)?e.map(c):"[object Object]"==={}.toString.call(e)?Object.keys(e).reduce((function(t,n){return t[n]=c(e[n]),t}),{}):e}function d(e,t){var n=e.calendar.querySelector(".qs-overlay"),a=n&&!n.classList.contains("qs-hidden");t=t||new Date(e.currentYear,e.currentMonth),e.calendar.innerHTML=[u(t,e,a),h(t,e,a),f(e,a)].join(""),a&&setTimeout((function(){w(!0,e)}),10)}function u(e,t,n){return['<div class="qs-controls'+(n?" qs-blur":"")+'">','<div class="qs-arrow qs-left"></div>','<div class="qs-month-year">','<span class="qs-month">'+t.months[e.getMonth()]+"</span>",'<span class="qs-year">'+e.getFullYear()+"</span>","</div>",'<div class="qs-arrow qs-right"></div>',"</div>"].join("")}function h(e,t,n){var a=t.currentMonth,r=t.currentYear,i=t.dateSelected,s=t.maxDate,o=t.minDate,l=t.showAllDates,c=t.days,d=t.disabledDates,u=t.disabler,h=t.noWeekends,f=t.startDay,v=t.weekendIndices,m=t.events,p=t.getRange?t.getRange():{},y=+p.start,b=+p.end,D=new Date,q=r===D.getFullYear()&&a===D.getMonth(),S=g(new Date(e).setDate(1)),w=S.getDay()-f,M=w<0?7:0;S.setMonth(S.getMonth()+1),S.setDate(0);var x=S.getDate(),L=[],C=M+7*((w+x)/7|0);C+=(w+x)%7?7:0,0!==f&&0===w&&(C+=7);for(var P=1;P<=C;P++){var j=(P-1)%7,k=c[j],Y=P-(w>=0?w:7+w),O=new Date(r,a,Y),N=m[+O],E="qs-num",I='<span class="qs-num">'+O.getDate()+"</span>",A=y&&b&&+O>=y&&+O<=b;Y<1||Y>x?(E="qs-empty qs-outside-current-month",l?(N&&(E+=" qs-event"),E+=" qs-disabled"):I=""):((o&&O<o||s&&O>s||u(O)||d.some((function(e){return e===+O}))||h&&v.some((function(e){return e===j})))&&(E="qs-disabled"),N&&(E+=" qs-event"),q&&Y===D.getDate()&&(E+=" qs-current"),+O==+i&&(E+=" qs-active"),A&&(E+=" qs-range-date-"+j,y!==b&&(E+=+O===y?" qs-range-date-start qs-active":+O===b?" qs-range-date-end qs-active":" qs-range-date-middle"))),L.push('<div class="qs-square '+E+" "+k+'">'+I+"</div>")}var F=c.map((function(e){return'<div class="qs-square qs-day">'+e+"</div>"})).concat(L);if(F.length%7!=0)throw"Calendar not constructed properly. The # of squares should be a multiple of 7.";return F.unshift('<div class="qs-squares'+(n?" qs-blur":"")+'">'),F.push("</div>"),F.join("")}function f(e,t){var n=e.overlayPlaceholder,a=e.overlayButton;return['<div class="qs-overlay'+(t?"":" qs-hidden")+'">',"<div>",'<input class="qs-overlay-year" placeholder="'+n+'" />','<div class="qs-close">&#10005;</div>',"</div>",'<div class="qs-overlay-month-container">'+e.overlayMonths.map((function(e,t){return['<div class="qs-overlay-month" data-month-num="'+t+'">','<span data-month-num="'+t+'">'+e+"</span>","</div>"].join("")})).join("")+"</div>",'<div class="qs-submit qs-disabled">'+a+"</div>","</div>"].join("")}function v(e,t,n){var a=t.el,r=t.calendar.querySelector(".qs-active"),i=e.textContent,s=t.sibling;(a.disabled||a.readOnly)&&t.respectDisabledReadOnly||(t.dateSelected=n?void 0:new Date(t.currentYear,t.currentMonth,i),r&&r.classList.remove("qs-active"),n||e.classList.add("qs-active"),p(a,t,n),n||q(t),s&&(m({instance:t,deselect:n}),t.first&&!s.dateSelected&&(s.currentYear=t.currentYear,s.currentMonth=t.currentMonth,s.currentMonthName=t.currentMonthName),d(t),d(s)),t.onSelect(t,n?void 0:new Date(t.dateSelected)))}function m(e){var t=e.instance.first?e.instance:e.instance.sibling,n=t.sibling;t===e.instance?e.deselect?(t.minDate=t.originalMinDate,n.minDate=n.originalMinDate):n.minDate=t.dateSelected:e.deselect?(n.maxDate=n.originalMaxDate,t.maxDate=t.originalMaxDate):t.maxDate=n.dateSelected}function p(e,t,n){if(!t.nonInput)return n?e.value="":t.formatter!==o?t.formatter(e,t.dateSelected,t):void(e.value=t.dateSelected.toDateString())}function y(e,t,n,a){n||a?(n&&(t.currentYear=+n),a&&(t.currentMonth=+a)):(t.currentMonth+=e.contains("qs-right")?1:-1,12===t.currentMonth?(t.currentMonth=0,t.currentYear++):-1===t.currentMonth&&(t.currentMonth=11,t.currentYear--)),t.currentMonthName=t.months[t.currentMonth],d(t),t.onMonthChange(t)}function b(e){if(!e.noPosition){var t=e.position.top,n=e.position.right;if(e.position.centered)return e.calendarContainer.classList.add("qs-centered");var a=[e.parent,e.el,e.calendarContainer].map((function(e){return e.getBoundingClientRect()})),r=a[0],i=a[1],s=a[2],o=i.top-r.top+e.parent.scrollTop-(t?s.height:-1*i.height)+"px",l=i.left-r.left+(n?i.width-s.width:0)+"px";e.calendarContainer.style.setProperty("top",o),e.calendarContainer.style.setProperty("left",l)}}function D(e){return"[object Date]"==={}.toString.call(e)&&"Invalid Date"!==e.toString()}function g(e){if(D(e)||"number"==typeof e&&!isNaN(e)){var t=new Date(+e);return new Date(t.getFullYear(),t.getMonth(),t.getDate())}}function q(e){e.disabled||!e.calendarContainer.classList.contains("qs-hidden")&&!e.alwaysShow&&(w(!0,e),e.calendarContainer.classList.add("qs-hidden"),e.onHide(e))}function S(e){e.disabled||(e.calendarContainer.classList.remove("qs-hidden"),b(e),e.onShow(e))}function w(e,t){var n=t.calendar;if(n){var a=n.querySelector(".qs-overlay"),r=a.querySelector(".qs-overlay-year"),i=n.querySelector(".qs-controls"),s=n.querySelector(".qs-squares");e?(a.classList.add("qs-hidden"),i.classList.remove("qs-blur"),s.classList.remove("qs-blur"),r.value=""):(a.classList.remove("qs-hidden"),i.classList.add("qs-blur"),s.classList.add("qs-blur"),r.focus())}}function M(e,t,n,a){var r=isNaN(+(new Date).setFullYear(t.value||void 0)),i=r?null:t.value;if(13===(e.which||e.keyCode)||"click"===e.type)a?y(null,n,i,a):r||t.classList.contains("qs-disabled")||y(null,n,i,a);else if(n.calendar.contains(t)){n.calendar.querySelector(".qs-submit").classList[r?"add":"remove"]("qs-disabled")}}function x(e){var t=e.type,n=e.target,r=n.classList,i=a.filter((function(e){return e.calendar.contains(n)||e.el===n}))[0],s=i&&i.calendar.contains(n);if(!(i&&i.isMobile&&i.disableMobile))if("click"===t){if(!i)return a.forEach(q);if(i.disabled)return;var o=i.calendar,l=i.calendarContainer,c=i.disableYearOverlay,d=i.nonInput,u=o.querySelector(".qs-overlay-year"),h=!!o.querySelector(".qs-hidden"),f=o.querySelector(".qs-month-year").contains(n),m=n.dataset.monthNum;if(i.noPosition&&!s)(l.classList.contains("qs-hidden")?S:q)(i);else if(r.contains("qs-arrow"))y(r,i);else if(f||r.contains("qs-close"))c||w(!h,i);else if(m)M(e,u,i,m);else{if(r.contains("qs-num")){var p="SPAN"===n.nodeName?n.parentNode:n;return void(p.classList.contains("qs-active")?v(p,i,!0):p.classList.contains("qs-disabled")||v(p,i))}r.contains("qs-submit")&&!r.contains("qs-disabled")?M(e,u,i):d&&n===i.el&&S(i)}}else if("focusin"===t&&i)S(i),a.forEach((function(e){e!==i&&q(e)}));else if("keydown"===t&&i&&!i.disabled){var b=!i.calendar.querySelector(".qs-overlay").classList.contains("qs-hidden");13===(e.which||e.keyCode)&&b&&s?M(e,n,i):27===(e.which||e.keyCode)&&b&&s&&w(!0,i)}else if("input"===t){if(!i||!i.calendar.contains(n))return;var D=i.calendar.querySelector(".qs-submit"),g=n.value.split("").reduce((function(e,t){return e||"0"!==t?e+(t.match(/[0-9]/)?t:""):""}),"").slice(0,4);n.value=g,D.classList[4===g.length?"remove":"add"]("qs-disabled")}}function L(){S(this)}function C(){q(this)}function P(e,t){var n=g(e),a=this.currentYear,r=this.currentMonth,i=this.sibling;if(null==e)return this.dateSelected=void 0,p(this.el,this,!0),i&&(m({instance:this,deselect:!0}),d(i)),d(this),this;if(!D(e))throw"`setDate` needs a JavaScript Date object.";if(this.disabledDates.some((function(e){return+e==+n}))||n<this.minDate||n>this.maxDate)throw"You can't manually set a date that's disabled.";return this.dateSelected=n,t&&(this.currentYear=n.getFullYear(),this.currentMonth=n.getMonth(),this.currentMonthName=this.months[n.getMonth()]),p(this.el,this),i&&(m({instance:this}),d(i)),(a===n.getFullYear()&&r===n.getMonth()||t)&&d(this,n),this}function j(e){return Y(this,e,!0)}function k(e){return Y(this,e)}function Y(e,t,n){var a=e.dateSelected,r=e.first,i=e.sibling,s=e.minDate,o=e.maxDate,l=g(t),c=n?"Min":"Max";function u(){return"original"+c+"Date"}function h(){return c.toLowerCase()+"Date"}function f(){return"set"+c}function v(){throw"Out-of-range date passed to "+f()}if(null==t)e[u()]=void 0,i?(i[u()]=void 0,n?(r&&!a||!r&&!i.dateSelected)&&(e.minDate=void 0,i.minDate=void 0):(r&&!i.dateSelected||!r&&!a)&&(e.maxDate=void 0,i.maxDate=void 0)):e[h()]=void 0;else{if(!D(t))throw"Invalid date passed to "+f();i?((r&&n&&l>(a||o)||r&&!n&&l<(i.dateSelected||s)||!r&&n&&l>(i.dateSelected||o)||!r&&!n&&l<(a||s))&&v(),e[u()]=l,i[u()]=l,(n&&(r&&!a||!r&&!i.dateSelected)||!n&&(r&&!i.dateSelected||!r&&!a))&&(e[h()]=l,i[h()]=l)):((n&&l>(a||o)||!n&&l<(a||s))&&v(),e[h()]=l)}return i&&d(i),d(e),e}function O(){var e=this.first?this:this.sibling,t=e.sibling;return{start:e.dateSelected,end:t.dateSelected}}function N(){var e=this.inlinePosition,t=this.parent,n=this.calendarContainer,r=this.el,i=this.sibling,s=this;e&&(a.some((function(e){return e!==s&&e.parent===t}))||t.style.setProperty("position",null));for(prop in n.remove(),a=a.filter((function(e){return e.el!==r})),i&&delete i.sibling,this)delete this[prop];a.length||l.forEach((function(e){document.removeEventListener(e,x)}))}e.exports=function(e,t){a.length||l.forEach((function(e){document.addEventListener(e,x)}));var n=function(e,t){var n=e;"string"==typeof n&&(n="#"===n[0]?document.getElementById(n.slice(1)):document.querySelector(n));if(!n)throw"No selector / element found.";var l=function(e,t){if(a.some((function(e){return e.el===t})))throw"A datepicker already exists on that element.";var n=c(e);n.events&&(n.events=n.events.reduce((function(e,t){if(!D(t))throw'"options.events" must only contain valid JavaScript Date objects.';return e[+g(t)]=!0,e}),{}));["startDate","dateSelected","minDate","maxDate"].forEach((function(e){var t=n[e];if(t&&!D(t))throw'"options.'+e+'" needs to be a valid JavaScript Date object.';n[e]=g(t)}));var i=n.position,l=n.maxDate,d=n.minDate,u=n.dateSelected,h=n.overlayPlaceholder,f=n.overlayButton,v=n.startDay,m=n.id;if(n.startDate=g(n.startDate||u||new Date),n.disabledDates=(n.disabledDates||[]).map((function(e){var t=+g(e);if(!D(e))throw'You supplied an invalid date to "options.disabledDates".';if(t===+g(u))throw'"disabledDates" cannot contain the same date as "dateSelected".';return t})),n.hasOwnProperty("id")&&null==m)throw"Id cannot be `null` or `undefined`";if(null!=m){var p=a.filter((function(e){return e.id===m}));if(p.length>1)throw"Only two datepickers can share an id.";p.length?(n.second=!0,n.sibling=p[0]):n.first=!0}var y=["tr","tl","br","bl","c"].some((function(e){return i===e}));if(i&&!y)throw'"options.position" must be one of the following: tl, tr, bl, br, or c.';if(n.position=function(e){var t=e[0],n=e[1],a={};a[s[t]]=1,n&&(a[s[n]]=1);return a}(i||"bl"),l<d)throw'"maxDate" in options is less than "minDate".';if(u){function b(e){throw'"dateSelected" in options is '+(e?"less":"greater")+' than "'+(e||"max")+'Date".'}d>u&&b("min"),l<u&&b()}if(["onSelect","onShow","onHide","onMonthChange","formatter","disabler"].forEach((function(e){"function"!=typeof n[e]&&(n[e]=o)})),["customDays","customMonths","customOverlayMonths"].forEach((function(e,t){var a=n[e],r=t?12:7;if(a){if(!Array.isArray(a)||a.length!==r||a.some((function(e){return"string"!=typeof e})))throw'"'+e+'" must be an array with ${num} strings.';n[t?t<2?"months":"overlayMonths":"days"]=a}})),v&&v>0&&v<7){var q=(n.customDays||r).slice(),S=q.splice(0,v);n.customDays=q.concat(S),n.startDay=+v,n.weekendIndices=[q.length-1,q.length]}else n.startDay=0,n.weekendIndices=[6,0];"string"!=typeof h&&delete n.overlayPlaceholder;"string"!=typeof f&&delete n.overlayButton;return n}(t||{startDate:g(new Date),position:"bl"},n),d=n===document.body,u=d?document.body:n.parentElement,h=document.createElement("div"),f=document.createElement("div");h.className="qs-datepicker-container qs-hidden",f.className="qs-datepicker";var v={el:n,parent:u,nonInput:"INPUT"!==n.nodeName,noPosition:d,position:!d&&l.position,startDate:l.startDate,dateSelected:l.dateSelected,disabledDates:l.disabledDates,minDate:l.minDate,maxDate:l.maxDate,noWeekends:!!l.noWeekends,weekendIndices:l.weekendIndices,calendarContainer:h,calendar:f,currentMonth:(l.startDate||l.dateSelected).getMonth(),currentMonthName:(l.months||i)[(l.startDate||l.dateSelected).getMonth()],currentYear:(l.startDate||l.dateSelected).getFullYear(),events:l.events||{},setDate:P,remove:N,setMin:j,setMax:k,show:L,hide:C,onSelect:l.onSelect,onShow:l.onShow,onHide:l.onHide,onMonthChange:l.onMonthChange,formatter:l.formatter,disabler:l.disabler,months:l.months||i,days:l.customDays||r,startDay:l.startDay,overlayMonths:l.overlayMonths||(l.months||i).map((function(e){return e.slice(0,3)})),overlayPlaceholder:l.overlayPlaceholder||"4-digit year",overlayButton:l.overlayButton||"Submit",disableYearOverlay:!!l.disableYearOverlay,disableMobile:!!l.disableMobile,isMobile:"ontouchstart"in window,alwaysShow:!!l.alwaysShow,id:l.id,showAllDates:!!l.showAllDates,respectDisabledReadOnly:!!l.respectDisabledReadOnly,first:l.first,second:l.second};if(l.sibling){var m=l.sibling,y=v,b=m.minDate||y.minDate,q=m.maxDate||y.maxDate;y.sibling=m,m.sibling=y,m.minDate=b,m.maxDate=q,y.minDate=b,y.maxDate=q,m.originalMinDate=b,m.originalMaxDate=q,y.originalMinDate=b,y.originalMaxDate=q,m.getRange=O,y.getRange=O}l.dateSelected&&p(n,v);var w=getComputedStyle(u).position;d||w&&"static"!==w||(v.inlinePosition=!0,u.style.setProperty("position","relative"));v.inlinePosition&&a.forEach((function(e){e.parent===v.parent&&(e.inlinePosition=!0)}));a.push(v),h.appendChild(f),u.appendChild(h),v.alwaysShow&&S(v);return v}(e,t);if(n.second){var u=n.sibling;m({instance:n,deselect:!n.dateSelected}),m({instance:u,deselect:!u.dateSelected}),d(u)}return d(n,n.startDate||n.dateSelected),n.alwaysShow&&b(n),n}},function(e,t,n){}])}));
+!function (e, t) {
+   true ? module.exports = t() : undefined
+}(window, (function () {
+  return function (e) {
+    var t = {};
+
+    function n(a) {
+      if (t[a]) return t[a].exports;
+      var r = t[a] = {i: a, l: !1, exports: {}};
+      return e[a].call(r.exports, r, r.exports, n), r.l = !0, r.exports
+    }
+
+    return n.m = e, n.c = t, n.d = function (e, t, a) {
+      n.o(e, t) || Object.defineProperty(e, t, {enumerable: !0, get: a})
+    }, n.r = function (e) {
+      "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(e, "__esModule", {value: !0})
+    }, n.t = function (e, t) {
+      if (1 & t && (e = n(e)), 8 & t) return e;
+      if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+      var a = Object.create(null);
+      if (n.r(a), Object.defineProperty(a, "default", {
+        enumerable: !0,
+        value: e
+      }), 2 & t && "string" != typeof e) for (var r in e) n.d(a, r, function (t) {
+        return e[t]
+      }.bind(null, r));
+      return a
+    }, n.n = function (e) {
+      var t = e && e.__esModule ? function () {
+        return e.default
+      } : function () {
+        return e
+      };
+      return n.d(t, "a", t), t
+    }, n.o = function (e, t) {
+      return Object.prototype.hasOwnProperty.call(e, t)
+    }, n.p = "", n(n.s = 0)
+  }([function (e, t, n) {
+    n(1);
+    var a = [], r = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      i = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      s = {t: "top", r: "right", b: "bottom", l: "left", c: "centered"};
+
+    function o() {
+    }
+
+    var l = ["click", "focusin", "keydown", "input"];
+
+    function c(e) {
+      return Array.isArray(e) ? e.map(c) : "[object Object]" === {}.toString.call(e) ? Object.keys(e).reduce((function (t, n) {
+        return t[n] = c(e[n]), t
+      }), {}) : e
+    }
+
+    function d(e, t) {
+      var n = e.calendar.querySelector(".qs-overlay"), a = n && !n.classList.contains("qs-hidden");
+      t = t || new Date(e.currentYear, e.currentMonth), e.calendar.innerHTML = [u(t, e, a), h(t, e, a), f(e, a)].join(""), a && setTimeout((function () {
+        w(!0, e)
+      }), 10)
+    }
+
+    function u(e, t, n) {
+      return ['<div class="qs-controls' + (n ? " qs-blur" : "") + '">', '<div class="qs-arrow qs-left"></div>', '<div class="qs-month-year">', '<span class="qs-month">' + t.months[e.getMonth()] + "</span>", '<span class="qs-year">' + e.getFullYear() + "</span>", "</div>", '<div class="qs-arrow qs-right"></div>', "</div>"].join("")
+    }
+
+    function h(e, t, n) {
+      var a = t.currentMonth, r = t.currentYear, i = t.dateSelected, s = t.maxDate, o = t.minDate, l = t.showAllDates,
+        c = t.days, d = t.disabledDates, u = t.disabler, h = t.noWeekends, f = t.startDay, v = t.weekendIndices,
+        m = t.events, p = t.getRange ? t.getRange() : {}, y = +p.start, b = +p.end, D = new Date,
+        q = r === D.getFullYear() && a === D.getMonth(), S = g(new Date(e).setDate(1)), w = S.getDay() - f,
+        M = w < 0 ? 7 : 0;
+      S.setMonth(S.getMonth() + 1), S.setDate(0);
+      var x = S.getDate(), L = [], C = M + 7 * ((w + x) / 7 | 0);
+      C += (w + x) % 7 ? 7 : 0, 0 !== f && 0 === w && (C += 7);
+      for (var P = 1; P <= C; P++) {
+        var j = (P - 1) % 7, k = c[j], Y = P - (w >= 0 ? w : 7 + w), O = new Date(r, a, Y), N = m[+O], E = "qs-num",
+          I = '<span class="qs-num">' + O.getDate() + "</span>", A = y && b && +O >= y && +O <= b;
+        Y < 1 || Y > x ? (E = "qs-empty qs-outside-current-month", l ? (N && (E += " qs-event"), E += " qs-disabled") : I = "") : ((o && O < o || s && O > s || u(O) || d.some((function (e) {
+          return e === +O
+        })) || h && v.some((function (e) {
+          return e === j
+        }))) && (E = "qs-disabled"), N && (E += " qs-event"), q && Y === D.getDate() && (E += " qs-current"), +O == +i && (E += " qs-active"), A && (E += " qs-range-date-" + j, y !== b && (E += +O === y ? " qs-range-date-start qs-active" : +O === b ? " qs-range-date-end qs-active" : " qs-range-date-middle"))), L.push('<div class="qs-square ' + E + " " + k + '">' + I + "</div>")
+      }
+      var F = c.map((function (e) {
+        return '<div class="qs-square qs-day">' + e + "</div>"
+      })).concat(L);
+      if (F.length % 7 != 0) throw"Calendar not constructed properly. The # of squares should be a multiple of 7.";
+      return F.unshift('<div class="qs-squares' + (n ? " qs-blur" : "") + '">'), F.push("</div>"), F.join("")
+    }
+
+    function f(e, t) {
+      var n = e.overlayPlaceholder, a = e.overlayButton;
+      return ['<div class="qs-overlay' + (t ? "" : " qs-hidden") + '">', "<div>", '<input class="qs-overlay-year" placeholder="' + n + '" />', '<div class="qs-close">&#10005;</div>', "</div>", '<div class="qs-overlay-month-container">' + e.overlayMonths.map((function (e, t) {
+        return ['<div class="qs-overlay-month" data-month-num="' + t + '">', '<span data-month-num="' + t + '">' + e + "</span>", "</div>"].join("")
+      })).join("") + "</div>", '<div class="qs-submit qs-disabled">' + a + "</div>", "</div>"].join("")
+    }
+
+    function v(e, t, n) {
+      var a = t.el, r = t.calendar.querySelector(".qs-active"), i = e.textContent, s = t.sibling;
+      (a.disabled || a.readOnly) && t.respectDisabledReadOnly || (t.dateSelected = n ? void 0 : new Date(t.currentYear, t.currentMonth, i), r && r.classList.remove("qs-active"), n || e.classList.add("qs-active"), p(a, t, n), n || q(t), s && (m({
+        instance: t,
+        deselect: n
+      }), t.first && !s.dateSelected && (s.currentYear = t.currentYear, s.currentMonth = t.currentMonth, s.currentMonthName = t.currentMonthName), d(t), d(s)), t.onSelect(t, n ? void 0 : new Date(t.dateSelected)))
+    }
+
+    function m(e) {
+      var t = e.instance.first ? e.instance : e.instance.sibling, n = t.sibling;
+      t === e.instance ? e.deselect ? (t.minDate = t.originalMinDate, n.minDate = n.originalMinDate) : n.minDate = t.dateSelected : e.deselect ? (n.maxDate = n.originalMaxDate, t.maxDate = t.originalMaxDate) : t.maxDate = n.dateSelected
+    }
+
+    function p(e, t, n) {
+      if (!t.nonInput) return n ? e.value = "" : t.formatter !== o ? t.formatter(e, t.dateSelected, t) : void (e.value = t.dateSelected.toDateString())
+    }
+
+    function y(e, t, n, a) {
+      n || a ? (n && (t.currentYear = +n), a && (t.currentMonth = +a)) : (t.currentMonth += e.contains("qs-right") ? 1 : -1, 12 === t.currentMonth ? (t.currentMonth = 0, t.currentYear++) : -1 === t.currentMonth && (t.currentMonth = 11, t.currentYear--)), t.currentMonthName = t.months[t.currentMonth], d(t), t.onMonthChange(t)
+    }
+
+    function b(e) {
+      if (!e.noPosition) {
+        var t = e.position.top, n = e.position.right;
+        if (e.position.centered) return e.calendarContainer.classList.add("qs-centered");
+        var a = [e.parent, e.el, e.calendarContainer].map((function (e) {
+            return e.getBoundingClientRect()
+          })), r = a[0], i = a[1], s = a[2],
+          o = i.top - r.top + e.parent.scrollTop - (t ? s.height : -1 * i.height) + "px",
+          l = i.left - r.left + (n ? i.width - s.width : 0) + "px";
+        e.calendarContainer.style.setProperty("top", o), e.calendarContainer.style.setProperty("left", l)
+      }
+    }
+
+    function D(e) {
+      return "[object Date]" === {}.toString.call(e) && "Invalid Date" !== e.toString()
+    }
+
+    function g(e) {
+      if (D(e) || "number" == typeof e && !isNaN(e)) {
+        var t = new Date(+e);
+        return new Date(t.getFullYear(), t.getMonth(), t.getDate())
+      }
+    }
+
+    function q(e) {
+      e.disabled || !e.calendarContainer.classList.contains("qs-hidden") && !e.alwaysShow && (w(!0, e), e.calendarContainer.classList.add("qs-hidden"), e.onHide(e))
+    }
+
+    function S(e) {
+      e.disabled || (e.calendarContainer.classList.remove("qs-hidden"), b(e), e.onShow(e))
+    }
+
+    function w(e, t) {
+      var n = t.calendar;
+      if (n) {
+        var a = n.querySelector(".qs-overlay"), r = a.querySelector(".qs-overlay-year"),
+          i = n.querySelector(".qs-controls"), s = n.querySelector(".qs-squares");
+        e ? (a.classList.add("qs-hidden"), i.classList.remove("qs-blur"), s.classList.remove("qs-blur"), r.value = "") : (a.classList.remove("qs-hidden"), i.classList.add("qs-blur"), s.classList.add("qs-blur"), r.focus())
+      }
+    }
+
+    function M(e, t, n, a) {
+      var r = isNaN(+(new Date).setFullYear(t.value || void 0)), i = r ? null : t.value;
+      if (13 === (e.which || e.keyCode) || "click" === e.type) a ? y(null, n, i, a) : r || t.classList.contains("qs-disabled") || y(null, n, i, a); else if (n.calendar.contains(t)) {
+        n.calendar.querySelector(".qs-submit").classList[r ? "add" : "remove"]("qs-disabled")
+      }
+    }
+
+    function x(e) {
+      var t = e.type, n = e.target, r = n.classList, i = a.filter((function (e) {
+        return e.calendar.contains(n) || e.el === n
+      }))[0], s = i && i.calendar.contains(n);
+      if (!(i && i.isMobile && i.disableMobile)) if ("click" === t) {
+        if (!i) return a.forEach(q);
+        if (i.disabled) return;
+        var o = i.calendar, l = i.calendarContainer, c = i.disableYearOverlay, d = i.nonInput,
+          u = o.querySelector(".qs-overlay-year"), h = !!o.querySelector(".qs-hidden"),
+          f = o.querySelector(".qs-month-year").contains(n), m = n.dataset.monthNum;
+        if (i.noPosition && !s) (l.classList.contains("qs-hidden") ? S : q)(i); else if (r.contains("qs-arrow")) y(r, i); else if (f || r.contains("qs-close")) c || w(!h, i); else if (m) M(e, u, i, m); else {
+          if (r.contains("qs-num")) {
+            var p = "SPAN" === n.nodeName ? n.parentNode : n;
+            return void (p.classList.contains("qs-active") ? v(p, i, !0) : p.classList.contains("qs-disabled") || v(p, i))
+          }
+          r.contains("qs-submit") && !r.contains("qs-disabled") ? M(e, u, i) : d && n === i.el && S(i)
+        }
+      } else if ("focusin" === t && i) S(i), a.forEach((function (e) {
+        e !== i && q(e)
+      })); else if ("keydown" === t && i && !i.disabled) {
+        var b = !i.calendar.querySelector(".qs-overlay").classList.contains("qs-hidden");
+        13 === (e.which || e.keyCode) && b && s ? M(e, n, i) : 27 === (e.which || e.keyCode) && b && s && w(!0, i)
+      } else if ("input" === t) {
+        if (!i || !i.calendar.contains(n)) return;
+        var D = i.calendar.querySelector(".qs-submit"), g = n.value.split("").reduce((function (e, t) {
+          return e || "0" !== t ? e + (t.match(/[0-9]/) ? t : "") : ""
+        }), "").slice(0, 4);
+        n.value = g, D.classList[4 === g.length ? "remove" : "add"]("qs-disabled")
+      }
+    }
+
+    function L() {
+      S(this)
+    }
+
+    function C() {
+      q(this)
+    }
+
+    function P(e, t) {
+      var n = g(e), a = this.currentYear, r = this.currentMonth, i = this.sibling;
+      if (null == e) return this.dateSelected = void 0, p(this.el, this, !0), i && (m({
+        instance: this,
+        deselect: !0
+      }), d(i)), d(this), this;
+      if (!D(e)) throw"`setDate` needs a JavaScript Date object.";
+      if (this.disabledDates.some((function (e) {
+        return +e == +n
+      })) || n < this.minDate || n > this.maxDate) throw"You can't manually set a date that's disabled.";
+      return this.dateSelected = n, t && (this.currentYear = n.getFullYear(), this.currentMonth = n.getMonth(), this.currentMonthName = this.months[n.getMonth()]), p(this.el, this), i && (m({instance: this}), d(i)), (a === n.getFullYear() && r === n.getMonth() || t) && d(this, n), this
+    }
+
+    function j(e) {
+      return Y(this, e, !0)
+    }
+
+    function k(e) {
+      return Y(this, e)
+    }
+
+    function Y(e, t, n) {
+      var a = e.dateSelected, r = e.first, i = e.sibling, s = e.minDate, o = e.maxDate, l = g(t), c = n ? "Min" : "Max";
+
+      function u() {
+        return "original" + c + "Date"
+      }
+
+      function h() {
+        return c.toLowerCase() + "Date"
+      }
+
+      function f() {
+        return "set" + c
+      }
+
+      function v() {
+        throw"Out-of-range date passed to " + f()
+      }
+
+      if (null == t) e[u()] = void 0, i ? (i[u()] = void 0, n ? (r && !a || !r && !i.dateSelected) && (e.minDate = void 0, i.minDate = void 0) : (r && !i.dateSelected || !r && !a) && (e.maxDate = void 0, i.maxDate = void 0)) : e[h()] = void 0; else {
+        if (!D(t)) throw"Invalid date passed to " + f();
+        i ? ((r && n && l > (a || o) || r && !n && l < (i.dateSelected || s) || !r && n && l > (i.dateSelected || o) || !r && !n && l < (a || s)) && v(), e[u()] = l, i[u()] = l, (n && (r && !a || !r && !i.dateSelected) || !n && (r && !i.dateSelected || !r && !a)) && (e[h()] = l, i[h()] = l)) : ((n && l > (a || o) || !n && l < (a || s)) && v(), e[h()] = l)
+      }
+      return i && d(i), d(e), e
+    }
+
+    function O() {
+      var e = this.first ? this : this.sibling, t = e.sibling;
+      return {start: e.dateSelected, end: t.dateSelected}
+    }
+
+    function N() {
+      var e = this.inlinePosition, t = this.parent, n = this.calendarContainer, r = this.el, i = this.sibling, s = this;
+      e && (a.some((function (e) {
+        return e !== s && e.parent === t
+      })) || t.style.setProperty("position", null));
+      for (prop in n.remove(), a = a.filter((function (e) {
+        return e.el !== r
+      })), i && delete i.sibling, this) delete this[prop];
+      a.length || l.forEach((function (e) {
+        document.removeEventListener(e, x)
+      }))
+    }
+
+    e.exports = function (e, t) {
+      a.length || l.forEach((function (e) {
+        document.addEventListener(e, x)
+      }));
+      var n = function (e, t) {
+        var n = e;
+        "string" == typeof n && (n = "#" === n[0] ? document.getElementById(n.slice(1)) : document.querySelector(n));
+        if (!n) throw"No selector / element found.";
+        var l = function (e, t) {
+            if (a.some((function (e) {
+              return e.el === t
+            }))) throw"A datepicker already exists on that element.";
+            var n = c(e);
+            n.events && (n.events = n.events.reduce((function (e, t) {
+              if (!D(t)) throw'"options.events" must only contain valid JavaScript Date objects.';
+              return e[+g(t)] = !0, e
+            }), {}));
+            ["startDate", "dateSelected", "minDate", "maxDate"].forEach((function (e) {
+              var t = n[e];
+              if (t && !D(t)) throw'"options.' + e + '" needs to be a valid JavaScript Date object.';
+              n[e] = g(t)
+            }));
+            var i = n.position, l = n.maxDate, d = n.minDate, u = n.dateSelected, h = n.overlayPlaceholder,
+              f = n.overlayButton, v = n.startDay, m = n.id;
+            if (n.startDate = g(n.startDate || u || new Date), n.disabledDates = (n.disabledDates || []).map((function (e) {
+              var t = +g(e);
+              if (!D(e)) throw'You supplied an invalid date to "options.disabledDates".';
+              if (t === +g(u)) throw'"disabledDates" cannot contain the same date as "dateSelected".';
+              return t
+            })), n.hasOwnProperty("id") && null == m) throw"Id cannot be `null` or `undefined`";
+            if (null != m) {
+              var p = a.filter((function (e) {
+                return e.id === m
+              }));
+              if (p.length > 1) throw"Only two datepickers can share an id.";
+              p.length ? (n.second = !0, n.sibling = p[0]) : n.first = !0
+            }
+            var y = ["tr", "tl", "br", "bl", "c"].some((function (e) {
+              return i === e
+            }));
+            if (i && !y) throw'"options.position" must be one of the following: tl, tr, bl, br, or c.';
+            if (n.position = function (e) {
+              var t = e[0], n = e[1], a = {};
+              a[s[t]] = 1, n && (a[s[n]] = 1);
+              return a
+            }(i || "bl"), l < d) throw'"maxDate" in options is less than "minDate".';
+            if (u) {
+              function b(e) {
+                throw'"dateSelected" in options is ' + (e ? "less" : "greater") + ' than "' + (e || "max") + 'Date".'
+              }
+
+              d > u && b("min"), l < u && b()
+            }
+            if (["onSelect", "onShow", "onHide", "onMonthChange", "formatter", "disabler"].forEach((function (e) {
+              "function" != typeof n[e] && (n[e] = o)
+            })), ["customDays", "customMonths", "customOverlayMonths"].forEach((function (e, t) {
+              var a = n[e], r = t ? 12 : 7;
+              if (a) {
+                if (!Array.isArray(a) || a.length !== r || a.some((function (e) {
+                  return "string" != typeof e
+                }))) throw'"' + e + '" must be an array with ${num} strings.';
+                n[t ? t < 2 ? "months" : "overlayMonths" : "days"] = a
+              }
+            })), v && v > 0 && v < 7) {
+              var q = (n.customDays || r).slice(), S = q.splice(0, v);
+              n.customDays = q.concat(S), n.startDay = +v, n.weekendIndices = [q.length - 1, q.length]
+            } else n.startDay = 0, n.weekendIndices = [6, 0];
+            "string" != typeof h && delete n.overlayPlaceholder;
+            "string" != typeof f && delete n.overlayButton;
+            return n
+          }(t || {startDate: g(new Date), position: "bl"}, n), d = n === document.body,
+          u = d ? document.body : n.parentElement, h = document.createElement("div"), f = document.createElement("div");
+        h.className = "qs-datepicker-container qs-hidden", f.className = "qs-datepicker";
+        var v = {
+          el: n,
+          parent: u,
+          nonInput: "INPUT" !== n.nodeName,
+          noPosition: d,
+          position: !d && l.position,
+          startDate: l.startDate,
+          dateSelected: l.dateSelected,
+          disabledDates: l.disabledDates,
+          minDate: l.minDate,
+          maxDate: l.maxDate,
+          noWeekends: !!l.noWeekends,
+          weekendIndices: l.weekendIndices,
+          calendarContainer: h,
+          calendar: f,
+          currentMonth: (l.startDate || l.dateSelected).getMonth(),
+          currentMonthName: (l.months || i)[(l.startDate || l.dateSelected).getMonth()],
+          currentYear: (l.startDate || l.dateSelected).getFullYear(),
+          events: l.events || {},
+          setDate: P,
+          remove: N,
+          setMin: j,
+          setMax: k,
+          show: L,
+          hide: C,
+          onSelect: l.onSelect,
+          onShow: l.onShow,
+          onHide: l.onHide,
+          onMonthChange: l.onMonthChange,
+          formatter: l.formatter,
+          disabler: l.disabler,
+          months: l.months || i,
+          days: l.customDays || r,
+          startDay: l.startDay,
+          overlayMonths: l.overlayMonths || (l.months || i).map((function (e) {
+            return e.slice(0, 3)
+          })),
+          overlayPlaceholder: l.overlayPlaceholder || "4-digit year",
+          overlayButton: l.overlayButton || "Submit",
+          disableYearOverlay: !!l.disableYearOverlay,
+          disableMobile: !!l.disableMobile,
+          isMobile: "ontouchstart" in window,
+          alwaysShow: !!l.alwaysShow,
+          id: l.id,
+          showAllDates: !!l.showAllDates,
+          respectDisabledReadOnly: !!l.respectDisabledReadOnly,
+          first: l.first,
+          second: l.second
+        };
+        if (l.sibling) {
+          var m = l.sibling, y = v, b = m.minDate || y.minDate, q = m.maxDate || y.maxDate;
+          y.sibling = m, m.sibling = y, m.minDate = b, m.maxDate = q, y.minDate = b, y.maxDate = q, m.originalMinDate = b, m.originalMaxDate = q, y.originalMinDate = b, y.originalMaxDate = q, m.getRange = O, y.getRange = O
+        }
+        l.dateSelected && p(n, v);
+        var w = getComputedStyle(u).position;
+        d || w && "static" !== w || (v.inlinePosition = !0, u.style.setProperty("position", "relative"));
+        v.inlinePosition && a.forEach((function (e) {
+          e.parent === v.parent && (e.inlinePosition = !0)
+        }));
+        a.push(v), h.appendChild(f), u.appendChild(h), v.alwaysShow && S(v);
+        return v
+      }(e, t);
+      if (n.second) {
+        var u = n.sibling;
+        m({instance: n, deselect: !n.dateSelected}), m({instance: u, deselect: !u.dateSelected}), d(u)
+      }
+      return d(n, n.startDate || n.dateSelected), n.alwaysShow && b(n), n
+    }
+  }, function (e, t, n) {
+  }])
+}));
 
 /***/ }),
 
@@ -24043,236 +24456,370 @@ __webpack_require__.r(__webpack_exports__);
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
-    /* Start Tabs Profile*/
+  /* Start Tabs Profile*/
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol").on("click", function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".content_tours_block_left_absol_child_img").toggle();
-        let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol_child_img").is(':hidden') ? 'Убрать из избранных' : 'Добавить в избранное';
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.content_tours_block_center_date_block_popup').html(`<p>${text}</p>`);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol").on("click", function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".content_tours_block_left_absol_child_img").toggle();
+    let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".content_tours_block_left_absol_child_img").is(':hidden') ? 'Убрать из избранных' : 'Добавить в избранное';
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.content_tours_block_center_date_block_popup').html(`<p>${text}</p>`);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".spring-break_header_helpers").on("click", function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".spring-break_header_helpers_child_img").toggle();
+    let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".spring-break_header_helpers_child_img").is(':hidden') ? 'Убрать из избранных' : 'Добавить в избранное';
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('.spring-break_header_helpers_popup').html(`<p>${text}</p>`);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_message_name_nav_item_link, .profile_chat_header_name_nav_item_link, .profile_content_right_tabs_header_nav_item_link").click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("active");
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_content_left_transition_url").click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_header_right_url").removeClass("active");
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_header_right_url").click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_content_left_transition_url").removeClass("active");
+  });
+
+  /* End Tabs Profile */
+
+  /* Start Modal */
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").addClass("modal-open");
+  })
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header_navbar_collapse_absolute, .header_navbar_collapse_nav_close_btn").click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("modal-open");
+  });
+
+  /* End Modal */
+
+  /*BTN TOP*/
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".footer_top_navbar_profile").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('href'),
+      top = jquery__WEBPACK_IMPORTED_MODULE_0___default()(id).offset().top;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('body,html').animate({scrollTop: top}, 1500);
+  });
+  /*END BTN TOP */
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#RegistrModalCenter').on('shown.bs.modal', function () {
+    // $('#customRadioInline1').prop('indeterminate', true);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.send_registr_modal_dialog_content_body_checkbox_block').click(function (e) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').prop('checked', true);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.send_registr_modal_dialog_content_body_checkbox_second_block_bottom').click(function (e) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').prop('checked', true);
+  });
+
+  /* INPUT REGISTR */
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".prevBtn").click(function () {
+    nextPrev(-1);
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".nextBtn").click(function () {
+    nextPrev(1);
+  });
+  /* END INPUT REGISTR */
+
+  /* INPUT PHONE */
+  // $("[name='client-phone']").mask("+998 (zz) zzz-zz-zz");
+
+  /* END INPUT PHONE */
+
+  /* Popup-carousel Start */
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".image").click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeIn(300);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel_bg").click(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeOut(300);
     });
+  });
+  /* END Popup-carousel */
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_message_name_nav_item_link, .profile_chat_header_name_nav_item_link, .profile_content_right_tabs_header_nav_item_link").click(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("active");
-    });
+  /*Select2 Start*/
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-example-basic-single").select2({
+    placeholder: "Выберите тип",
+    minimumResultsForSearch: -1,
+  });
+  jQuery(function ($) {
+    $.fn.select2.amd.require([
+      'select2/selection/single',
+      'select2/selection/placeholder',
+      'select2/selection/allowClear',
+      'select2/dropdown',
+      'select2/dropdown/search',
+      'select2/dropdown/attachBody',
+      'select2/utils'
+    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_content_left_transition_url").click(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_header_right_url").removeClass("active");
-    });
+      var SelectionAdapter = Utils.Decorate(
+        SingleSelection,
+        Placeholder
+      );
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_header_right_url").click(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".profile_content_left_transition_url").removeClass("active");
-    });
+      SelectionAdapter = Utils.Decorate(
+        SelectionAdapter,
+        AllowClear
+      );
 
-    /* End Tabs Profile */
+      var DropdownAdapter = Utils.Decorate(
+        Utils.Decorate(
+          Dropdown,
+          DropdownSearch
+        ),
+        AttachBody
+      );
 
-    /* Start Modal */
+      var base_element = $('.js-tours-pages-select')
+      $(base_element).select2({
+        placeholder: 'Любое',
+        selectionAdapter: SelectionAdapter,
+        dropdownAdapter: DropdownAdapter,
+        allowClear: true,
+        templateResult: function (data) {
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").addClass("modal-open");
-    })
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header_navbar_collapse_absolute, .header_navbar_collapse_nav_close_btn").click(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click();
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("modal-open");
-    });
+          if (!data.id) {
+            return data.text;
+          }
 
-    /* End Modal */
+          var $res = $('<div></div>');
 
-    /*BTN TOP*/
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".footer_top_navbar_profile").on("click", "a", function (event) {
-        event.preventDefault();
-        var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('href'),
-            top = jquery__WEBPACK_IMPORTED_MODULE_0___default()(id).offset().top;
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('body,html').animate({scrollTop: top}, 1500);
-    });
-    /*END BTN TOP */
+          $res.text(data.text);
+          $res.addClass('wrap');
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#RegistrModalCenter').on('shown.bs.modal', function () {
-        // $('#customRadioInline1').prop('indeterminate', true);
-    });
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.send_registr_modal_dialog_content_body_checkbox_block').click(function (e) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').prop('checked', true);
-    });
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.send_registr_modal_dialog_content_body_checkbox_second_block_bottom').click(function (e) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find('input').prop('checked', true);
-    });
-
-    /* INPUT REGISTR */
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".prevBtn").click(function () {
-        nextPrev(-1);
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".nextBtn").click(function () {
-        nextPrev(1);
-    });
-    /* END INPUT REGISTR */
-
-    /* INPUT PHONE */
-    // $("[name='client-phone']").mask("+998 (zz) zzz-zz-zz");
-
-    /* END INPUT PHONE */
-
-    /* Popup-carousel Start */
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".image").click(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeIn(800);
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel_bg").click(function () {
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeOut(800);
-        });
-    });
-    /* END Popup-carousel */
-
-    /*Select2 Start*/
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-example-basic-single").select2({
-        placeholder: "Выберите тип",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-tours-pages-select").select2({
-        placeholder: "Любое",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-tours-pages-select-towns").select2({
-        placeholder: "Любое",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-towns").select2({
-        placeholder: "Страна",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-sex").select2({
-        placeholder: "Пол",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-view").select2({
-        placeholder: "Вид деятельности в лицензии",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-money").select2({
-        placeholder: "USD",
-        minimumResultsForSearch: -1,
-    });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-disable").select2({
-        disabled: true,
-    });
-    jQuery(function ($) {
-        $.fn.select2.amd.require([
-            'select2/selection/single',
-            'select2/selection/placeholder',
-            'select2/selection/allowClear',
-            'select2/dropdown',
-            'select2/dropdown/search',
-            'select2/dropdown/attachBody',
-            'select2/utils'
-        ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
-
-            var SelectionAdapter = Utils.Decorate(
-                SingleSelection,
-                Placeholder
-            );
-
-            SelectionAdapter = Utils.Decorate(
-                SelectionAdapter,
-                AllowClear
-            );
-
-            var DropdownAdapter = Utils.Decorate(
-                Utils.Decorate(
-                    Dropdown,
-                    DropdownSearch
-                ),
-                AttachBody
-            );
-
-            var base_element = $('.select2-multiple2')
-            $(base_element).select2({
-                placeholder: 'Вид деятельности в лицензии',
-                selectionAdapter: SelectionAdapter,
-                dropdownAdapter: DropdownAdapter,
-                allowClear: true,
-                templateResult: function (data) {
-
-                    if (!data.id) {
-                        return data.text;
-                    }
-
-                    var $res = $('<div></div>');
-
-                    $res.text(data.text);
-                    $res.addClass('wrap');
-
-                    return $res;
-                },
-                templateSelection: function (data) {
-                    if (!data.id) {
-                        return data.text;
-                    }
-                    var selected = ($(base_element).val() || []).length;
-                    var total = $('option', $(base_element)).length;
-                    return "Выбранно " + selected + " из " + total;
-                }
-            })
-
-        });
-
-    });
-
-    /* END Select2 */
-
-    /* Download file Start */
-
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').focus(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').addClass('focus');
-    })
-        .focusout(function () {
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').removeClass('focus');
-        });
-    var dropZone = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.registr_content_left_form_row_file');
-    dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function () {
-        return false;
-    });
-    dropZone.on('dragover dragenter', function () {
-        dropZone.addClass('dragover');
-    });
-
-    dropZone.on('dragleave', function (e) {
-        dropZone.removeClass('dragover');
-    });
-    dropZone.on('dragleave', function (e) {
-        let dx = e.pageX - dropZone.offset().left;
-        let dy = e.pageY - dropZone.offset().top;
-        if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
-            dropZone.removeClass('dragover');
+          return $res;
+        },
+        templateSelection: function (data) {
+          if (!data.id) {
+            return data.text;
+          }
+          var selected = ($(base_element).val() || []).length;
+          var total = $('option', $(base_element)).length;
+          return "Выбранно " + selected + " из " + total;
         }
-        ;
+      })
+
     });
 
-    /* END Download file */
+  });
+  jQuery(function ($) {
+    $.fn.select2.amd.require([
+      'select2/selection/single',
+      'select2/selection/placeholder',
+      'select2/selection/allowClear',
+      'select2/dropdown',
+      'select2/dropdown/search',
+      'select2/dropdown/attachBody',
+      'select2/utils'
+    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
 
-    /* Password Start*/
+      var SelectionAdapter = Utils.Decorate(
+        SingleSelection,
+        Placeholder
+      );
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control').click(function () {
-        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type') == 'password') {
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('view');
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type', 'text');
-        } else {
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('view');
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type', 'password');
+      SelectionAdapter = Utils.Decorate(
+        SelectionAdapter,
+        AllowClear
+      );
+
+      var DropdownAdapter = Utils.Decorate(
+        Utils.Decorate(
+          Dropdown,
+          DropdownSearch
+        ),
+        AttachBody
+      );
+
+      var base_element = $('.js-tours-pages-select-towns')
+      $(base_element).select2({
+        placeholder: 'Любое',
+        selectionAdapter: SelectionAdapter,
+        dropdownAdapter: DropdownAdapter,
+        allowClear: true,
+        templateResult: function (data) {
+
+          if (!data.id) {
+            return data.text;
+          }
+
+          var $res = $('<div></div>');
+
+          $res.text(data.text);
+          $res.addClass('wrap');
+
+          return $res;
+        },
+        templateSelection: function (data) {
+          if (!data.id) {
+            return data.text;
+          }
+          var selected = ($(base_element).val() || []).length;
+          var total = $('option', $(base_element)).length;
+          return "Выбранно " + selected + " из " + total;
         }
-        return false;
+      })
+
     });
 
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control-repeat').click(function () {
-        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type') == 'password') {
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('view');
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type', 'text');
-        } else {
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('view');
-            jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type', 'password');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-towns").select2({
+    placeholder: "Страна",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-sex").select2({
+    placeholder: "Пол",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-view").select2({
+    placeholder: "Вид деятельности в лицензии",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-money").select2({
+    placeholder: "USD",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-disable").select2({
+    disabled: true,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-where").select2({
+    placeholder: "Направление",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-money").select2({
+    placeholder: "Фин. возможности",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-call").select2({
+    placeholder: "Куда получить ответ",
+    minimumResultsForSearch: -1,
+  });
+  jQuery(function ($) {
+    $.fn.select2.amd.require([
+      'select2/selection/single',
+      'select2/selection/placeholder',
+      'select2/selection/allowClear',
+      'select2/dropdown',
+      'select2/dropdown/search',
+      'select2/dropdown/attachBody',
+      'select2/utils'
+    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
+
+      var SelectionAdapter = Utils.Decorate(
+        SingleSelection,
+        Placeholder
+      );
+
+      SelectionAdapter = Utils.Decorate(
+        SelectionAdapter,
+        AllowClear
+      );
+
+      var DropdownAdapter = Utils.Decorate(
+        Utils.Decorate(
+          Dropdown,
+          DropdownSearch
+        ),
+        AttachBody
+      );
+
+      var base_element = $('.select2-multiple2')
+      $(base_element).select2({
+        placeholder: 'Вид деятельности в лицензии',
+        selectionAdapter: SelectionAdapter,
+        dropdownAdapter: DropdownAdapter,
+        allowClear: true,
+        templateResult: function (data) {
+
+          if (!data.id) {
+            return data.text;
+          }
+
+          var $res = $('<div></div>');
+
+          $res.text(data.text);
+          $res.addClass('wrap');
+
+          return $res;
+        },
+        templateSelection: function (data) {
+          if (!data.id) {
+            return data.text;
+          }
+          var selected = ($(base_element).val() || []).length;
+          var total = $('option', $(base_element)).length;
+          return "Выбранно " + selected + " из " + total;
         }
-        return false;
+      })
+
     });
 
-    /* END Password */
+  });
 
+  /* END Select2 */
+
+  /* Download file Start */
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').focus(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').addClass('focus');
+  })
+    .focusout(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').removeClass('focus');
+    });
+  var dropZone = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.registr_content_left_form_row_file');
+  dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function () {
+    return false;
+  });
+  dropZone.on('dragover dragenter', function () {
+    dropZone.addClass('dragover');
+  });
+
+  dropZone.on('dragleave', function (e) {
+    dropZone.removeClass('dragover');
+  });
+  dropZone.on('dragleave', function (e) {
+    let dx = e.pageX - dropZone.offset().left;
+    let dy = e.pageY - dropZone.offset().top;
+    if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
+      dropZone.removeClass('dragover');
+    }
+    ;
+  });
+
+  /* END Download file */
+
+  /* Password Start*/
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control').click(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type') == 'password') {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('view');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type', 'text');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('view');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input').attr('type', 'password');
+    }
+    return false;
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.password-control-repeat').click(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type') == 'password') {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('view');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type', 'text');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass('view');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#password-input-repeat').attr('type', 'password');
+    }
+    return false;
+  });
+
+  /* END Password */
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dropdown-input').click(function(event){
+    event.stopPropagation();
+  });
 
 });
 
@@ -24280,259 +24827,271 @@ var currentTab = 0;
 showTab(currentTab);
 
 function showTab(n) {
-    var x = document.getElementsByClassName("needs-validation");
-    x[n].style.display = "block";
-    fixStepIndicator(n)
+  var x = document.getElementsByClassName("needs-validation");
+  x[n].style.display = "block";
+  fixStepIndicator(n)
 }
 
 function nextPrev(n) {
-    var x = document.getElementsByClassName("needs-validation");
-    if (n == 1 && !validateForm()) return false;
-    x[currentTab].style.display = "none";
-    currentTab = currentTab + n;
-    if (currentTab >= x.length) {
-        document.getElementById("regForm").submit();
-        return false;
-    }
-    showTab(currentTab);
+  var x = document.getElementsByClassName("needs-validation");
+  if (n == 1 && !validateForm()) return false;
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  if (currentTab >= x.length) {
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  showTab(currentTab);
 }
 
 function validateForm() {
-    var x, y, i, valid = true;
-    x = document.getElementsByClassName("needs-validation");
-    y = x[currentTab].getElementsByTagName("input");
-    for (i = 0; i < y.length; i++) {
-        if (y[i].value == "") {
-            y[i].className += " invalid";
-            valid = false;
-        }
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("needs-validation");
+  y = x[currentTab].getElementsByTagName("input");
+  for (i = 0; i < y.length; i++) {
+    if (y[i].value == "") {
+      y[i].className += " invalid";
+      valid = false;
     }
-    if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
-    }
-    return valid;
+  }
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid;
 }
 
 function fixStepIndicator(n) {
-    var i, x = document.getElementsByClassName("step");
-    for (i = 0; i < x.length; i++) {
-        x[i].className = x[i].className.replace(" active", "");
-    }
-    x[n].className += " active";
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  x[n].className += " active";
 }
 
 !function (factory) {
-    "function" == typeof define && __webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js") ? define(["jquery"], factory) : factory("object" == typeof exports ? __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js") : jQuery);
+  "function" == typeof define && __webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js") ? define(["jquery"], factory) : factory("object" == typeof exports ? __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js") : jQuery);
 }(function ($) {
-    var caretTimeoutId, ua = navigator.userAgent, iPhone = /iphone/i.test(ua), chrome = /chrome/i.test(ua),
-        android = /android/i.test(ua);
-    $.mask = {
-        definitions: {
-            "z": "[0-9]",
-            a: "[A-Za-z]",
-            "*": "[A-Za-z0-9]"
-        },
-        autoclear: !0,
-        dataName: "rawMaskFn",
-        placeholder: "_"
-    }, $.fn.extend({
-        caret: function (begin, end) {
-            var range;
-            if (0 !== this.length && !this.is(":hidden")) return "number" == typeof begin ? (end = "number" == typeof end ? end : begin,
-                this.each(function () {
-                    this.setSelectionRange ? this.setSelectionRange(begin, end) : this.createTextRange && (range = this.createTextRange(),
-                        range.collapse(!0), range.moveEnd("character", end), range.moveStart("character", begin),
-                        range.select());
-                })) : (this[0].setSelectionRange ? (begin = this[0].selectionStart, end = this[0].selectionEnd) : document.selection && document.selection.createRange && (range = document.selection.createRange(),
-                begin = 0 - range.duplicate().moveStart("character", -1e5), end = begin + range.text.length),
-                {
-                    begin: begin,
-                    end: end
-                });
-        },
-        unmask: function () {
-            return this.trigger("unmask");
-        },
-        mask: function (mask, settings) {
-            var input, defs, tests, partialPosition, firstNonMaskPos, lastRequiredNonMaskPos, len, oldVal;
-            if (!mask && this.length > 0) {
-                input = $(this[0]);
-                var fn = input.data($.mask.dataName);
-                return fn ? fn() : void 0;
-            }
-            return settings = $.extend({
-                autoclear: $.mask.autoclear,
-                placeholder: $.mask.placeholder,
-                completed: null
-            }, settings), defs = $.mask.definitions, tests = [], partialPosition = len = mask.length,
-                firstNonMaskPos = null, $.each(mask.split(""), function (i, c) {
-                "?" == c ? (len--, partialPosition = i) : defs[c] ? (tests.push(new RegExp(defs[c])),
-                null === firstNonMaskPos && (firstNonMaskPos = tests.length - 1), partialPosition > i && (lastRequiredNonMaskPos = tests.length - 1)) : tests.push(null);
-            }), this.trigger("unmask").each(function () {
-                function tryFireCompleted() {
-                    if (settings.completed) {
-                        for (var i = firstNonMaskPos; lastRequiredNonMaskPos >= i; i++) if (tests[i] && buffer[i] === getPlaceholder(i)) return;
-                        settings.completed.call(input);
-                    }
-                }
-
-                function getPlaceholder(i) {
-                    return settings.placeholder.charAt(i < settings.placeholder.length ? i : 0);
-                }
-
-                function seekNext(pos) {
-                    for (; ++pos < len && !tests[pos];) ;
-                    return pos;
-                }
-
-                function seekPrev(pos) {
-                    for (; --pos >= 0 && !tests[pos];) ;
-                    return pos;
-                }
-
-                function shiftL(begin, end) {
-                    var i, j;
-                    if (!(0 > begin)) {
-                        for (i = begin, j = seekNext(end); len > i; i++) if (tests[i]) {
-                            if (!(len > j && tests[i].test(buffer[j]))) break;
-                            buffer[i] = buffer[j], buffer[j] = getPlaceholder(j), j = seekNext(j);
-                        }
-                        writeBuffer(), input.caret(Math.max(firstNonMaskPos, begin));
-                    }
-                }
-
-                function shiftR(pos) {
-                    var i, c, j, t;
-                    for (i = pos, c = getPlaceholder(pos); len > i; i++) if (tests[i]) {
-                        if (j = seekNext(i), t = buffer[i], buffer[i] = c, !(len > j && tests[j].test(t))) break;
-                        c = t;
-                    }
-                }
-
-                function androidInputEvent() {
-                    var curVal = input.val(), pos = input.caret();
-                    if (oldVal && oldVal.length && oldVal.length > curVal.length) {
-                        for (checkVal(!0); pos.begin > 0 && !tests[pos.begin - 1];) pos.begin--;
-                        if (0 === pos.begin) for (; pos.begin < firstNonMaskPos && !tests[pos.begin];) pos.begin++;
-                        input.caret(pos.begin, pos.begin);
-                    } else {
-                        for (checkVal(!0); pos.begin < len && !tests[pos.begin];) pos.begin++;
-                        input.caret(pos.begin, pos.begin);
-                    }
-                    tryFireCompleted();
-                }
-
-                function blurEvent() {
-                    checkVal(), input.val() != focusText && input.change();
-                }
-
-                function keydownEvent(e) {
-                    if (!input.prop("readonly")) {
-                        var pos, begin, end, k = e.which || e.keyCode;
-                        oldVal = input.val(), 8 === k || 46 === k || iPhone && 127 === k ? (pos = input.caret(),
-                            begin = pos.begin, end = pos.end, end - begin === 0 && (begin = 46 !== k ? seekPrev(begin) : end = seekNext(begin - 1),
-                            end = 46 === k ? seekNext(end) : end), clearBuffer(begin, end), shiftL(begin, end - 1),
-                            e.preventDefault()) : 13 === k ? blurEvent.call(this, e) : 27 === k && (input.val(focusText),
-                            input.caret(0, checkVal()), e.preventDefault());
-                    }
-                }
-
-                function keypressEvent(e) {
-                    if (!input.prop("readonly")) {
-                        var p, c, next, k = e.which || e.keyCode, pos = input.caret();
-                        if (!(e.ctrlKey || e.altKey || e.metaKey || 32 > k) && k && 13 !== k) {
-                            if (pos.end - pos.begin !== 0 && (clearBuffer(pos.begin, pos.end), shiftL(pos.begin, pos.end - 1)),
-                                p = seekNext(pos.begin - 1), len > p && (c = String.fromCharCode(k), tests[p].test(c))) {
-                                if (shiftR(p), buffer[p] = c, writeBuffer(), next = seekNext(p), android) {
-                                    var proxy = function () {
-                                        $.proxy($.fn.caret, input, next)();
-                                    };
-                                    setTimeout(proxy, 0);
-                                } else input.caret(next);
-                                pos.begin <= lastRequiredNonMaskPos && tryFireCompleted();
-                            }
-                            e.preventDefault();
-                        }
-                    }
-                }
-
-                function clearBuffer(start, end) {
-                    var i;
-                    for (i = start; end > i && len > i; i++) tests[i] && (buffer[i] = getPlaceholder(i));
-                }
-
-                function writeBuffer() {
-                    input.val(buffer.join(""));
-                }
-
-                function checkVal(allow) {
-                    var i, c, pos, test = input.val(), lastMatch = -1;
-                    for (i = 0, pos = 0; len > i; i++) if (tests[i]) {
-                        for (buffer[i] = getPlaceholder(i); pos++ < test.length;) if (c = test.charAt(pos - 1),
-                            tests[i].test(c)) {
-                            buffer[i] = c, lastMatch = i;
-                            break;
-                        }
-                        if (pos > test.length) {
-                            clearBuffer(i + 1, len);
-                            break;
-                        }
-                    } else buffer[i] === test.charAt(pos) && pos++, partialPosition > i && (lastMatch = i);
-                    return allow ? writeBuffer() : partialPosition > lastMatch + 1 ? settings.autoclear || buffer.join("") === defaultBuffer ? (input.val() && input.val(""),
-                        clearBuffer(0, len)) : writeBuffer() : (writeBuffer(), input.val(input.val().substring(0, lastMatch + 1))),
-                        partialPosition ? i : firstNonMaskPos;
-                }
-
-                var input = $(this), buffer = $.map(mask.split(""), function (c, i) {
-                    return "?" != c ? defs[c] ? getPlaceholder(i) : c : void 0;
-                }), defaultBuffer = buffer.join(""), focusText = input.val();
-                input.data($.mask.dataName, function () {
-                    return $.map(buffer, function (c, i) {
-                        return tests[i] && c != getPlaceholder(i) ? c : null;
-                    }).join("");
-                }), input.one("unmask", function () {
-                    input.off(".mask").removeData($.mask.dataName);
-                }).on("focus.mask", function () {
-                    if (!input.prop("readonly")) {
-                        clearTimeout(caretTimeoutId);
-                        var pos;
-                        focusText = input.val(), pos = checkVal(), caretTimeoutId = setTimeout(function () {
-                            input.get(0) === document.activeElement && (writeBuffer(), pos == mask.replace("?", "").length ? input.caret(0, pos) : input.caret(pos));
-                        }, 10);
-                    }
-                }).on("blur.mask", blurEvent).on("keydown.mask", keydownEvent).on("keypress.mask", keypressEvent).on("input.mask paste.mask", function () {
-                    input.prop("readonly") || setTimeout(function () {
-                        var pos = checkVal(!0);
-                        input.caret(pos), tryFireCompleted();
-                    }, 0);
-                }), chrome && android && input.off("input.mask").on("input.mask", androidInputEvent),
-                    checkVal();
-            });
+  var caretTimeoutId, ua = navigator.userAgent, iPhone = /iphone/i.test(ua), chrome = /chrome/i.test(ua),
+    android = /android/i.test(ua);
+  $.mask = {
+    definitions: {
+      "z": "[0-9]",
+      a: "[A-Za-z]",
+      "*": "[A-Za-z0-9]"
+    },
+    autoclear: !0,
+    dataName: "rawMaskFn",
+    placeholder: "_"
+  }, $.fn.extend({
+    caret: function (begin, end) {
+      var range;
+      if (0 !== this.length && !this.is(":hidden")) return "number" == typeof begin ? (end = "number" == typeof end ? end : begin,
+        this.each(function () {
+          this.setSelectionRange ? this.setSelectionRange(begin, end) : this.createTextRange && (range = this.createTextRange(),
+            range.collapse(!0), range.moveEnd("character", end), range.moveStart("character", begin),
+            range.select());
+        })) : (this[0].setSelectionRange ? (begin = this[0].selectionStart, end = this[0].selectionEnd) : document.selection && document.selection.createRange && (range = document.selection.createRange(),
+        begin = 0 - range.duplicate().moveStart("character", -1e5), end = begin + range.text.length),
+        {
+          begin: begin,
+          end: end
+        });
+    },
+    unmask: function () {
+      return this.trigger("unmask");
+    },
+    mask: function (mask, settings) {
+      var input, defs, tests, partialPosition, firstNonMaskPos, lastRequiredNonMaskPos, len, oldVal;
+      if (!mask && this.length > 0) {
+        input = $(this[0]);
+        var fn = input.data($.mask.dataName);
+        return fn ? fn() : void 0;
+      }
+      return settings = $.extend({
+        autoclear: $.mask.autoclear,
+        placeholder: $.mask.placeholder,
+        completed: null
+      }, settings), defs = $.mask.definitions, tests = [], partialPosition = len = mask.length,
+        firstNonMaskPos = null, $.each(mask.split(""), function (i, c) {
+        "?" == c ? (len--, partialPosition = i) : defs[c] ? (tests.push(new RegExp(defs[c])),
+        null === firstNonMaskPos && (firstNonMaskPos = tests.length - 1), partialPosition > i && (lastRequiredNonMaskPos = tests.length - 1)) : tests.push(null);
+      }), this.trigger("unmask").each(function () {
+        function tryFireCompleted() {
+          if (settings.completed) {
+            for (var i = firstNonMaskPos; lastRequiredNonMaskPos >= i; i++) if (tests[i] && buffer[i] === getPlaceholder(i)) return;
+            settings.completed.call(input);
+          }
         }
-    });
+
+        function getPlaceholder(i) {
+          return settings.placeholder.charAt(i < settings.placeholder.length ? i : 0);
+        }
+
+        function seekNext(pos) {
+          for (; ++pos < len && !tests[pos];) ;
+          return pos;
+        }
+
+        function seekPrev(pos) {
+          for (; --pos >= 0 && !tests[pos];) ;
+          return pos;
+        }
+
+        function shiftL(begin, end) {
+          var i, j;
+          if (!(0 > begin)) {
+            for (i = begin, j = seekNext(end); len > i; i++) if (tests[i]) {
+              if (!(len > j && tests[i].test(buffer[j]))) break;
+              buffer[i] = buffer[j], buffer[j] = getPlaceholder(j), j = seekNext(j);
+            }
+            writeBuffer(), input.caret(Math.max(firstNonMaskPos, begin));
+          }
+        }
+
+        function shiftR(pos) {
+          var i, c, j, t;
+          for (i = pos, c = getPlaceholder(pos); len > i; i++) if (tests[i]) {
+            if (j = seekNext(i), t = buffer[i], buffer[i] = c, !(len > j && tests[j].test(t))) break;
+            c = t;
+          }
+        }
+
+        function androidInputEvent() {
+          var curVal = input.val(), pos = input.caret();
+          if (oldVal && oldVal.length && oldVal.length > curVal.length) {
+            for (checkVal(!0); pos.begin > 0 && !tests[pos.begin - 1];) pos.begin--;
+            if (0 === pos.begin) for (; pos.begin < firstNonMaskPos && !tests[pos.begin];) pos.begin++;
+            input.caret(pos.begin, pos.begin);
+          } else {
+            for (checkVal(!0); pos.begin < len && !tests[pos.begin];) pos.begin++;
+            input.caret(pos.begin, pos.begin);
+          }
+          tryFireCompleted();
+        }
+
+        function blurEvent() {
+          checkVal(), input.val() != focusText && input.change();
+        }
+
+        function keydownEvent(e) {
+          if (!input.prop("readonly")) {
+            var pos, begin, end, k = e.which || e.keyCode;
+            oldVal = input.val(), 8 === k || 46 === k || iPhone && 127 === k ? (pos = input.caret(),
+              begin = pos.begin, end = pos.end, end - begin === 0 && (begin = 46 !== k ? seekPrev(begin) : end = seekNext(begin - 1),
+              end = 46 === k ? seekNext(end) : end), clearBuffer(begin, end), shiftL(begin, end - 1),
+              e.preventDefault()) : 13 === k ? blurEvent.call(this, e) : 27 === k && (input.val(focusText),
+              input.caret(0, checkVal()), e.preventDefault());
+          }
+        }
+
+        function keypressEvent(e) {
+          if (!input.prop("readonly")) {
+            var p, c, next, k = e.which || e.keyCode, pos = input.caret();
+            if (!(e.ctrlKey || e.altKey || e.metaKey || 32 > k) && k && 13 !== k) {
+              if (pos.end - pos.begin !== 0 && (clearBuffer(pos.begin, pos.end), shiftL(pos.begin, pos.end - 1)),
+                p = seekNext(pos.begin - 1), len > p && (c = String.fromCharCode(k), tests[p].test(c))) {
+                if (shiftR(p), buffer[p] = c, writeBuffer(), next = seekNext(p), android) {
+                  var proxy = function () {
+                    $.proxy($.fn.caret, input, next)();
+                  };
+                  setTimeout(proxy, 0);
+                } else input.caret(next);
+                pos.begin <= lastRequiredNonMaskPos && tryFireCompleted();
+              }
+              e.preventDefault();
+            }
+          }
+        }
+
+        function clearBuffer(start, end) {
+          var i;
+          for (i = start; end > i && len > i; i++) tests[i] && (buffer[i] = getPlaceholder(i));
+        }
+
+        function writeBuffer() {
+          input.val(buffer.join(""));
+        }
+
+        function checkVal(allow) {
+          var i, c, pos, test = input.val(), lastMatch = -1;
+          for (i = 0, pos = 0; len > i; i++) if (tests[i]) {
+            for (buffer[i] = getPlaceholder(i); pos++ < test.length;) if (c = test.charAt(pos - 1),
+              tests[i].test(c)) {
+              buffer[i] = c, lastMatch = i;
+              break;
+            }
+            if (pos > test.length) {
+              clearBuffer(i + 1, len);
+              break;
+            }
+          } else buffer[i] === test.charAt(pos) && pos++, partialPosition > i && (lastMatch = i);
+          return allow ? writeBuffer() : partialPosition > lastMatch + 1 ? settings.autoclear || buffer.join("") === defaultBuffer ? (input.val() && input.val(""),
+            clearBuffer(0, len)) : writeBuffer() : (writeBuffer(), input.val(input.val().substring(0, lastMatch + 1))),
+            partialPosition ? i : firstNonMaskPos;
+        }
+
+        var input = $(this), buffer = $.map(mask.split(""), function (c, i) {
+          return "?" != c ? defs[c] ? getPlaceholder(i) : c : void 0;
+        }), defaultBuffer = buffer.join(""), focusText = input.val();
+        input.data($.mask.dataName, function () {
+          return $.map(buffer, function (c, i) {
+            return tests[i] && c != getPlaceholder(i) ? c : null;
+          }).join("");
+        }), input.one("unmask", function () {
+          input.off(".mask").removeData($.mask.dataName);
+        }).on("focus.mask", function () {
+          if (!input.prop("readonly")) {
+            clearTimeout(caretTimeoutId);
+            var pos;
+            focusText = input.val(), pos = checkVal(), caretTimeoutId = setTimeout(function () {
+              input.get(0) === document.activeElement && (writeBuffer(), pos == mask.replace("?", "").length ? input.caret(0, pos) : input.caret(pos));
+            }, 10);
+          }
+        }).on("blur.mask", blurEvent).on("keydown.mask", keydownEvent).on("keypress.mask", keypressEvent).on("input.mask paste.mask", function () {
+          input.prop("readonly") || setTimeout(function () {
+            var pos = checkVal(!0);
+            input.caret(pos), tryFireCompleted();
+          }, 0);
+        }), chrome && android && input.off("input.mask").on("input.mask", androidInputEvent),
+          checkVal();
+      });
+    }
+  });
 });
 
 (function () {
-    'use strict';
-    window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
+  'use strict';
+  window.addEventListener('load', function () {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
 })();
 
 var datepicker = new js_datepicker__WEBPACK_IMPORTED_MODULE_3___default.a('#datepicker', {
-    time: true
+  formatter: (input, date, instance) => {
+    const value = date.toLocaleDateString()
+    input.value = value // => '1/1/2099'
+  },
+  startDay: 1,
+  customDays: ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],
+  overlayButton: "Показать",
+  overlayPlaceholder: 'Введите год',
+  customMonths: [ "Январь","Февраль","Март","Апрель","Май","Июнь",
+    "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь" ],
+  showAllDates: true,
+  id: 2
 });
+
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
