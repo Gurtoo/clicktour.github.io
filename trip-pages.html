@@ -98,76 +98,54 @@
 
 <main>
   <section class="content_tours_pages">
-    <div class="content_top_tours_pages">
+    <div class="content_top_tours_pages content_top_trip_pages">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <form>
+            <form class="content_top_tours_pages_form">
               <div class="form-row">
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label for="inputType">Тип тура</label>
+                  <label for="inputPeople">Ищу</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select form-control" multiple id="inputType">
-                      <option>Горящие туры</option>
-                      <option>Туры в Узбекистан</option>
-                      <option>Совместные путешествия</option>
+                    <select class="tours-pages-select js-tours-pages-select form-control" multiple id="inputPeople">
+                      <option>Кого угодно</option>
+                      <option>Компанию</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label for="inputState">Страна</label>
+                  <label for="inputState">Финансы</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select-towns form-control" multiple
+                    <select class="tours-pages-select js-tours-pages-select-money form-control" multiple
                             id="inputState">
-                      <option>Австрия</option>
-                      <option>Автралия</option>
-                      <option>Алжир</option>
+                      <option>По договоренности</option>
+                      <option>Каждый платит за себя</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label for="inputAddress">Длительность</label>
-                  <input type="text" class="content_top_tours_pages_control" id="inputAddress"
-                         placeholder="Любое">
-                </div>
-                <div class="form-group content_top_tours_pages_group content_top_tours_pages_group_last col-md-2">
-                  <label for="inputAddress2">Цена</label>
-                  <div class="form-row content_top_tours_pages_child">
-                    <div class="content_top_tours_pages_child_group col-md-6">
-                      <input type="text" class="content_top_tours_pages_child_group_control" id="inputAddress2"
-                             placeholder="от">
-                    </div>
-                    <div class="content_top_tours_pages_child_group col-md-6">
-                      <input type="text" class="content_top_tours_pages_child_group_control" placeholder="до">
-                    </div>
+                  <label for="inputType">Тип</label>
+                  <div class="content_top_tours_pages_control_select">
+                    <select class="tours-pages-select js-tours-pages-select-type form-control" multiple id="inputType">
+                      <option>Любое</option>
+                      <option>Компанию</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label>Начало тура</label>
+                  <label for="inputAddress">Куда</label>
+                  <input type="text" class="content_top_tours_pages_control" id="inputAddress"
+                         placeholder="Выберите">
+                </div>
+                <div class="form-group content_top_tours_pages_group col-md-2">
+                  <label>Когда</label>
                   <input type="text"
                          class="content_top_tours_pages_control" name="calendar" id="datepicker"
                          autocomplete="off"
-                         name="date-data" value="месяц" required>
+                         name="date-data" value="март" required>
                 </div>
               </div>
               <div class="form-row content_top_tours_pages_second">
-                <div class="form-group content_top_tours_pages_second_group col-md-2">
-                  <div class="form-check custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" type="checkbox" id="gridCheck"
-                           name="customCheckbox" required>
-                    <label class="custom-control-label" for="gridCheck">
-                      Групповой тур
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group content_top_tours_pages_second_group col-md-2">
-                  <div class="form-check custom-control custom-checkbox">
-                    <input class="custom-control-input" type="checkbox" id="linearCheck" name="customCheckbox" required>
-                    <label class="custom-control-label" for="linearCheck">
-                      Со скидкой
-                    </label>
-                  </div>
-                </div>
                 <div class="content_top_tours_pages_second_group_btn">
                   <button type="submit" class="btn btn-orange">Найти поездку</button>
                 </div>
@@ -183,7 +161,7 @@
           <div class="col-12">
             <div class="content_tours_header">
               <div class="content_tours_header_left">
-                <h2>Горящие туры</h2>
+                <h2>Совместные путешествия</h2>
               </div>
               <div class="content_tours_pages_header_right">
                 <a class="content_tours_pages_header_right_url" href="#">
@@ -198,9 +176,9 @@
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img.png" alt="hot-tours-img">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -212,161 +190,37 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Весенние каникулы</h3>
-                    </div>
-                    <div class="content_tours_block_center_navigation">
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
                       <div class="d-flex align-items-center">
-                        <p>Ташкент</p>
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Баку</p>
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Турция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Ташкент</p>
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
                       </div>
                     </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Светлана Сорокина, 30 лет</p>
+                    </div>
                   </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-0">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Культура, история..</p>
+                      <p>Паломничество</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-1">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>Каждая суббота</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-2">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>6 дней/5 ночей</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_old">
-                        <p>959 USD</p>
-                      </div>
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>2 взрослых</p>
-                    </div>
-                  </div>
-                  <div class="content_tours_block_right_btn">
-                    <a href="tours-pages-info.html" class="btn btn-gray">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img-second.png" alt="hot-tours-img-second">
-                  <div class="content_tours_block_left_absol">
-                    <div class="position-relative">
-                      <button type="button" class="content_tours_block_left_absol_child">
-                        <span class="content_tours_block_left_absol_child_img icon-add"></span>
-                      </button>
-                      <div class="content_tours_block_center_date_block_popup">
-                        <p>Добавить в избранное</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Великая Китайская стена 2020</h3>
-                      <div class="content_tours_block_center_title_sale">
-                        <span class="icon-discount"></span>
-                        <p>-15% скидка на раннее бронирование</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Узбекистан</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Китай</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Корея</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Узбекистан</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-3">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-plane"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Тип тура</p>
-                        </div>
-                      </div>
-                      <p>Экскурсионный тур</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-4">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>15.02.2020</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-5">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>10 дней / 9 ночей</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-6">
+                    <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
                         <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
                         <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
@@ -374,29 +228,43 @@
                           <p>Групповой тур</p>
                         </div>
                       </div>
-                      <p>6 из 12</p>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>10.04.2020</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Каждый платит за себя</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
                   </div>
-                  <div class="content_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                  <div class="content_joint_tours_block_right_btn">
+                    <a href="trip-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img-third.png" alt="hot-tours-img-second">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img-second.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -408,54 +276,49 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Австрия, </p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Великобритания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Испания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Узбекистан</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Франция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Узбекистан</p>
-                      </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Олег Маями, 33 года</p>
                     </div>
                   </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-3">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Экскурсионный тур</p>
+                      <p>Паломничество</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-4">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>03.02.2020</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-5">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>8 дней / 7 ночей</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-6">
+                    <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
                         <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
                         <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
@@ -463,33 +326,43 @@
                           <p>Групповой тур</p>
                         </div>
                       </div>
-                      <p>6 из 10</p>
+                      <p>Кто угодно</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>10.04.2020</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Финансы по договоренности</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>Цена при 2х местном
-                        размещении</p>
-                    </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
                   </div>
-                  <div class="content_tours_block_right_btn">
+                  <div class="content_joint_tours_block_right_btn">
                     <a href="#" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img.png" alt="hot-tours-img">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img-third.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -501,161 +374,37 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Весенние каникулы</h3>
-                    </div>
-                    <div class="content_tours_block_center_navigation">
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
                       <div class="d-flex align-items-center">
-                        <p>Ташкент</p>
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Баку</p>
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Турция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Ташкент</p>
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
                       </div>
                     </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Alexander Belenkiy, 32 года</p>
+                    </div>
                   </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-0">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Культура, история..</p>
+                      <p>Автопутешествие..</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-1">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>Каждая суббота</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-2">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>6 дней/5 ночей</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_old">
-                        <p>959 USD</p>
-                      </div>
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>2 взрослых</p>
-                    </div>
-                  </div>
-                  <div class="content_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img-second.png" alt="hot-tours-img-second">
-                  <div class="content_tours_block_left_absol">
-                    <div class="position-relative">
-                      <button type="button" class="content_tours_block_left_absol_child">
-                        <span class="content_tours_block_left_absol_child_img icon-add"></span>
-                      </button>
-                      <div class="content_tours_block_center_date_block_popup">
-                        <p>Добавить в избранное</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Великая Китайская стена 2020</h3>
-                      <div class="content_tours_block_center_title_sale">
-                        <span class="icon-discount"></span>
-                        <p>-15% скидка на раннее бронирование</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Узбекистан</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Китай</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Корея</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Узбекистан</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-3">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-plane"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Тип тура</p>
-                        </div>
-                      </div>
-                      <p>Экскурсионный тур</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-4">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>15.02.2020</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-5">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>10 дней / 9 ночей</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-6">
+                    <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
                         <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
                         <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
@@ -663,29 +412,43 @@
                           <p>Групповой тур</p>
                         </div>
                       </div>
-                      <p>6 из 12</p>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>Когда угодно</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Каждый платит за себя</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
                   </div>
-                  <div class="content_tours_block_right_btn">
+                  <div class="content_joint_tours_block_right_btn">
                     <a href="#" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img-third.png" alt="hot-tours-img-second">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -697,54 +460,37 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Узбекистан</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Франция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Узбекистан</p>
-                      </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Светлана Сорокина, 30 лет</p>
                     </div>
                   </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-3">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Экскурсионный тур</p>
+                      <p>Паломничество</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-4">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>03.02.2020</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-5">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>8 дней / 7 ночей</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-6">
+                    <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
                         <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
                         <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
@@ -752,33 +498,43 @@
                           <p>Групповой тур</p>
                         </div>
                       </div>
-                      <p>6 из 10</p>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>10.04.2020</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Каждый платит за себя</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>Цена при 2х местном
-                        размещении</p>
-                    </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
                   </div>
-                  <div class="content_tours_block_right_btn">
+                  <div class="content_joint_tours_block_right_btn">
                     <a href="#" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img.png" alt="hot-tours-img">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img-second.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -790,161 +546,49 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Весенние каникулы</h3>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Австрия, </p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Великобритания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Испания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Ташкент</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Баку</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Турция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Ташкент</p>
-                      </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Олег Маями, 33 года</p>
                     </div>
                   </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-0">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Культура, история..</p>
+                      <p>Паломничество</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-1">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>Каждая суббота</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-2">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>6 дней/5 ночей</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_old">
-                        <p>959 USD</p>
-                      </div>
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>2 взрослых</p>
-                    </div>
-                  </div>
-                  <div class="content_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img-second.png" alt="hot-tours-img-second">
-                  <div class="content_tours_block_left_absol">
-                    <div class="position-relative">
-                      <button type="button" class="content_tours_block_left_absol_child">
-                        <span class="content_tours_block_left_absol_child_img icon-add"></span>
-                      </button>
-                      <div class="content_tours_block_center_date_block_popup">
-                        <p>Добавить в избранное</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Великая Китайская стена 2020</h3>
-                      <div class="content_tours_block_center_title_sale">
-                        <span class="icon-discount"></span>
-                        <p>-15% скидка на раннее бронирование</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Узбекистан</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Китай</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Корея</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Узбекистан</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-3">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-plane"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Тип тура</p>
-                        </div>
-                      </div>
-                      <p>Экскурсионный тур</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-4">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>15.02.2020</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-5">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>10 дней / 9 ночей</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-6">
+                    <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
                         <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
                         <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
@@ -952,29 +596,43 @@
                           <p>Групповой тур</p>
                         </div>
                       </div>
-                      <p>6 из 12</p>
+                      <p>Кто угодно</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>10.04.2020</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Финансы по договоренности</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
                   </div>
-                  <div class="content_tours_block_right_btn">
+                  <div class="content_joint_tours_block_right_btn">
                     <a href="#" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img-third.png" alt="hot-tours-img-second">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img-third.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -986,54 +644,37 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
                     </div>
-                    <div class="content_tours_block_center_navigation">
-                      <div class="d-flex align-items-center">
-                        <p>Узбекистан</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Франция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Узбекистан</p>
-                      </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Alexander Belenkiy, 32 года</p>
                     </div>
                   </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-3">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Экскурсионный тур</p>
+                      <p>Автопутешествие..</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-4">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-calendar"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Дата отправления</p>
-                        </div>
-                      </div>
-                      <p>03.02.2020</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-5">
-                      <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
-                        <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
-                        </div>
-                      </div>
-                      <p>8 дней / 7 ночей</p>
-                    </div>
-                    <div class="content_tours_block_center_date_block order-6">
+                    <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
                         <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
                         <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
@@ -1041,33 +682,43 @@
                           <p>Групповой тур</p>
                         </div>
                       </div>
-                      <p>6 из 10</p>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>Когда угодно</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Каждый платит за себя</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>Цена при 2х местном
-                        размещении</p>
-                    </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
                   </div>
-                  <div class="content_tours_block_right_btn">
+                  <div class="content_joint_tours_block_right_btn">
                     <a href="#" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
             <div class="content_tours_pad">
-              <div class="content_tours_block">
-                <div class="content_tours_block_left">
-                  <img src="./img/hot-tours-img.png" alt="hot-tours-img">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img.png" alt="hot-tours-img-second">
                   <div class="content_tours_block_left_absol">
                     <div class="position-relative">
                       <button type="button" class="content_tours_block_left_absol_child">
@@ -1079,80 +730,342 @@
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_center">
-                  <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
-                      <h3>Весенние каникулы</h3>
-                    </div>
-                    <div class="content_tours_block_center_navigation">
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
                       <div class="d-flex align-items-center">
-                        <p>Ташкент</p>
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Баку</p>
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Турция</p>
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="icon-inter_plane"></span>
-                        <p>Ташкент</p>
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
                       </div>
                     </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Светлана Сорокина, 30 лет</p>
+                    </div>
                   </div>
-                  <div class="content_tours_block_center_info">
-                    <p>Молодость надо прожить так, чтоб было что вспомнить и рассказать. </p>
-                    <p>Самые яркие моменты юности лучше всего оставляют отпечаток в памяти при
-                      активном отдыхе...</p>
-                  </div>
-                  <div class="content_tours_block_center_date">
-                    <div class="content_tours_block_center_date_block order-0">
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Тип тура</p>
                         </div>
                       </div>
-                      <p>Культура, история..</p>
+                      <p>Паломничество</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-1">
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-calendar"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Дата отправления</p>
                         </div>
                       </div>
-                      <p>Каждая суббота</p>
+                      <p>10.04.2020</p>
                     </div>
-                    <div class="content_tours_block_center_date_block order-2">
+                    <div class="content_joint_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                        <span class="icon-time"></span>
+                        <span class="icon-wallet"></span>
                         <div class="content_tours_block_center_date_block_popup">
-                          <p>Длительность тура</p>
+                          <p>Финансы</p>
                         </div>
                       </div>
-                      <p>6 дней/5 ночей</p>
+                      <p>Каждый платит за себя</p>
                     </div>
                   </div>
                 </div>
-                <div class="content_tours_block_right">
-                  <div class="content_tours_block_right_top">
-                    <h4>Travel System Uzbekistan</h4>
-                    <div class="content_tours_block_right_price">
-                      <div class="content_tours_block_right_price_old">
-                        <p>959 USD</p>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
+                  </div>
+                  <div class="content_joint_tours_block_right_btn">
+                    <a href="#" class="btn btn-gray">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content_tours_pad">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img-second.png" alt="hot-tours-img-second">
+                  <div class="content_tours_block_left_absol">
+                    <div class="position-relative">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <span class="content_tours_block_left_absol_child_img icon-add"></span>
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
                       </div>
-                      <div class="content_tours_block_right_price_main">
-                        <p>820 USD</p>
-                      </div>
-                    </div>
-                    <div class="content_tours_block_right_calculated">
-                      <p>2 взрослых</p>
                     </div>
                   </div>
-                  <div class="content_tours_block_right_btn">
+                </div>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Австрия, </p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Великобритания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Испания,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
+                    </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Олег Маями, 33 года</p>
+                    </div>
+                  </div>
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-plane"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
+                      <p>Паломничество</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
+                      <p>Кто угодно</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>10.04.2020</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Финансы по договоренности</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
+                  </div>
+                  <div class="content_joint_tours_block_right_btn">
+                    <a href="#" class="btn btn-gray">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content_tours_pad">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img-third.png" alt="hot-tours-img-second">
+                  <div class="content_tours_block_left_absol">
+                    <div class="position-relative">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <span class="content_tours_block_left_absol_child_img icon-add"></span>
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
+                    </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Alexander Belenkiy, 32 года</p>
+                    </div>
+                  </div>
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-plane"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
+                      <p>Автопутешествие..</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>Когда угодно</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Каждый платит за себя</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
+                  </div>
+                  <div class="content_joint_tours_block_right_btn">
+                    <a href="#" class="btn btn-gray">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content_tours_pad">
+              <div class="content_joint_tours_block">
+                <div class="content_joint_tours_block_left">
+                  <img src="./img/joint-tours-img.png" alt="hot-tours-img-second">
+                  <div class="content_tours_block_left_absol">
+                    <div class="position-relative">
+                      <button type="button" class="content_tours_block_left_absol_child">
+                        <span class="content_tours_block_left_absol_child_img icon-add"></span>
+                      </button>
+                      <div class="content_tours_block_center_date_block_popup">
+                        <p>Добавить в избранное</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_joint_tours_block_center">
+                  <div class="content_joint_tours_block_center_top">
+                    <div class="content_joint_tours_block_center_navigation">
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Китай,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>Малайзия,</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="icon-location"></span>
+                        <p>ОАЭ</p>
+                      </div>
+                    </div>
+                    <div class="content_joint_tours_block_center_who">
+                      <p>Светлана Сорокина, 30 лет</p>
+                    </div>
+                  </div>
+                  <div class="content_joint_tours_block_center_date">
+                    <div class="content_joint_tours_block_center_date_block order-3">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-plane"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Тип тура</p>
+                        </div>
+                      </div>
+                      <p>Паломничество</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-4">
+                      <div class="content_tours_block_center_date_block_img">
+                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
+                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Групповой тур</p>
+                        </div>
+                      </div>
+                      <p>Компанию</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-5">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-calendar"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Дата отправления</p>
+                        </div>
+                      </div>
+                      <p>10.04.2020</p>
+                    </div>
+                    <div class="content_joint_tours_block_center_date_block order-6">
+                      <div class="content_tours_block_center_date_block_img">
+                        <span class="icon-wallet"></span>
+                        <div class="content_tours_block_center_date_block_popup">
+                          <p>Финансы</p>
+                        </div>
+                      </div>
+                      <p>Каждый платит за себя</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="content_joint_tours_block_right">
+                  <div class="content_joint_tours_block_right_calculated">
+                    <p>Откуда едем: </p>
+                    <p>Ташкент, Узбекистан</p>
+                  </div>
+                  <div class="content_joint_tours_block_right_btn">
                     <a href="#" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>

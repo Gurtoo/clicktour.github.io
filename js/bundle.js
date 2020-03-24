@@ -24545,6 +24545,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     placeholder: "Выберите тип",
     minimumResultsForSearch: -1,
   });
+
   jQuery(function ($) {
     $.fn.select2.amd.require([
       'select2/selection/single',
@@ -24637,7 +24638,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
       var base_element = $('.js-tours-pages-select-towns')
       $(base_element).select2({
-        placeholder: 'Любое',
+        placeholder: 'Страна',
         selectionAdapter: SelectionAdapter,
         dropdownAdapter: DropdownAdapter,
         allowClear: true,
@@ -24666,37 +24667,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
     });
 
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-towns").select2({
-    placeholder: "Страна",
-    minimumResultsForSearch: -1,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-sex").select2({
-    placeholder: "Пол",
-    minimumResultsForSearch: -1,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-view").select2({
-    placeholder: "Вид деятельности в лицензии",
-    minimumResultsForSearch: -1,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-money").select2({
-    placeholder: "USD",
-    minimumResultsForSearch: -1,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-disable").select2({
-    disabled: true,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-where").select2({
-    placeholder: "Направление",
-    minimumResultsForSearch: -1,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-money").select2({
-    placeholder: "Фин. возможности",
-    minimumResultsForSearch: -1,
-  });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-call").select2({
-    placeholder: "Куда получить ответ",
-    minimumResultsForSearch: -1,
   });
   jQuery(function ($) {
     $.fn.select2.amd.require([
@@ -24727,9 +24697,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
         AttachBody
       );
 
-      var base_element = $('.select2-multiple2')
+      var base_element = $('.js-add-pages-select-towns')
       $(base_element).select2({
-        placeholder: 'Вид деятельности в лицензии',
+        placeholder: 'Выберите страну',
         selectionAdapter: SelectionAdapter,
         dropdownAdapter: DropdownAdapter,
         allowClear: true,
@@ -24758,6 +24728,160 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
     });
 
+  });
+  jQuery(function ($) {
+    $.fn.select2.amd.require([
+      'select2/selection/single',
+      'select2/selection/placeholder',
+      'select2/selection/allowClear',
+      'select2/dropdown',
+      'select2/dropdown/search',
+      'select2/dropdown/attachBody',
+      'select2/utils'
+    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
+
+      var SelectionAdapter = Utils.Decorate(
+        SingleSelection,
+        Placeholder
+      );
+
+      SelectionAdapter = Utils.Decorate(
+        SelectionAdapter,
+        AllowClear
+      );
+
+      var DropdownAdapter = Utils.Decorate(
+        Utils.Decorate(
+          Dropdown,
+          DropdownSearch
+        ),
+        AttachBody
+      );
+
+      var base_element = $('.js-tours-pages-select-money')
+      $(base_element).select2({
+        placeholder: 'Любое',
+        selectionAdapter: SelectionAdapter,
+        dropdownAdapter: DropdownAdapter,
+        allowClear: true,
+        templateResult: function (data) {
+
+          if (!data.id) {
+            return data.text;
+          }
+
+          var $res = $('<div></div>');
+
+          $res.text(data.text);
+          $res.addClass('wrap');
+
+          return $res;
+        },
+        templateSelection: function (data) {
+          if (!data.id) {
+            return data.text;
+          }
+          var selected = ($(base_element).val() || []).length;
+          var total = $('option', $(base_element)).length;
+          return "Выбранно " + selected + " из " + total;
+        }
+      })
+
+    });
+
+  });
+  jQuery(function ($) {
+    $.fn.select2.amd.require([
+      'select2/selection/single',
+      'select2/selection/placeholder',
+      'select2/selection/allowClear',
+      'select2/dropdown',
+      'select2/dropdown/search',
+      'select2/dropdown/attachBody',
+      'select2/utils'
+    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
+
+      var SelectionAdapter = Utils.Decorate(
+        SingleSelection,
+        Placeholder
+      );
+
+      SelectionAdapter = Utils.Decorate(
+        SelectionAdapter,
+        AllowClear
+      );
+
+      var DropdownAdapter = Utils.Decorate(
+        Utils.Decorate(
+          Dropdown,
+          DropdownSearch
+        ),
+        AttachBody
+      );
+
+      var base_element = $('.js-tours-pages-select-type')
+      $(base_element).select2({
+        placeholder: 'Любое',
+        selectionAdapter: SelectionAdapter,
+        dropdownAdapter: DropdownAdapter,
+        allowClear: true,
+        templateResult: function (data) {
+
+          if (!data.id) {
+            return data.text;
+          }
+
+          var $res = $('<div></div>');
+
+          $res.text(data.text);
+          $res.addClass('wrap');
+
+          return $res;
+        },
+        templateSelection: function (data) {
+          if (!data.id) {
+            return data.text;
+          }
+          var selected = ($(base_element).val() || []).length;
+          var total = $('option', $(base_element)).length;
+          return "Выбранно " + selected + " из " + total;
+        }
+      })
+
+    });
+
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-towns").select2({
+    placeholder: "Страна",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-sex").select2({
+    placeholder: "Пол",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-view").select2({
+    placeholder: "Вид деятельности в лицензии",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-money").select2({
+    placeholder: "USD",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-disable").select2({
+    disabled: true,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-where").select2({
+    placeholder: "Направление",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-money").select2({
+    placeholder: "Фин. возможности",
+    minimumResultsForSearch: -1,
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-call").select2({
+    placeholder: "Куда получить ответ",
+    minimumResultsForSearch: -1,
   });
 
   /* END Select2 */
@@ -24817,7 +24941,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   });
 
   /* END Password */
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dropdown-input').click(function(event){
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dropdown-input').click(function (event) {
     event.stopPropagation();
   });
 
@@ -25083,11 +25208,11 @@ var datepicker = new js_datepicker__WEBPACK_IMPORTED_MODULE_3___default.a('#date
     input.value = value // => '1/1/2099'
   },
   startDay: 1,
-  customDays: ["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],
+  customDays: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
   overlayButton: "Показать",
   overlayPlaceholder: 'Введите год',
-  customMonths: [ "Январь","Февраль","Март","Апрель","Май","Июнь",
-    "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь" ],
+  customMonths: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
   showAllDates: true,
   id: 2
 });

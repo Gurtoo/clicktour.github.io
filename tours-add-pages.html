@@ -24,29 +24,30 @@
               <li class="header_navbar_collapse_nav_close">
                 <button type="button" class="header_navbar_collapse_nav_close_btn">&times;</button>
               </li>
-              <a class="header_navbar_collapse_nav_item" href="#">
+              <a class="header_navbar_collapse_nav_item" href="tours-pages.html">
                 <div class="header_navbar_collapse_nav_item_pad">
                   <p class="header_navbar_collapse_nav_item_link">Горящие туры</p>
                 </div>
               </a>
-              <a class="header_navbar_collapse_nav_item" href="#">
+              <a class="header_navbar_collapse_nav_item" href="uzb-pages.html">
                 <div class="header_navbar_collapse_nav_item_pad">
                   <p class="header_navbar_collapse_nav_item_link">Туры в Узбекистан</p>
                 </div>
               </a>
-              <a class="header_navbar_collapse_nav_item" href="#">
+              <a class="header_navbar_collapse_nav_item" href="trip-pages.html">
                 <div class="header_navbar_collapse_nav_item_pad">
                   <p class="header_navbar_collapse_nav_item_link">Совместные путешествия</p>
                 </div>
               </a>
               <li class="header_navbar_collapse_nav_item header_navbar_collapse_nav_pad-btn">
                 <div class="header_navbar_collapse_nav_item_pad">
-                  <a class="header_navbar_collapse_nav_item_btn btn" href="#" data-toggle="modal" data-target="#individualTourModal">Заказать тур</a>
+                  <a class="header_navbar_collapse_nav_item_btn btn" href="#" data-toggle="modal"
+                     data-target="#individualTourModal">Заказать тур</a>
                 </div>
               </li>
               <li class="header_navbar_collapse_nav_item header_navbar_collapse_nav_item_white">
                 <div class="header_navbar_collapse_nav_item_pad">
-                  <a class="header_navbar_collapse_nav_item_link" href="#">Добавить объявление</a>
+                  <a class="header_navbar_collapse_nav_item_link" href="tours-add-pages.html">Добавить объявление</a>
                 </div>
               </li>
             </ul>
@@ -63,7 +64,8 @@
                   <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Мои обьявление</a>
                   <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Сообщение</a>
                   <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#">Настройки</a>
-                  <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#" data-toggle="modal" data-target="#exampleModalCenter">Выход</a>
+                  <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="#" data-toggle="modal"
+                     data-target="#exampleModalCenter">Выход</a>
                 </div>
               </div>
             </ul>
@@ -106,42 +108,50 @@
             <div class="add-page_content">
               <form id="regForm" class="needs-validation" action="/" novalidate>
                 <div class="needs-validation add-page_content_form" novalidate>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-lg-8 col-md-6 mb-3">
-                      <div class="add-page_content_form_row_input">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
                         <label for="inputType">Выберите раздел</label>
-                        <select class="tours-pages-select js-example-basic-single js-states form-control"
-                                id="inputType">
-                          <option hidden></option>
-                          <option>Горящие туры</option>
-                          <option>Туры в Узбекистан</option>
-                          <option>Совместные путешествия</option>
-                        </select>
                       </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 mb-3">
-                      <div class="form-check custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck"
-                               name="customCheckbox">
-                        <label class="custom-control-label" for="customCheck">
-                          Групповой на
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 mb-3">
-                      <div class="add-page_content_form_row_input">
-                        <input type="text" class="form-control" placeholder="человек"
-                               oninput="this.className = ''" name="name" required>
-                        <div class="invalid-feedback">
-                          Заполните поля
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_group add-page_content_group_top">
+                        <div class="add-page_content_select add-page_content_group_top_select">
+                          <select class="tours-pages-select js-example-basic-single js-states form-control"
+                                  id="inputType">
+                            <option hidden></option>
+                            <option>Горящие туры</option>
+                            <option>Туры в Узбекистан</option>
+                            <option>Совместные путешествия</option>
+                          </select>
+                        </div>
+                        <div class="add-page_content_group_top_check">
+                          <div class="form-check custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck"
+                                   name="customCheckbox">
+                            <label class="custom-control-label" for="customCheck">
+                              Групповой на
+                            </label>
+                          </div>
+                        </div>
+                        <div class="add-page_content_input add-page_content_group_top_input">
+                          <input type="text" class="form-control" placeholder="человек"
+                                 oninput="this.className = ''" name="name" required>
+                          <div class="invalid-feedback">
+                            Заполните поля
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input add-page_content_form_row_input_second">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2 mb-4">
+                      <div class="add-page_content_header">
                         <label>Название тура</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_input">
                         <input type="text" class="form-control" placeholder="Горящие туры"
                                oninput="this.className = ''" name="nameTours" required>
                         <div class="invalid-feedback">
@@ -150,235 +160,235 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group add-page_content_form_row_check">
-                        <div class="add-page_content_form_row_group_label p-0">
-                          <label>Тип тура</label>
-                          <p>
-                            Можно выбрать несколько пунктов
-                          </p>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
+                        <label>Тип тура</label>
+                        <p>Можно выбрать несколько пунктов</p>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_check">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckBeachTour"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckBeachTour">
+                            Пляжные туры
+                          </label>
                         </div>
-                        <div class="add-page_content_form_row_group_check">
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckBeachTour"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckBeachTour">
-                              Пляжные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckHotTour"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckHotTour">
-                              Горящие туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckEarly"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckEarly">
-                              Раннее бронирование
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSki"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSki">
-                              Горнолыжные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckKinder"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckKinder">
-                              Детские лагеря
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckExcurs"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckExcurs">
-                              Экскурсии
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckDiving"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckDiving">
-                              Дайвинг
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckHike"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckHike">
-                              Поход
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckPilgrimage"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckPilgrimage">
-                              Паломничество
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckVip"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckVip">
-                              VIP туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWeekend"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWeekend">
-                              Туры на выходные
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckNewyear"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckNewyear">
-                              Новогодние туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWeekKinder"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWeekKinder">
-                              Отдых с детьми
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckBus"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckBus">
-                              Автобусные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWintering"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWintering">
-                              Зимовка
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckAuto"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckAuto">
-                              Автопутешествие
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWater"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWater">
-                              Водный туризм
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckLearn"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckLearn">
-                              Образование, работа
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckExcursions"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckExcursions">
-                              Экскурсионные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckWedding"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckWedding">
-                              Свадебные туры
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckСredit"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckСredit">
-                              Туры в кредит
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSea"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSea">
-                              Морские круизы
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckHoliday"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckHoliday">
-                              Пляжный отдых
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckFitnes"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckFitnes">
-                              Здоровье, фитнес
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSkid"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSkid">
-                              Лыжи, сноуборд
-                            </label>
-                          </div>
-                          <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="CheckSurfing"
-                                   name="customCheckbox">
-                            <label class="custom-control-label" for="CheckSurfing">
-                              Серфинг
-                            </label>
-                          </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckHotTour"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckHotTour">
+                            Горящие туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckEarly"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckEarly">
+                            Раннее бронирование
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckSki"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckSki">
+                            Горнолыжные туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckKinder"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckKinder">
+                            Детские лагеря
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckExcurs"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckExcurs">
+                            Экскурсии
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckDiving"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckDiving">
+                            Дайвинг
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckHike"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckHike">
+                            Поход
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckPilgrimage"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckPilgrimage">
+                            Паломничество
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckVip"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckVip">
+                            VIP туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckWeekend"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckWeekend">
+                            Туры на выходные
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckNewyear"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckNewyear">
+                            Новогодние туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckWeekKinder"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckWeekKinder">
+                            Отдых с детьми
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckBus"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckBus">
+                            Автобусные туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckWintering"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckWintering">
+                            Зимовка
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckAuto"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckAuto">
+                            Автопутешествие
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckWater"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckWater">
+                            Водный туризм
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckLearn"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckLearn">
+                            Образование, работа
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckExcursions"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckExcursions">
+                            Экскурсионные туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckWedding"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckWedding">
+                            Свадебные туры
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckСredit"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckСredit">
+                            Туры в кредит
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckSea"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckSea">
+                            Морские круизы
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckHoliday"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckHoliday">
+                            Пляжный отдых
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckFitnes"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckFitnes">
+                            Здоровье, фитнес
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckSkid"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckSkid">
+                            Лыжи, сноуборд
+                          </label>
+                        </div>
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="CheckSurfing"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="CheckSurfing">
+                            Серфинг
+                          </label>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Маршрут</label>
-                          <p>
-                            Выберите страну и город
-                          </p>
-                        </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
+                  <div class="row align-items-center">
+                    <div class="col-md-2">
+                      <div class="add-page_content_header add-page_content_group_route_header">
+                        <label>Маршрут</label>
+                        <p>
+                          Выберите страну и город
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-3 mb-2">
+                      <div class="add-page_content_group add-page_content_group_route">
+                        <div class="add-page_content_select add-page_content_group_route_child">
                           <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
                             <option hidden></option>
                             <option>Австрия</option>
                             <option>Автралия</option>
                             <option>Алжир</option>
                           </select>
-                          <div class="add-page_content_form_row_group_route_input">
+                          <div class="add-page_content_input add-page_content_group_route_input">
                             <input type="text" class="form-control" placeholder="Город"
-                                   oninput="this.className = ''" name="name">
+                                   oninput="this.className = ''" name="name" required>
                             <div class="invalid-feedback">
                               Заполните поля
                             </div>
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route_dash"></div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
+                        <div class="add-page_content_form_row_input add-page_content_dash"></div>
+                        <div class="add-page_content_select add-page_content_group_route_child">
                           <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
                             <option hidden></option>
                             <option>Австрия</option>
                             <option>Автралия</option>
                             <option>Алжир</option>
                           </select>
-                          <div class="add-page_content_form_row_group_route_input">
+                          <div class="add-page_content_input add-page_content_group_route_input">
                             <input type="text" class="form-control" placeholder="Город"
                                    oninput="this.className = ''" name="name" required>
                             <div class="invalid-feedback">
@@ -387,16 +397,18 @@
                           </div>
                         </div>
                       </div>
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label"></div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_group add-page_content_group_route">
+                        <div class="add-page_content_select add-page_content_group_route_child">
                           <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
                             <option hidden></option>
                             <option>Австрия</option>
                             <option>Автралия</option>
                             <option>Алжир</option>
                           </select>
-                          <div class="add-page_content_form_row_group_route_input">
+                          <div class="add-page_content_input add-page_content_group_route_input">
                             <input type="text" class="form-control" placeholder="Город"
                                    oninput="this.className = ''" name="name" required>
                             <div class="invalid-feedback">
@@ -404,124 +416,132 @@
                             </div>
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route_dash"></div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_route">
-                          <div class="add-page_content_form_row_group_route_input_btn">
-                            <a href="#" class="btn">Добавить еще</a>
+                        <div class="add-page_content_form_row_input add-page_content_dash"></div>
+                        <div class="add-page_content_select add-page_content_group_route_child">
+                          <a href="#" class="add-page_content_group_route_child_btn">Добавить еще</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header add-page_content_text-area_header">
+                        <label>Описание</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_text-area">
+                        <textarea cols="1" rows="8" placeholder="Описание"></textarea>
+                        <label class="max-words">Максимум 1000 символов</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-3 mb-2">
+                      <div class="add-page_content_header add-page_content_group_route_header">
+                        <label>Фото</label>
+                        <p>Прикрепите фотографии</p>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-3 mb-2">
+                      <div class="add-page_content_group_upload">
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="add-page_content_upload">
+                          <div class="add-page_content_upload_file">
+                            <span class="icon-plus">+</span>
+                            <input type="file">
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Описание</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Описание"></textarea>
-                          <label class="max-words">Максимум 1000 символов</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Фото</label>
-                          <p>Прикрепите фотографии</p>
-                        </div>
-                        <div class="add-page_content_form_row_group_block_upload">
-                          <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_upload">
-                          <div class="add-page_content_form_row_group_upload_file">
-                            <span class="icon-plus">+</span>
-                            <input type="file">
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
                         <label>Длительность</label>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_duration">
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_group add-page_content_group_duration">
+                        <div class="add-page_content_input add-page_content_group_duration_input">
                           <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <label>дней</label>
-                          <div class="invalid-feedback">
-                            Заполните поля
+                                 oninput="this.className = ''" name="nameTours" required>
+                        </div>
+                        <div class="add-page_content_group_duration_text">
+                          <div class="add-page_content_header">
+                            <label>дней</label>
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_duration">
+                        <div class="add-page_content_input add-page_content_group_duration_input">
                           <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <label>ночей</label>
-                          <div class="invalid-feedback">
-                            Заполните поля
+                                 oninput="this.className = ''" name="nameTours" required>
+                        </div>
+                        <div class="add-page_content_group_duration_text">
+                          <div class="add-page_content_header">
+                            <label>ночей</label>
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_duration_second">
-                          <label>Дата отправления</label>
+                        <div class="add-page_content_group_duration_info">
+                          <div class="add-page_content_header">
+                            <label>Дата отправления</label>
+                          </div>
+                        </div>
+                        <div class="add-page_content_input add-page_content_group_duration_info_input">
                           <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
+                                 oninput="this.className = ''" name="nameTours" required>
                           <div class="invalid-feedback">
                             Заполните поля
                           </div>
@@ -529,56 +549,57 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Программа тура</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Программа"></textarea>
-                        </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header add-page_content_text-area_header">
+                        <label>Программа тура</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_text-area">
+                        <textarea cols="1" rows="8" placeholder="Программа"></textarea>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Проживание</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Отель"></textarea>
-                        </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header add-page_content_text-area_header">
+                        <label>Проживание</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_text-area">
+                        <textarea cols="1" rows="8" placeholder="Отель"></textarea>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input add-page_content_form_row_input_price">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
                         <label>Цена</label>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_price">
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_group add-page_content_group_price">
+                        <div
+                            class="add-page_content_input add-page_content_group_price_input add-page_content_group_price_input_first">
                           <input type="text" class="form-control" placeholder="Цена"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
+                                 oninput="this.className = ''" name="nameTours" required>
                         </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_price_second">
+                        <div
+                            class="add-page_content_input add-page_content_group_price_input add-page_content_group_price_input_second">
                           <input type="text" class="form-control" placeholder="Старая цена"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
+                                 oninput="this.className = ''" name="nameTours" required>
                         </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_price_third">
+                        <div
+                            class="add-page_content_input add-page_content_group_price_input add-page_content_group_price_input_third">
                           <input type="text" class="form-control" placeholder="Скидка на ранее бронирование"
-                                 oninput="this.className = ''" required>
+                                 oninput="this.className = ''" name="nameTours" required>
                           <div class="invalid-feedback">
                             Заполните поля
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_input add-page_content_form_row_group_price_select">
+                        <div class="add-page_content_select add-page_content_group_price_select">
                           <select class="tours-pages-select js-add-pages-select-money js-states form-control">
                             <option hidden></option>
                             <option>USD</option>
@@ -589,10 +610,14 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
                         <label>Примечание </br> для цены</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_input">
                         <input type="text" class="form-control" placeholder="Цена указана"
                                oninput="this.className = ''" name="nameTours" required>
                         <div class="invalid-feedback">
@@ -601,70 +626,82 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Включено в </br> стоимость</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Программа"></textarea>
-                        </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header add-page_content_text-area_header">
+                        <label>Включено в </br> стоимость</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_text-area">
+                        <textarea cols="1" rows="8" placeholder="Программа"></textarea>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Оплачивается </br> отдельно</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="8" placeholder="Трансфер"></textarea>
-                        </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header add-page_content_text-area_header">
+                        <label>Оплачивается </br> отдельно</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_text-area">
+                        <textarea cols="1" rows="8" placeholder="Трансфер"></textarea>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
                         <label>Период действия </br>предложения</label>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_acts">
-                          <label>от</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_group add-page_content_group_actions">
+                        <div class="add-page_content_group_actions_text">
+                          <div class="add-page_content_header">
+                            <label>от</label>
+                          </div>
+                        </div>
+                        <div class="add-page_content_input add-page_content_group_actions_input">
                           <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
+                                 oninput="this.className = ''" name="nameTours" required>
+                        </div>
+                        <div class="add-page_content_group_actions_text">
+                          <div class="add-page_content_header">
+                            <label>до</label>
+                          </div>
+                        </div>
+                        <div class="add-page_content_input add-page_content_group_actions_input">
+                          <input type="text" class="form-control"
+                                 oninput="this.className = ''" name="nameTours" required>
                           <div class="invalid-feedback">
                             Заполните поля
                           </div>
                         </div>
-                        <div class="add-page_content_form_row_group add-page_content_form_row_group_acts">
-                          <label class="add-page_content_form_row_group_acts_label">до</label>
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
-                        </div>
-                        <div class="add-page_content_form_row_group_acts_block"></div>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="form-group col-md-12 mb-3">
-                      <div class="add-page_content_form_row_group">
-                        <div class="add-page_content_form_row_group_label">
-                          <label>Примечание</label>
-                        </div>
-                        <div class="add-page_content_form_row_group_text-area">
-                          <textarea cols="1" rows="6" placeholder="Дополнительные услуги"></textarea>
-                        </div>
+                  <div class="row">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header add-page_content_text-area_header">
+                        <label>Примечание</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_text-area">
+                        <textarea cols="1" rows="6" placeholder="Дополнительные услуги"></textarea>
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row">
-                    <div class="col-md-12 mb-3">
-                      <div class="add-page_content_form_row_input">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 mb-md-4 mb-2">
+                      <div class="add-page_content_header">
                         <label>Контакты</label>
+                      </div>
+                    </div>
+                    <div class="col-md-10 mb-md-4 mb-2">
+                      <div class="add-page_content_input">
                         <input type="text" class="form-control" placeholder="+998 90 123 45 67"
                                oninput="this.className = ''" name="nameTours" required>
                         <div class="invalid-feedback">
@@ -673,10 +710,12 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-row add-page_content_form_row_second">
-                    <div class="add-page_content_form_row_second_group_btn">
-                      <button type="submit" class="btn btn-gray">Предпросмотр</button>
-                      <button type="submit" class="btn btn-orange">Опубликовать</button>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="add-page_content_group add-page_content_group_btn">
+                        <button type="submit" class="btn btn-gray">Предпросмотр</button>
+                        <button type="submit" class="btn btn-orange">Опубликовать</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -847,184 +886,184 @@
                     <ul class="dropdown-menu send_message_individ_body_dropdown_menu">
                       <li class="dropdown-input send_message_individ_body_dropdown_menu_input">
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckBeachTour"
+                          <input type="checkbox" class="custom-control-input" id="checkBeach"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckBeachTour">
+                          <label class="custom-control-label" for="checkBeach">
                             Пляжные туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckVip"
+                          <input type="checkbox" class="custom-control-input" id="checkVip"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckVip">
+                          <label class="custom-control-label" for="checkVip">
                             VIP туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckExcursions"
+                          <input type="checkbox" class="custom-control-input" id="checkExcursions"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckExcursions">
+                          <label class="custom-control-label" for="checkExcursions">
                             Экскурсионные туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckHotTour"
+                          <input type="checkbox" class="custom-control-input" id="checkHotTour"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckHotTour">
+                          <label class="custom-control-label" for="checkHotTour">
                             Горящие туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckWeekend"
+                          <input type="checkbox" class="custom-control-input" id="checkWeekend"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckWeekend">
+                          <label class="custom-control-label" for="checkWeekend">
                             Туры на выходные
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckWedding"
+                          <input type="checkbox" class="custom-control-input" id="checkWedding"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckWedding">
+                          <label class="custom-control-label" for="checkWedding">
                             Свадебные туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckEarly"
+                          <input type="checkbox" class="custom-control-input" id="checkEarly"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckEarly">
+                          <label class="custom-control-label" for="checkEarly">
                             Раннее бронирование
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckNewyear"
+                          <input type="checkbox" class="custom-control-input" id="checkNewyear"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckNewyear">
+                          <label class="custom-control-label" for="checkNewyear">
                             Новогодние туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckСredit"
+                          <input type="checkbox" class="custom-control-input" id="checkСredit"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckСredit">
+                          <label class="custom-control-label" for="checkСredit">
                             Туры в кредит
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckSki"
+                          <input type="checkbox" class="custom-control-input" id="checkSki"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckSki">
+                          <label class="custom-control-label" for="checkSki">
                             Горнолыжные туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckWeekKinder"
+                          <input type="checkbox" class="custom-control-input" id="checkWeekKinder"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckWeekKinder">
+                          <label class="custom-control-label" for="checkWeekKinder">
                             Отдых с детьми
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckKinder"
+                          <input type="checkbox" class="custom-control-input" id="checkKinder"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckKinder">
+                          <label class="custom-control-label" for="checkKinder">
                             Детские лагеря
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckExcurs"
+                          <input type="checkbox" class="custom-control-input" id="checkExcurs"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckExcurs">
+                          <label class="custom-control-label" for="checkExcurs">
                             Экскурсии
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckDiving"
+                          <input type="checkbox" class="custom-control-input" id="checkDiving"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckDiving">
+                          <label class="custom-control-label" for="checkDiving">
                             Дайвинг
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckHike"
+                          <input type="checkbox" class="custom-control-input" id="checkHike"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckHike">
+                          <label class="custom-control-label" for="checkHike">
                             Поход
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckPilgrimage"
+                          <input type="checkbox" class="custom-control-input" id="checkPilgrimage"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckPilgrimage">
+                          <label class="custom-control-label" for="checkPilgrimage">
                             Паломничество
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckBus"
+                          <input type="checkbox" class="custom-control-input" id="checkBus"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckBus">
+                          <label class="custom-control-label" for="checkBus">
                             Автобусные туры
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckWintering"
+                          <input type="checkbox" class="custom-control-input" id="checkWintering"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckWintering">
+                          <label class="custom-control-label" for="checkWintering">
                             Зимовка
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckAuto"
+                          <input type="checkbox" class="custom-control-input" id="checkAuto"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckAuto">
+                          <label class="custom-control-label" for="checkAuto">
                             Автопутешествие
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckWater"
+                          <input type="checkbox" class="custom-control-input" id="checkWater"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckWater">
+                          <label class="custom-control-label" for="checkWater">
                             Водный туризм
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckLearn"
+                          <input type="checkbox" class="custom-control-input" id="checkLearn"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckLearn">
+                          <label class="custom-control-label" for="checkLearn">
                             Образование, работа
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckSea"
+                          <input type="checkbox" class="custom-control-input" id="checkSea"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckSea">
+                          <label class="custom-control-label" for="checkSea">
                             Морские круизы
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckHoliday"
+                          <input type="checkbox" class="custom-control-input" id="checkHoliday"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckHoliday">
+                          <label class="custom-control-label" for="checkHoliday">
                             Пляжный отдых
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckFitnes"
+                          <input type="checkbox" class="custom-control-input" id="checkFitnes"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckFitnes">
+                          <label class="custom-control-label" for="checkFitnes">
                             Здоровье, фитнес
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckSkid"
+                          <input type="checkbox" class="custom-control-input" id="checkSkid"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckSkid">
+                          <label class="custom-control-label" for="checkSkid">
                             Лыжи, сноуборд
                           </label>
                         </div>
                         <div class="form-check custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" id="CheckSurfing"
+                          <input type="checkbox" class="custom-control-input" id="checkSurfing"
                                  name="customCheckbox">
-                          <label class="custom-control-label" for="CheckSurfing">
+                          <label class="custom-control-label" for="checkSurfing">
                             Серфинг
                           </label>
                         </div>
