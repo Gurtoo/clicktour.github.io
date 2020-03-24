@@ -24888,31 +24888,64 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   /* Download file Start */
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').focus(function () {
+  var dropZone = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#upload-container');
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').focus(function() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').addClass('focus');
   })
-    .focusout(function () {
+    .focusout(function() {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('label').removeClass('focus');
     });
-  var dropZone = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.registr_content_left_form_row_file');
-  dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function () {
+
+
+  dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function(){
     return false;
   });
-  dropZone.on('dragover dragenter', function () {
+
+  dropZone.on('dragover dragenter', function() {
     dropZone.addClass('dragover');
   });
 
-  dropZone.on('dragleave', function (e) {
-    dropZone.removeClass('dragover');
-  });
-  dropZone.on('dragleave', function (e) {
+  dropZone.on('dragleave', function(e) {
     let dx = e.pageX - dropZone.offset().left;
     let dy = e.pageY - dropZone.offset().top;
     if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
       dropZone.removeClass('dragover');
     }
-    ;
   });
+
+  dropZone.on('drop', function(e) {
+    dropZone.removeClass('dragover');
+    let files = e.originalEvent.dataTransfer.files;
+    sendFiles(files);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#file-input').change(function() {
+    let files = this.files;
+    sendFiles(files);
+  });
+
+
+  function sendFiles(files) {
+    let maxFileSize = 5242880;
+    let Data = new FormData();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(files).each(function(index, file) {
+      if ((file.size <= maxFileSize) && ((file.type == 'image/png') || (file.type == 'image/jpeg'))) {
+        Data.append('images[]', file);
+      }
+    });
+
+    jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+      url: dropZone.attr('action'),
+      type: dropZone.attr('method'),
+      data: Data,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+        alert ('Файлы были успешно загружены!');
+      }
+    });
+  }
 
   /* END Download file */
 
@@ -24947,7 +24980,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   });
 
 });
-
 var currentTab = 0;
 showTab(currentTab);
 
@@ -25216,7 +25248,6 @@ var datepicker = new js_datepicker__WEBPACK_IMPORTED_MODULE_3___default.a('#date
   showAllDates: true,
   id: 2
 });
-
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
