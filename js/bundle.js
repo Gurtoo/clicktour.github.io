@@ -24638,7 +24638,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
       var base_element = $('.js-tours-pages-select-towns')
       $(base_element).select2({
-        placeholder: 'Страна',
+        placeholder: 'Любое',
         selectionAdapter: SelectionAdapter,
         dropdownAdapter: DropdownAdapter,
         allowClear: true,
