@@ -130,6 +130,7 @@
                 </a>
                 <a class="spring-break_header_right_url_item" href="#">
                   <div class="spring-break_header_helpers">
+                    <span class="icon-added"></span>
                     <div class="position-relative">
                       <button type="button" class="spring-break_header_helpers_child">
                         <span class="spring-break_header_helpers_child_img icon-add"></span>
@@ -520,13 +521,13 @@
               </div>
               <div class="content_tours_block_center">
                 <div class="content_tours_block_center_top">
-                  <div class="content_tours_block_center_title">
+                  <a class="content_tours_block_center_title" href="uzb-pages-info.html">
                     <h3>Великолепный Узбекистан</h3>
                     <div class="content_tours_block_center_title_sale">
                       <span class="icon-discount"></span>
                       <p>-15% скидка на раннее бронирование</p>
                     </div>
-                  </div>
+                  </a>
                   <div class="content_tours_block_center_navigation">
                     <div class="d-flex">
                       <p>Ташкент</p>
@@ -542,6 +543,9 @@
                   </div>
                 </div>
                 <div class="content_tours_block_center_date">
+                  <div class="content_tours_block_center_date_mobile">
+                    <h4>Travel System Uzbekistan</h4>
+                  </div>
                   <div class="content_tours_block_center_date_block order-0">
                     <div class="content_tours_block_center_date_block_img">
                       <span class="icon-plane"></span>
@@ -587,7 +591,7 @@
                   </div>
                 </div>
                 <div class="content_tours_block_right_btn">
-                  <a href="#" class="btn btn-gray">Подробнее</a>
+                  <a href="uzb-pages-info.html" class="btn btn-gray">Подробнее</a>
                 </div>
               </div>
             </div>
@@ -610,9 +614,9 @@
               </div>
               <div class="content_tours_block_center">
                 <div class="content_tours_block_center_top">
-                  <div class="content_tours_block_center_title">
+                  <a class="content_tours_block_center_title" href="#">
                     <h3>Оазис Средневекового Востока</h3>
-                  </div>
+                  </a>
                   <div class="content_tours_block_center_navigation">
                     <div class="d-flex">
                       <p>Самарканд</p>
@@ -633,6 +637,9 @@
                     активном отдыхе...</p>
                 </div>
                 <div class="content_tours_block_center_date">
+                  <div class="content_tours_block_center_date_mobile">
+                    <h4>Travel System Uzbekistan</h4>
+                  </div>
                   <div class="content_tours_block_center_date_block order-3">
                     <div class="content_tours_block_center_date_block_img">
                       <span class="icon-plane"></span>
@@ -704,9 +711,9 @@
               </div>
               <div class="content_tours_block_center">
                 <div class="content_tours_block_center_top">
-                  <div class="content_tours_block_center_title">
+                  <a class="content_tours_block_center_title" href="#">
                     <h3>Шелковый путь от Ферганы до Хивы</h3>
-                  </div>
+                  </a>
                   <div class="content_tours_block_center_navigation">
                     <div class="d-flex">
                       <p>Фергана</p>
@@ -718,6 +725,9 @@
                   </div>
                 </div>
                 <div class="content_tours_block_center_date">
+                  <div class="content_tours_block_center_date_mobile">
+                    <h4>Travel System Uzbekistan</h4>
+                  </div>
                   <div class="content_tours_block_center_date_block order-3">
                     <div class="content_tours_block_center_date_block_img">
                       <span class="icon-plane"></span>
@@ -1187,8 +1197,10 @@
                       </select>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
-                      <input type="text" class="form-control" placeholder="Предложение актуально до"
-                             oninput="this.className = ''" name="duration" required>
+                      <input type="text"
+                             class="form-control" name="calendar" id="datepicker"
+                             autocomplete="off"
+                             name="date-data" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1214,8 +1226,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
+                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>

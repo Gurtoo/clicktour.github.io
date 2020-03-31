@@ -139,8 +139,8 @@
                       </div>
                       <div class="col-md-6 mb-3">
                         <div class="registr_content_left_form_row_input">
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" name="calendar" id="datepicker" autocomplete="off"
+                          <input type="text" class="form-control  start"
+                                 oninput="this.className = ''" name="calendar" autocomplete="off"
                                  name="date-data" placeholder="Дата выдачи лицензии" required>
                           <label class="registr_content_left_form_row_input_datepicker">
                             <span class="icon-calendar"></span>
@@ -632,8 +632,10 @@
                       </select>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
-                      <input type="text" class="form-control" placeholder="Предложение актуально до"
-                             oninput="this.className = ''" name="duration" required>
+                      <input type="text"
+                             class="form-control" name="calendar" id="datepicker"
+                             autocomplete="off"
+                             name="date-data" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -659,8 +661,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
+                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>

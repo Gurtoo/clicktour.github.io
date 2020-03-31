@@ -116,7 +116,7 @@
                     </div>
                     <div class="col-md-10 mb-md-4 mb-2">
                       <div class="add-page_content_group add-page_content_group_top">
-                        <div class="add-page_content_select add-page_content_group_top_select">
+                        <div class="add-page_content_select add-page_content_group_top_select" required>
                           <select class="tours-pages-select js-example-basic-single js-states form-control"
                                   id="inputType">
                             <option hidden></option>
@@ -136,10 +136,7 @@
                         </div>
                         <div class="add-page_content_input add-page_content_group_top_input">
                           <input type="text" class="form-control" placeholder="человек"
-                                 oninput="this.className = ''" name="name" required>
-                          <div class="invalid-feedback">
-                            Заполните поля
-                          </div>
+                                 oninput="this.className = ''" name="name">
                           <div class="add-page_info">
                             <span class="icon-info"></span>
                             <div class="add-page_info_text">
@@ -1232,8 +1229,10 @@
                       </select>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
-                      <input type="text" class="form-control" placeholder="Предложение актуально до"
-                             oninput="this.className = ''" name="duration" required>
+                      <input type="text"
+                             class="form-control" name="calendar" id="datepicker"
+                             autocomplete="off"
+                             name="date-data" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1259,8 +1258,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
+                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>

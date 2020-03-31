@@ -105,25 +105,77 @@
             <form>
               <div class="form-row">
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label for="inputType">Тип тура</label>
+                  <label>Тип тура</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select form-control" multiple id="inputType"
-                            placeholder="Любое">
-                      <option>Горящие туры</option>
-                      <option>Туры в Узбекистан</option>
-                      <option>Совместные путешествия</option>
-                    </select>
+                    <button class="dropdown top_tours_pages_dropdown js-top-tours-type" type="button" data-toggle="dropdown">
+                      <span>Любое</span>
+                    </button>
+                    <ul class="dropdown-menu top_tours_pages_dropdown_menu js-top-tours-type-menu">
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkHotTours"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkHotTours">
+                            Горящие туры
+                          </label>
+                        </div>
+                      </li>
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkUzbTours"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkUzbTours">
+                            Туры в Узбекистан
+                          </label>
+                        </div>
+                      </li>
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkTripTours"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkTripTours">
+                            Совместные путешествия
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label for="inputState">Страна</label>
+                  <label>Страна</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select-towns form-control" multiple
-                            id="inputState">
-                      <option>Австрия</option>
-                      <option>Австралия</option>
-                      <option>Алжир</option>
-                    </select>
+                    <button class="dropdown top_tours_pages_dropdown js-top-tours-town" type="button" data-toggle="dropdown">
+                      <span>Любое</span>
+                    </button>
+                    <ul class="dropdown-menu top_tours_pages_dropdown_menu js-top-tours-town-menu">
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkTopAustria"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkTopAustria">
+                            Австрия
+                          </label>
+                        </div>
+                      </li>
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkTopAustralia"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkTopAustralia">
+                            Австралия
+                          </label>
+                        </div>
+                      </li>
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkTopAljir"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkTopAljir">
+                            Алжир
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
@@ -145,10 +197,23 @@
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
                   <label>Начало тура</label>
-                  <input type="text"
-                         class="content_top_tours_pages_control" name="calendar" id="datepicker"
-                         autocomplete="off"
-                         name="date-data" placeholder="Месяц" required>
+                  <div class="content_top_tours_pages_control_select tours-pages-select-month">
+                    <select class="tours-pages-select js-tours-pages-select-month form-control">
+                      <option hidden></option>
+                      <option>Март 2020 г.</option>
+                      <option>Апрель 2020 г.</option>
+                      <option>Май 2020 г.</option>
+                      <option>Июнь 2020 г.</option>
+                      <option>Июль 2020 г.</option>
+                      <option>Август 2020 г.</option>
+                      <option>Сентябрь 2020 г.</option>
+                      <option>Октябрь 2020 г.</option>
+                      <option>Ноябрь 2020 г.</option>
+                      <option>Декабрь 2020 г.</option>
+                      <option>Январь 2021 г.</option>
+                      <option>Февраль 2021 г.</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="form-row content_top_tours_pages_second">
@@ -216,9 +281,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="tours-pages-info.html">
                       <h3>Весенние каникулы</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Ташкент</p>
@@ -243,6 +308,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-0">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -311,13 +379,13 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="#">
                       <h3>Великая Китайская стена 2020</h3>
                       <div class="content_tours_block_center_title_sale">
                         <span class="icon-discount"></span>
                         <p>-15% скидка на раннее бронирование</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Узбекистан</p>
@@ -342,6 +410,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -371,7 +442,7 @@
                     </div>
                     <div class="content_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                      <span class="icon-group"></span>
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -413,9 +484,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="#">
                       <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Узбекистан</p>
@@ -431,6 +502,9 @@
                     </div>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -460,7 +534,7 @@
                     </div>
                     <div class="content_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                      <span class="icon-group"></span>
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -478,7 +552,7 @@
                       </div>
                     </div>
                     <div class="content_tours_block_right_calculated">
-                      <p>Цена при 2х местном
+                      <p>Цена при </br> 2х местном
                         размещении</p>
                     </div>
                   </div>
@@ -506,9 +580,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="tours-pages-info.html">
                       <h3>Весенние каникулы</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Ташкент</p>
@@ -533,6 +607,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-0">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -578,7 +655,7 @@
                     </div>
                   </div>
                   <div class="content_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                    <a href="tours-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -601,13 +678,13 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="#">
                       <h3>Великая Китайская стена 2020</h3>
                       <div class="content_tours_block_center_title_sale">
                         <span class="icon-discount"></span>
                         <p>-15% скидка на раннее бронирование</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Узбекистан</p>
@@ -632,6 +709,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -661,7 +741,7 @@
                     </div>
                     <div class="content_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                      <span class="icon-group"></span>
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -703,9 +783,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="#">
                       <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Узбекистан</p>
@@ -721,6 +801,9 @@
                     </div>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -750,7 +833,7 @@
                     </div>
                     <div class="content_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                      <span class="icon-group"></span>
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -768,7 +851,7 @@
                       </div>
                     </div>
                     <div class="content_tours_block_right_calculated">
-                      <p>Цена при 2х местном
+                      <p>Цена при </br> 2х местном
                         размещении</p>
                     </div>
                   </div>
@@ -796,9 +879,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="tours-pages-info.html">
                       <h3>Весенние каникулы</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Ташкент</p>
@@ -823,6 +906,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-0">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -868,7 +954,7 @@
                     </div>
                   </div>
                   <div class="content_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                    <a href="tours-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -891,13 +977,13 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="#">
                       <h3>Великая Китайская стена 2020</h3>
                       <div class="content_tours_block_center_title_sale">
                         <span class="icon-discount"></span>
                         <p>-15% скидка на раннее бронирование</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Узбекистан</p>
@@ -922,6 +1008,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -951,7 +1040,7 @@
                     </div>
                     <div class="content_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                      <span class="icon-group"></span>
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -993,9 +1082,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="#">
                       <h3>Экскурсионный тур во Францию «Париж и Нормандия»</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Узбекистан</p>
@@ -1011,6 +1100,9 @@
                     </div>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-3">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -1040,7 +1132,7 @@
                     </div>
                     <div class="content_tours_block_center_date_block order-6">
                       <div class="content_tours_block_center_date_block_img">
-                      <span class="icon-group"></span>
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -1058,7 +1150,7 @@
                       </div>
                     </div>
                     <div class="content_tours_block_right_calculated">
-                      <p>Цена при 2х местном
+                      <p>Цена при </br> 2х местном
                         размещении</p>
                     </div>
                   </div>
@@ -1086,9 +1178,9 @@
                 </div>
                 <div class="content_tours_block_center">
                   <div class="content_tours_block_center_top">
-                    <div class="content_tours_block_center_title">
+                    <a class="content_tours_block_center_title" href="tours-pages-info.html">
                       <h3>Весенние каникулы</h3>
-                    </div>
+                    </a>
                     <div class="content_tours_block_center_navigation">
                       <div class="d-flex">
                         <p>Ташкент</p>
@@ -1113,6 +1205,9 @@
                       активном отдыхе...</p>
                   </div>
                   <div class="content_tours_block_center_date">
+                    <div class="content_tours_block_center_date_mobile">
+                      <h4>Travel System Uzbekistan</h4>
+                    </div>
                     <div class="content_tours_block_center_date_block order-0">
                       <div class="content_tours_block_center_date_block_img">
                         <span class="icon-plane"></span>
@@ -1158,7 +1253,7 @@
                     </div>
                   </div>
                   <div class="content_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                    <a href="tours-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -1588,8 +1683,10 @@
                       </select>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
-                      <input type="text" class="form-control" placeholder="Предложение актуально до"
-                             oninput="this.className = ''" name="duration" required>
+                      <input type="text"
+                             class="form-control" name="calendar" id="datepicker"
+                             autocomplete="off"
+                             name="date-data" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1615,8 +1712,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
+                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>

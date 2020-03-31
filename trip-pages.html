@@ -107,7 +107,8 @@
                 <div class="form-group content_top_tours_pages_group col-md-2">
                   <label for="inputPeople">Ищу</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select form-control" multiple id="inputPeople">
+                    <select class="tours-pages-select js-trip-pages-select form-control" id="inputPeople">
+                      <option hidden></option>
                       <option>Кого угодно</option>
                       <option>Компанию</option>
                     </select>
@@ -116,20 +117,40 @@
                 <div class="form-group content_top_tours_pages_group col-md-2">
                   <label for="inputState">Финансы</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select-money form-control" multiple
+                    <select class="tours-pages-select js-tours-pages-select-money form-control"
                             id="inputState">
+                      <option hidden></option>
                       <option>По договоренности</option>
                       <option>Каждый платит за себя</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
-                  <label for="inputType">Тип</label>
+                  <label>Тип</label>
                   <div class="content_top_tours_pages_control_select">
-                    <select class="tours-pages-select js-tours-pages-select-type form-control" multiple id="inputType">
-                      <option>Любое</option>
-                      <option>Компанию</option>
-                    </select>
+                    <button class="dropdown top_tours_pages_dropdown js-top-tours-type" type="button" data-toggle="dropdown">
+                      <span>Любое</span>
+                    </button>
+                    <ul class="dropdown-menu top_tours_pages_dropdown_menu js-top-tours-type-menu">
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkHotTours"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkHotTours">
+                            Любое
+                          </label>
+                        </div>
+                      </li>
+                      <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                        <div class="form-check custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="checkUzbTours"
+                                 name="customCheckbox">
+                          <label class="custom-control-label" for="checkUzbTours">
+                            Компанию
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
@@ -139,10 +160,23 @@
                 </div>
                 <div class="form-group content_top_tours_pages_group col-md-2">
                   <label>Когда</label>
-                  <input type="text"
-                         class="content_top_tours_pages_control" name="calendar" id="datepicker"
-                         autocomplete="off"
-                         name="date-data" placeholder="Месяц" required>
+                  <div class="content_top_tours_pages_control_select tours-pages-select-month">
+                    <select class="tours-pages-select js-tours-pages-select-month form-control">
+                      <option hidden></option>
+                      <option>Март 2020 г.</option>
+                      <option>Апрель 2020 г.</option>
+                      <option>Май 2020 г.</option>
+                      <option>Июнь 2020 г.</option>
+                      <option>Июль 2020 г.</option>
+                      <option>Август 2020 г.</option>
+                      <option>Сентябрь 2020 г.</option>
+                      <option>Октябрь 2020 г.</option>
+                      <option>Ноябрь 2020 г.</option>
+                      <option>Декабрь 2020 г.</option>
+                      <option>Январь 2021 г.</option>
+                      <option>Февраль 2021 г.</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="form-row content_top_tours_pages_second content_top_trip_pages_second">
@@ -195,20 +229,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="trip-pages-info.html">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Светлана Сорокина, 30 лет</p>
                     </div>
@@ -225,8 +259,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -282,32 +315,32 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="#">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Австрия, </p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Великобритания,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Испания,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Олег Маями, 33 года</p>
                     </div>
@@ -324,8 +357,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -381,20 +413,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="#">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Alexander Belenkiy, 32 года</p>
                     </div>
@@ -411,8 +443,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -468,20 +499,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="trip-pages-info.html">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Светлана Сорокина, 30 лет</p>
                     </div>
@@ -498,8 +529,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -532,7 +562,7 @@
                     <p>Ташкент, Узбекистан</p>
                   </div>
                   <div class="content_joint_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                    <a href="trip-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -555,32 +585,32 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="#">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Австрия, </p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Великобритания,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Испания,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Олег Маями, 33 года</p>
                     </div>
@@ -597,8 +627,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -654,20 +683,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="#">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Alexander Belenkiy, 32 года</p>
                     </div>
@@ -684,8 +713,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -741,20 +769,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="trip-pages-info.html">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Светлана Сорокина, 30 лет</p>
                     </div>
@@ -771,8 +799,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -805,7 +832,7 @@
                     <p>Ташкент, Узбекистан</p>
                   </div>
                   <div class="content_joint_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                    <a href="trip-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -828,32 +855,32 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="#">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Австрия, </p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Великобритания,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Испания,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Олег Маями, 33 года</p>
                     </div>
@@ -870,8 +897,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -927,20 +953,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="#">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Alexander Belenkiy, 32 года</p>
                     </div>
@@ -957,8 +983,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -1014,20 +1039,20 @@
                 </div>
                 <div class="content_joint_tours_block_center">
                   <div class="content_joint_tours_block_center_top">
-                    <div class="content_joint_tours_block_center_navigation">
-                      <div class="d-flex">
+                    <a class="content_joint_tours_block_center_navigation" href="trip-pages-info.html">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Китай,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>Малайзия,</p>
                       </div>
-                      <div class="d-flex">
+                      <div class="d-flex align-items-center">
                         <span class="icon-location"></span>
                         <p>ОАЭ</p>
                       </div>
-                    </div>
+                    </a>
                     <div class="content_joint_tours_block_center_who">
                       <p>Светлана Сорокина, 30 лет</p>
                     </div>
@@ -1044,8 +1069,7 @@
                     </div>
                     <div class="content_joint_tours_block_center_date_block order-4">
                       <div class="content_tours_block_center_date_block_img">
-                        <img src="./img/icon/quantity-icon-min-puprle.png" alt="plane-icon-min">
-                        <img src="./img/icon/quantity-icon-min-orange.png" alt="plane-icon-min">
+                        <span class="icon-group"></span>
                         <div class="content_tours_block_center_date_block_popup">
                           <p>Групповой тур</p>
                         </div>
@@ -1078,7 +1102,7 @@
                     <p>Ташкент, Узбекистан</p>
                   </div>
                   <div class="content_joint_tours_block_right_btn">
-                    <a href="#" class="btn btn-gray">Подробнее</a>
+                    <a href="trip-pages-info.html" class="btn btn-gray">Подробнее</a>
                   </div>
                 </div>
               </div>
@@ -1508,8 +1532,10 @@
                       </select>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
-                      <input type="text" class="form-control" placeholder="Предложение актуально до"
-                             oninput="this.className = ''" name="duration" required>
+                      <input type="text"
+                             class="form-control" name="calendar" id="datepicker"
+                             autocomplete="off"
+                             name="date-data" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1535,8 +1561,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
+                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>

@@ -124,6 +124,7 @@
               <div class="profile_content_left">
                 <div class="profile_content_left_top">
                   <div class="profile_content_left_top_img">
+                    <input type="file">
                     <span class="icon-photo_image"></span>
                   </div>
                   <div class="profile_content_left_top_name">
@@ -990,8 +991,8 @@
                               </div>
                               <div class="profile_setting_contact_right_input">
                                 <div class="registr_content_left_form_row_input">
-                                  <input type="text"
-                                         oninput="this.className = ''" name="calendar" id="datepicker"
+                                  <input type="text" class="start"
+                                         oninput="this.className = ''" name="calendar"
                                          autocomplete="off"
                                          name="date-data" value="17.03.2018" required>
                                   <label class="registr_content_left_form_row_input_datepicker">
@@ -1583,8 +1584,10 @@
                       </select>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
-                      <input type="text" class="form-control" placeholder="Предложение актуально до"
-                             oninput="this.className = ''" name="duration" required>
+                      <input type="text"
+                             class="form-control" name="calendar" id="datepicker"
+                             autocomplete="off"
+                             name="date-data" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1610,8 +1613,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
+                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
