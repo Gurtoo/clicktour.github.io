@@ -26435,35 +26435,47 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     event.stopPropagation();
   });
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]").each(function() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).change(function() {
-      var line = [];
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]:checked").each(function() {
-        line.push(jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text())
-      });
-      let str = line.join(',');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown").text(str);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]:checked");
+    let line = [];
+    checkbox.each(function(i) {
+      let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
+      if(i >= 2 && i+1 < checkbox.length){
+        line.push(text + '...');
+        return false;
+      }
+      line.push(text);
     });
+    line.join(',');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown").text(line);
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]").each(function() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).change(function() {
-      var line = [];
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]:checked").each(function() {
-        line.push(jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text())
-      });
-      let str = line.join(',');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type").text(str);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]:checked");
+    let line = [];
+    checkbox.each(function(i) {
+      let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
+      if(i >= 0 && i+1 < checkbox.length){
+        line.push(text + '...');
+        return false;
+      }
+      line.push(text);
     });
+    line.join(',');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type").text(line);
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town-menu input[type=checkbox]").each(function() {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).change(function() {
-      var line = [];
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town-menu input[type=checkbox]:checked").each(function() {
-        line.push(jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text())
-      });
-      let str = line.join(',');
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town").text(str);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town-menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town-menu input[type=checkbox]:checked");
+    let line = [];
+    checkbox.each(function(i) {
+      let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
+      if(i >= 1 && i+1 < checkbox.length){
+        line.push(text + '...');
+        return false;
+      }
+      line.push(text);
     });
+    line.join(',');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town").text(line);
   });
 
   /* END Dropdown Checkbox */

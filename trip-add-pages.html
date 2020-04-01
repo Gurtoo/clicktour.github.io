@@ -118,9 +118,9 @@
                       <div class="row align-items-center">
                         <div class="col-md-12 mb-4">
                           <div class="add-page_content_group">
-                            <div class="add-page_content_group_select add-page_content_select">
+                            <div class="add-page_content_group_select add-page_content_select add-page_content_input">
                               <select class="tours-pages-select js-registr-pages-select-sex js-states form-control"
-                                      id="inputPeople">
+                                      id="inputPeople" required>
                                 <option hidden></option>
                                 <option>Мужчина</option>
                                 <option>Женщина</option>
@@ -131,13 +131,16 @@
                                 <label for="inputSomeOne">Ищу</label>
                               </div>
                             </div>
-                            <div class="add-page_content_group_select add-page_content_select">
+                            <div class="add-page_content_group_select add-page_content_select add-page_content_input">
                               <select class="tours-pages-select js-example-basic-single js-states form-control"
-                                      id="inputSomeOne">
+                                      id="inputSomeOne" required>
                                 <option hidden></option>
                                 <option>Кого-нибудь</option>
                                 <option>Всех</option>
                               </select>
+                              <div class="invalid-feedback">
+                                Выберите один пункт
+                              </div>
                               <div class="add-page_info">
                                 <span class="icon-info"></span>
                                 <div class="add-page_info_text">
@@ -160,13 +163,16 @@
                       </div>
                     </div>
                     <div class="col-md-10 mb-4">
-                      <div class="add-page_content_select">
+                      <div class="add-page_content_select add-page_content_input">
                         <select class="tours-pages-select js-example-basic-single js-states form-control"
-                                id="inputMoney">
+                                id="inputMoney" required>
                           <option hidden></option>
                           <option>Финансы по договоренности</option>
                           <option>Пополам</option>
                         </select>
+                        <div class="invalid-feedback">
+                          Выберите один пункт
+                        </div>
                         <div class="add-page_info">
                           <span class="icon-info"></span>
                           <div class="add-page_info_text">
@@ -419,13 +425,16 @@
                       </div>
                     </div>
                     <div class="col-md-10 mb-4">
-                      <div class="add-page_content_select">
-                        <select class="tours-pages-select js-add-pages-select-towns js-states form-control">
+                      <div class="add-page_content_select add-page_content_input">
+                        <select class="tours-pages-select js-add-pages-select-towns js-states form-control" required>
                           <option hidden></option>
                           <option>Австрия</option>
                           <option>Автралия</option>
                           <option>Алжир</option>
                         </select>
+                        <div class="invalid-feedback">
+                          Выберите один пункт
+                        </div>
                         <div class="add-page_info">
                           <span class="icon-info"></span>
                           <div class="add-page_info_text">
@@ -1066,12 +1075,15 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control">
-                    <select class="tours-pages-select js-individ-select-where js-states form-control">
+                    <select class="tours-pages-select js-individ-select-where js-states form-control" required>
                       <option hidden></option>
                       <option>Горящие туры</option>
                       <option>Туры в Узбекистан</option>
                       <option>Совместные путешествия</option>
                     </select>
+                    <div class="invalid-feedback">
+                      Выберите один пункт
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -1088,12 +1100,15 @@
                 <div class="col-md-6 mb-3">
                   <div class="d-flex flex-column justify-content-between h-100">
                     <div class="send_message_individ_body_control">
-                      <select class="tours-pages-select js-individ-select-money js-states form-control">
+                      <select class="tours-pages-select js-individ-select-money js-states form-control" required>
                         <option hidden></option>
                         <option>Горящие туры</option>
                         <option>Туры в Узбекистан</option>
                         <option>Совместные путешествия</option>
                       </select>
+                      <div class="invalid-feedback">
+                        Выберите один пункт
+                      </div>
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
                       <input type="text"
@@ -1115,12 +1130,15 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control">
-                    <select class="tours-pages-select js-individ-select-call js-states form-control">
+                    <select class="tours-pages-select js-individ-select-call js-states form-control" required>
                       <option hidden></option>
                       <option>Горящие туры</option>
                       <option>Туры в Узбекистан</option>
                       <option>Совместные путешествия</option>
                     </select>
+                    <div class="invalid-feedback">
+                      Выберите один пункт
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
