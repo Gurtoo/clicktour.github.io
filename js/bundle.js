@@ -26289,6 +26289,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     placeholder: "Любое",
     minimumResultsForSearch: -1,
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-trip-pages-select-lang").select2({
+    placeholder: "Выберите языки, которыми владеете",
+    minimumResultsForSearch: -1,
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-tours-pages-select-money").select2({
     placeholder: "Любое",
     minimumResultsForSearch: -1,
