@@ -26484,6 +26484,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   /* END Dropdown Checkbox */
 
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('input', '[data-action="text"]', function () {
+    var $item = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this),
+    value = $item.val();
+    if (value) {
+      $item.addClass("active_input");
+    } else {
+      $item.removeClass("active_input");
+    }
+  });
 });
 var currentTab = 0;
 showTab(currentTab);
