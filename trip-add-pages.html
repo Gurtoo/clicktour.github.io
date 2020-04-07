@@ -124,6 +124,9 @@
                                 <option hidden></option>
                                 <option>Мужчина</option>
                                 <option>Женщина</option>
+                                <option>Компания</option>
+                                <option>Пара или семья</option>
+                                <option>Родитель с ребенком</option>
                               </select>
                             </div>
                             <div class="add-page_content_group_text">
@@ -136,7 +139,11 @@
                                       id="inputSomeOne" required>
                                 <option hidden></option>
                                 <option>Кого-нибудь</option>
-                                <option>Всех</option>
+                                <option>Мужчину</option>
+                                <option>Женщину</option>
+                                <option>Компанию</option>
+                                <option>Пару или семью</option>
+                                <option>Родителя с ребенком</option>
                               </select>
                               <div class="invalid-feedback">
                                 Выберите один пункт
@@ -167,8 +174,9 @@
                         <select class="tours-pages-select js-example-basic-single js-states form-control"
                                 id="inputMoney" required>
                           <option hidden></option>
-                          <option>Финансы по договоренности</option>
-                          <option>Пополам</option>
+                          <option>Каждый платит за себя</option>
+                          <option>Предпочитаю спонсорство</option>
+                          <option>По договоренности</option>
                         </select>
                         <div class="invalid-feedback">
                           Выберите один пункт
@@ -389,17 +397,20 @@
                       <div class="row align-items-center">
                         <div class="col-md-12 mb-4">
                           <div class="add-page_content_group_start">
-                            <div class="add-page_content_group_start_select add-page_content_select">
-                              <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
+                            <div class="add-page_content_group_start_select add-page_content_select add-page_content_input">
+                              <select class="tours-pages-select js-registr-pages-select-towns js-states form-control" required>
                                 <option hidden></option>
                                 <option>Австрия</option>
                                 <option>Автралия</option>
                                 <option>Алжир</option>
                               </select>
+                              <div class="invalid-feedback">
+                                Выберите один пункт
+                              </div>
                             </div>
                             <div class="add-page_content_input add-page_content_group_start_input">
                               <input type="text" class="form-control" placeholder="Город"
-                                     oninput="this.className = ''" name="name" required>
+                                      name="quantity" required>
                               <div class="invalid-feedback">
                                 Заполните поля
                               </div>
@@ -425,13 +436,41 @@
                       </div>
                     </div>
                     <div class="col-md-10 mb-4">
-                      <div class="add-page_content_select add-page_content_input">
-                        <select class="tours-pages-select js-add-pages-select-towns js-states form-control" required>
-                          <option hidden></option>
-                          <option>Австрия</option>
-                          <option>Автралия</option>
-                          <option>Алжир</option>
-                        </select>
+                      <div class="registr_content_left_form_row_input">
+                        <div class="content_top_tours_pages_control_select">
+                          <button class="dropdown send_message_individ_body_dropdown js-town-add" type="button" data-toggle="dropdown">
+                            <span>Страны</span>
+                          </button>
+                          <ul class="dropdown-menu top_tours_pages_dropdown_menu js-town-add-menu">
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkTopAustria"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkTopAustria">
+                                  Австрия
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkTopAustralia"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkTopAustralia">
+                                  Алжир
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkTopAljir"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkTopAljir">
+                                  Автралия
+                                </label>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                         <div class="invalid-feedback">
                           Выберите один пункт
                         </div>
@@ -456,7 +495,7 @@
                     <div class="col-md-10 mb-4">
                       <div class="add-page_content_input">
                         <input type="text" class="form-control" placeholder="Напишите куда вы хотите поехать"
-                               oninput="this.className = ''" name="nameTours" required>
+                                name="nameTours" required>
                         <div class="invalid-feedback">
                           Заполните поля
                         </div>
@@ -481,8 +520,9 @@
                     <div class="col-md-10 mb-4">
                       <div class="add-page_content_group add-page_content_group_date">
                         <div class="add-page_content_input add-page_content_group_date_input">
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" name="nameTours" required>
+                          <input type="text"
+                                 class="form-control start" name="quantityNum"
+                                 autocomplete="off" required>
                         </div>
                         <div class="add-page_content_group_date_info">
                           <div class="add-page_content_header">
@@ -490,8 +530,8 @@
                           </div>
                         </div>
                         <div class="add-page_content_input add-page_content_group_date_input">
-                          <input type="text" class="form-control"
-                                 oninput="this.className = ''" name="nameTours" required>
+                          <input type="number" class="form-control"
+                                  name="nameTours" required>
                           <div class="invalid-feedback">
                             Заполните поля
                           </div>
@@ -519,12 +559,89 @@
                       </div>
                     </div>
                     <div class="col-md-10 mb-4">
-                      <div class="add-page_content_select">
-                        <select class="tours-pages-select js-trip-pages-select-lang js-states form-control">
-                          <option hidden></option>
-                          <option>Английский</option>
-                          <option>Русский</option>
-                        </select>
+                      <div class="registr_content_left_form_row_input">
+                        <div class="content_top_tours_pages_control_select">
+                          <button class="dropdown send_message_individ_body_dropdown js-lang-add" type="button" data-toggle="dropdown">
+                            <span>Выберите языки, которыми владеете</span>
+                          </button>
+                          <ul class="dropdown-menu top_tours_pages_dropdown_menu js-lang-add-menu">
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkEng"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkEng">
+                                  English
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkItal"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkItal">
+                                  Italiano
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkDeut"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkDeut">
+                                  Deutsch
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkPortug"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkPortug">
+                                  Portugues
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkEspan"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkEspan">
+                                  Espanol
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkRuss"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkRuss">
+                                  Русский
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkFrench"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkFrench">
+                                  Francais
+                                </label>
+                              </div>
+                            </li>
+                            <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                              <div class="form-check custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkUkr"
+                                       name="customCheckbox">
+                                <label class="custom-control-label" for="checkUkr">
+                                  Украинска
+                                </label>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="invalid-feedback">
+                          Выберите один пункт
+                        </div>
                         <div class="add-page_info">
                           <span class="icon-info"></span>
                           <div class="add-page_info_text">
@@ -855,13 +972,12 @@
           <p>Отправить запрос на рассчет стоимости индивидуального тура</p>
         </div>
         <div class="modal-body send_message_individ_body">
-          <form id="regForm" class="needs-validation" action="/" novalidate>
-            <div class="needs-validation send_message_individ_body_form" novalidate>
+          <form class="needs-validation" novalidate>
+            <div class="send_message_individ_body_form">
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Ваше ФИО"
-                           oninput="this.className = ''" name="name" required>
+                    <input type="text" class="form-control" placeholder="Ваше ФИО" name="quantity" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -869,8 +985,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Ваш E-Mail"
-                           oninput="this.className = ''" name="email" required>
+                    <input type="email" class="form-control" placeholder="Ваш E-Mail"
+                           name="email" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -880,9 +996,13 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-12 mb-3">
                   <div class="send_message_individ_body_control">
-                    <button class="dropdown send_message_individ_body_dropdown" type="button" data-toggle="dropdown">
-                      Цель поездки
+                    <button class="dropdown send_message_individ_body_dropdown" type="button"
+                            data-toggle="dropdown">
+                      <span>Цель поездки </span>
                     </button>
+                    <div class="invalid-feedback">
+                      Заполните поля
+                    </div>
                     <ul class="dropdown-menu send_message_individ_body_dropdown_menu">
                       <li class="dropdown-input send_message_individ_body_dropdown_menu_input">
                         <div class="form-check custom-control custom-checkbox">
@@ -1075,11 +1195,15 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control">
-                    <select class="tours-pages-select js-individ-select-where js-states form-control" required>
+                    <select class="tours-pages-select js-individ-select-where js-states form-control" multiple required>
                       <option hidden></option>
-                      <option>Горящие туры</option>
-                      <option>Туры в Узбекистан</option>
-                      <option>Совместные путешествия</option>
+                      <option>Абхазия</option>
+                      <option>Австралия</option>
+                      <option>Австрия</option>
+                      <option>Азербайджан</option>
+                      <option>Албания</option>
+                      <option>Алжир</option>
+                      <option>Ангилья</option>
                     </select>
                     <div class="invalid-feedback">
                       Выберите один пункт
@@ -1088,8 +1212,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Длительность путешествия"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="number" class="form-control" placeholder="Длительность путешествия"
+                           name="duration" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -1102,9 +1226,10 @@
                     <div class="send_message_individ_body_control">
                       <select class="tours-pages-select js-individ-select-money js-states form-control" required>
                         <option hidden></option>
-                        <option>Горящие туры</option>
-                        <option>Туры в Узбекистан</option>
-                        <option>Совместные путешествия</option>
+                        <option>Эконом</option>
+                        <option>Стандарт</option>
+                        <option>Бизнес</option>
+                        <option>Люкс</option>
                       </select>
                       <div class="invalid-feedback">
                         Выберите один пункт
@@ -1112,9 +1237,8 @@
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
                       <input type="text"
-                             class="form-control" name="calendar" id="datepicker"
-                             autocomplete="off"
-                             name="date-data" placeholder="Предложение актуально до" required>
+                             class="form-control" name="quantityNum" id="datepicker"
+                             autocomplete="off" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1129,12 +1253,12 @@
               </div>
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
-                  <div class="send_message_individ_body_control">
+                  <div class="send_message_individ_body_control js-individ-disabled-active">
                     <select class="tours-pages-select js-individ-select-call js-states form-control" required>
                       <option hidden></option>
-                      <option>Горящие туры</option>
-                      <option>Туры в Узбекистан</option>
-                      <option>Совместные путешествия</option>
+                      <option>Звонок</option>
+                      <option>Телеграм</option>
+                      <option>Email</option>
                     </select>
                     <div class="invalid-feedback">
                       Выберите один пункт
@@ -1144,7 +1268,7 @@
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
                     <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
+                           name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -1156,7 +1280,6 @@
                   и туроператорам сушествующих на базе CLICKTOUR.UZ</p>
                 <button class="btn btn-orange" type="submit">Отправить</button>
               </div>
-              <span class="step"></span>
             </div>
           </form>
         </div>

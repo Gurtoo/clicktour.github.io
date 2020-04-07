@@ -25935,20 +25935,6 @@ S2.define('jquery.select2',[
 
 /***/ }),
 
-/***/ "./node_modules/webpack/buildin/amd-options.js":
-/*!****************************************!*\
-  !*** (webpack)/buildin/amd-options.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
-module.exports = __webpack_amd_options__;
-
-/* WEBPACK VAR INJECTION */}.call(this, {}))
-
-/***/ }),
-
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -25989,7 +25975,7 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);
@@ -26043,7 +26029,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").addClass("modal-open");
-  })
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header_navbar_collapse_absolute, .header_navbar_collapse_nav_close_btn").click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".navbar-toggler").click();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("modal-open");
@@ -26081,16 +26067,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   });
   /* END INPUT REGISTR */
 
-  /* INPUT PHONE */
-  // $("[name='client-phone']").mask("+998 (zz) zzz-zz-zz");
-
-  /* END INPUT PHONE */
-
   /* Popup-carousel Start */
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".image").click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeIn(300);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").addClass("modal-open");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel_bg").click(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popup-carousel").fadeOut(300);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("modal-open");
     });
   });
   /* END Popup-carousel */
@@ -26100,191 +26083,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     placeholder: "Выберите тип",
     minimumResultsForSearch: -1,
   });
-
-  jQuery(function ($) {
-    $.fn.select2.amd.require([
-      'select2/selection/single',
-      'select2/selection/placeholder',
-      'select2/selection/allowClear',
-      'select2/dropdown',
-      'select2/dropdown/search',
-      'select2/dropdown/attachBody',
-      'select2/utils'
-    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
-
-      var SelectionAdapter = Utils.Decorate(
-        SingleSelection,
-        Placeholder
-      );
-
-      SelectionAdapter = Utils.Decorate(
-        SelectionAdapter,
-        AllowClear
-      );
-
-      var DropdownAdapter = Utils.Decorate(
-        Utils.Decorate(
-          Dropdown,
-          DropdownSearch
-        ),
-        AttachBody
-      );
-
-      var base_element = $('.js-tours-pages-select-towns')
-      $(base_element).select2({
-        placeholder: 'Любое',
-        selectionAdapter: SelectionAdapter,
-        dropdownAdapter: DropdownAdapter,
-        allowClear: true,
-        templateResult: function (data) {
-
-          if (!data.id) {
-            return data.text;
-          }
-
-          var $res = $('<div></div>');
-
-          $res.text(data.text);
-          $res.addClass('wrap');
-
-          return $res;
-        },
-        templateSelection: function (data) {
-          if (!data.id) {
-            return data.text;
-          }
-          var selected = ($(base_element).val() || []).length;
-          var total = $('option', $(base_element)).length;
-          return "Выбранно " + selected + " из " + total;
-        }
-      })
-
-    });
-
-  });
-  jQuery(function ($) {
-    $.fn.select2.amd.require([
-      'select2/selection/single',
-      'select2/selection/placeholder',
-      'select2/selection/allowClear',
-      'select2/dropdown',
-      'select2/dropdown/search',
-      'select2/dropdown/attachBody',
-      'select2/utils'
-    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
-
-      var SelectionAdapter = Utils.Decorate(
-        SingleSelection,
-        Placeholder
-      );
-
-      SelectionAdapter = Utils.Decorate(
-        SelectionAdapter,
-        AllowClear
-      );
-
-      var DropdownAdapter = Utils.Decorate(
-        Utils.Decorate(
-          Dropdown,
-          DropdownSearch
-        ),
-        AttachBody
-      );
-
-      var base_element = $('.js-add-pages-select-towns')
-      $(base_element).select2({
-        placeholder: 'Выберите страну',
-        selectionAdapter: SelectionAdapter,
-        dropdownAdapter: DropdownAdapter,
-        allowClear: true,
-        templateResult: function (data) {
-
-          if (!data.id) {
-            return data.text;
-          }
-
-          var $res = $('<div></div>');
-
-          $res.text(data.text);
-          $res.addClass('wrap');
-
-          return $res;
-        },
-        templateSelection: function (data) {
-          if (!data.id) {
-            return data.text;
-          }
-          var selected = ($(base_element).val() || []).length;
-          var total = $('option', $(base_element)).length;
-          return "Выбранно " + selected + " из " + total;
-        }
-      })
-
-    });
-
-  });
-  jQuery(function ($) {
-    $.fn.select2.amd.require([
-      'select2/selection/single',
-      'select2/selection/placeholder',
-      'select2/selection/allowClear',
-      'select2/dropdown',
-      'select2/dropdown/search',
-      'select2/dropdown/attachBody',
-      'select2/utils'
-    ], function (SingleSelection, Placeholder, AllowClear, Dropdown, DropdownSearch, AttachBody, Utils) {
-
-      var SelectionAdapter = Utils.Decorate(
-        SingleSelection,
-        Placeholder
-      );
-
-      SelectionAdapter = Utils.Decorate(
-        SelectionAdapter,
-        AllowClear
-      );
-
-      var DropdownAdapter = Utils.Decorate(
-        Utils.Decorate(
-          Dropdown,
-          DropdownSearch
-        ),
-        AttachBody
-      );
-
-      var base_element = $('.js-tours-pages-select-type')
-      $(base_element).select2({
-        placeholder: 'Любое',
-        selectionAdapter: SelectionAdapter,
-        dropdownAdapter: DropdownAdapter,
-        allowClear: true,
-        templateResult: function (data) {
-
-          if (!data.id) {
-            return data.text;
-          }
-
-          var $res = $('<div></div>');
-
-          $res.text(data.text);
-          $res.addClass('wrap');
-
-          return $res;
-        },
-        templateSelection: function (data) {
-          if (!data.id) {
-            return data.text;
-          }
-          var selected = ($(base_element).val() || []).length;
-          var total = $('option', $(base_element)).length;
-          return "Выбранно " + selected + " из " + total;
-        }
-      })
-
-    });
-
-  });
-
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-trip-pages-select").select2({
     placeholder: "Любое",
     minimumResultsForSearch: -1,
@@ -26309,8 +26107,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     placeholder: "Пол",
     minimumResultsForSearch: -1,
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-view").select2({
-    placeholder: "Вид деятельности в лицензии",
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-firm").select2({
+    placeholder: "Организационно-правовая форма",
     minimumResultsForSearch: -1,
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-money").select2({
@@ -26322,7 +26120,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-where").select2({
     placeholder: "Направление",
-    minimumResultsForSearch: -1,
+    maximumSelectionSize: 7,
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-money").select2({
     placeholder: "Фин. возможности",
@@ -26333,16 +26131,28 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     minimumResultsForSearch: -1,
   });
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_control").on("change", function () {
+  /* END Select2 */
 
-    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__rendered').is('#title')) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".text-box").attr('disabled');
-    } else {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".text-box").removeAttr('disabled', true);
+  /* Start Disable call */
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-disabled-active").on("change", function () {
+    let titleSelectDisable = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__rendered');
+    let titleSelectDisableCall = titleSelectDisable.is('[title="Звонок"]');
+    let titleSelectDisableTg = titleSelectDisable.is('[title="Телеграм"]');
+    let titleSelectDisableEmail = titleSelectDisable.is('[title="Email"]');
+    let removeAttrDisable = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".text-box").removeAttr('disabled', true);
+    if (titleSelectDisableCall) {
+      removeAttrDisable.attr("placeholder", "Введите телефон номер");
+    }
+    if (titleSelectDisableTg) {
+      removeAttrDisable.attr("placeholder", "Введите телеграм номер");
+    }
+    if (titleSelectDisableEmail) {
+      removeAttrDisable.attr("placeholder", "Введите ваш E-mail");
     }
   });
 
-  /* END Select2 */
+  /* END Disable call */
 
   /* Download file Start */
 
@@ -26439,6 +26249,36 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     event.stopPropagation();
   });
 
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-add-menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-add-menu input[type=checkbox]:checked");
+    let line = [];
+    checkbox.each(function(i) {
+      let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
+      if(i >= 2 && i+1 < checkbox.length){
+        line.push(text + '...');
+        return false;
+      }
+      line.push(text);
+    });
+    line.join(',');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-add").text(line);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-lang-add-menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-lang-add-menu input[type=checkbox]:checked");
+    let line = [];
+    checkbox.each(function(i) {
+      let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
+      if(i >= 2 && i+1 < checkbox.length){
+        line.push(text + '...');
+        return false;
+      }
+      line.push(text);
+    });
+    line.join(',');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-lang-add").text(line);
+  });
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]").change(function () {
     let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]:checked");
     let line = [];
@@ -26453,6 +26293,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     line.join(',');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown").text(line);
   });
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]").change(function () {
     let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]:checked");
     let line = [];
@@ -26467,6 +26308,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     line.join(',');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type").text(line);
   });
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town-menu input[type=checkbox]").change(function () {
     let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town-menu input[type=checkbox]:checked");
     let line = [];
@@ -26484,8 +26326,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   /* END Dropdown Checkbox */
 
+  /* Start Validate Social add-pages */
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('input', '[data-action="text"]', function () {
-    var $item = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this),
+    let $item = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this),
     value = $item.val();
     if (value) {
       $item.addClass("active_input");
@@ -26493,251 +26337,43 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       $item.removeClass("active_input");
     }
   });
-});
-var currentTab = 0;
-showTab(currentTab);
 
-function showTab(n) {
-  var x = document.getElementsByClassName("needs-validation");
-  x[n].style.display = "block";
-  fixStepIndicator(n)
-}
+  /* End Validate Social add-pages */
 
-function nextPrev(n) {
-  var x = document.getElementsByClassName("needs-validation");
-  if (n == 1 && !validateForm()) return false;
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
-  if (currentTab >= x.length) {
-    document.getElementById("regForm").submit();
-    return false;
-  }
-  showTab(currentTab);
-}
+  /* Start Disable number input */
 
-function validateForm() {
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("needs-validation");
-  y = x[currentTab].getElementsByTagName("input");
-  for (i = 0; i < y.length; i++) {
-    if (y[i].value == "") {
-      y[i].className += " invalid";
-      valid = false;
-    }
-  }
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid;
-}
-
-function fixStepIndicator(n) {
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
-  }
-  x[n].className += " active";
-}
-
-!function (factory) {
-  "function" == typeof define && __webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js") ? define(["jquery"], factory) : factory("object" == typeof exports ? __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js") : jQuery);
-}(function ($) {
-  var caretTimeoutId, ua = navigator.userAgent, iPhone = /iphone/i.test(ua), chrome = /chrome/i.test(ua),
-    android = /android/i.test(ua);
-  $.mask = {
-    definitions: {
-      "z": "[0-9]",
-      a: "[A-Za-z]",
-      "*": "[A-Za-z0-9]"
-    },
-    autoclear: !0,
-    dataName: "rawMaskFn",
-    placeholder: "_"
-  }, $.fn.extend({
-    caret: function (begin, end) {
-      var range;
-      if (0 !== this.length && !this.is(":hidden")) return "number" == typeof begin ? (end = "number" == typeof end ? end : begin,
-        this.each(function () {
-          this.setSelectionRange ? this.setSelectionRange(begin, end) : this.createTextRange && (range = this.createTextRange(),
-            range.collapse(!0), range.moveEnd("character", end), range.moveStart("character", begin),
-            range.select());
-        })) : (this[0].setSelectionRange ? (begin = this[0].selectionStart, end = this[0].selectionEnd) : document.selection && document.selection.createRange && (range = document.selection.createRange(),
-        begin = 0 - range.duplicate().moveStart("character", -1e5), end = begin + range.text.length),
-        {
-          begin: begin,
-          end: end
-        });
-    },
-    unmask: function () {
-      return this.trigger("unmask");
-    },
-    mask: function (mask, settings) {
-      var input, defs, tests, partialPosition, firstNonMaskPos, lastRequiredNonMaskPos, len, oldVal;
-      if (!mask && this.length > 0) {
-        input = $(this[0]);
-        var fn = input.data($.mask.dataName);
-        return fn ? fn() : void 0;
-      }
-      return settings = $.extend({
-        autoclear: $.mask.autoclear,
-        placeholder: $.mask.placeholder,
-        completed: null
-      }, settings), defs = $.mask.definitions, tests = [], partialPosition = len = mask.length,
-        firstNonMaskPos = null, $.each(mask.split(""), function (i, c) {
-        "?" == c ? (len--, partialPosition = i) : defs[c] ? (tests.push(new RegExp(defs[c])),
-        null === firstNonMaskPos && (firstNonMaskPos = tests.length - 1), partialPosition > i && (lastRequiredNonMaskPos = tests.length - 1)) : tests.push(null);
-      }), this.trigger("unmask").each(function () {
-        function tryFireCompleted() {
-          if (settings.completed) {
-            for (var i = firstNonMaskPos; lastRequiredNonMaskPos >= i; i++) if (tests[i] && buffer[i] === getPlaceholder(i)) return;
-            settings.completed.call(input);
-          }
-        }
-
-        function getPlaceholder(i) {
-          return settings.placeholder.charAt(i < settings.placeholder.length ? i : 0);
-        }
-
-        function seekNext(pos) {
-          for (; ++pos < len && !tests[pos];) ;
-          return pos;
-        }
-
-        function seekPrev(pos) {
-          for (; --pos >= 0 && !tests[pos];) ;
-          return pos;
-        }
-
-        function shiftL(begin, end) {
-          var i, j;
-          if (!(0 > begin)) {
-            for (i = begin, j = seekNext(end); len > i; i++) if (tests[i]) {
-              if (!(len > j && tests[i].test(buffer[j]))) break;
-              buffer[i] = buffer[j], buffer[j] = getPlaceholder(j), j = seekNext(j);
-            }
-            writeBuffer(), input.caret(Math.max(firstNonMaskPos, begin));
-          }
-        }
-
-        function shiftR(pos) {
-          var i, c, j, t;
-          for (i = pos, c = getPlaceholder(pos); len > i; i++) if (tests[i]) {
-            if (j = seekNext(i), t = buffer[i], buffer[i] = c, !(len > j && tests[j].test(t))) break;
-            c = t;
-          }
-        }
-
-        function androidInputEvent() {
-          var curVal = input.val(), pos = input.caret();
-          if (oldVal && oldVal.length && oldVal.length > curVal.length) {
-            for (checkVal(!0); pos.begin > 0 && !tests[pos.begin - 1];) pos.begin--;
-            if (0 === pos.begin) for (; pos.begin < firstNonMaskPos && !tests[pos.begin];) pos.begin++;
-            input.caret(pos.begin, pos.begin);
-          } else {
-            for (checkVal(!0); pos.begin < len && !tests[pos.begin];) pos.begin++;
-            input.caret(pos.begin, pos.begin);
-          }
-          tryFireCompleted();
-        }
-
-        function blurEvent() {
-          checkVal(), input.val() != focusText && input.change();
-        }
-
-        function keydownEvent(e) {
-          if (!input.prop("readonly")) {
-            var pos, begin, end, k = e.which || e.keyCode;
-            oldVal = input.val(), 8 === k || 46 === k || iPhone && 127 === k ? (pos = input.caret(),
-              begin = pos.begin, end = pos.end, end - begin === 0 && (begin = 46 !== k ? seekPrev(begin) : end = seekNext(begin - 1),
-              end = 46 === k ? seekNext(end) : end), clearBuffer(begin, end), shiftL(begin, end - 1),
-              e.preventDefault()) : 13 === k ? blurEvent.call(this, e) : 27 === k && (input.val(focusText),
-              input.caret(0, checkVal()), e.preventDefault());
-          }
-        }
-
-        function keypressEvent(e) {
-          if (!input.prop("readonly")) {
-            var p, c, next, k = e.which || e.keyCode, pos = input.caret();
-            if (!(e.ctrlKey || e.altKey || e.metaKey || 32 > k) && k && 13 !== k) {
-              if (pos.end - pos.begin !== 0 && (clearBuffer(pos.begin, pos.end), shiftL(pos.begin, pos.end - 1)),
-                p = seekNext(pos.begin - 1), len > p && (c = String.fromCharCode(k), tests[p].test(c))) {
-                if (shiftR(p), buffer[p] = c, writeBuffer(), next = seekNext(p), android) {
-                  var proxy = function () {
-                    $.proxy($.fn.caret, input, next)();
-                  };
-                  setTimeout(proxy, 0);
-                } else input.caret(next);
-                pos.begin <= lastRequiredNonMaskPos && tryFireCompleted();
-              }
-              e.preventDefault();
-            }
-          }
-        }
-
-        function clearBuffer(start, end) {
-          var i;
-          for (i = start; end > i && len > i; i++) tests[i] && (buffer[i] = getPlaceholder(i));
-        }
-
-        function writeBuffer() {
-          input.val(buffer.join(""));
-        }
-
-        function checkVal(allow) {
-          var i, c, pos, test = input.val(), lastMatch = -1;
-          for (i = 0, pos = 0; len > i; i++) if (tests[i]) {
-            for (buffer[i] = getPlaceholder(i); pos++ < test.length;) if (c = test.charAt(pos - 1),
-              tests[i].test(c)) {
-              buffer[i] = c, lastMatch = i;
-              break;
-            }
-            if (pos > test.length) {
-              clearBuffer(i + 1, len);
-              break;
-            }
-          } else buffer[i] === test.charAt(pos) && pos++, partialPosition > i && (lastMatch = i);
-          return allow ? writeBuffer() : partialPosition > lastMatch + 1 ? settings.autoclear || buffer.join("") === defaultBuffer ? (input.val() && input.val(""),
-            clearBuffer(0, len)) : writeBuffer() : (writeBuffer(), input.val(input.val().substring(0, lastMatch + 1))),
-            partialPosition ? i : firstNonMaskPos;
-        }
-
-        var input = $(this), buffer = $.map(mask.split(""), function (c, i) {
-          return "?" != c ? defs[c] ? getPlaceholder(i) : c : void 0;
-        }), defaultBuffer = buffer.join(""), focusText = input.val();
-        input.data($.mask.dataName, function () {
-          return $.map(buffer, function (c, i) {
-            return tests[i] && c != getPlaceholder(i) ? c : null;
-          }).join("");
-        }), input.one("unmask", function () {
-          input.off(".mask").removeData($.mask.dataName);
-        }).on("focus.mask", function () {
-          if (!input.prop("readonly")) {
-            clearTimeout(caretTimeoutId);
-            var pos;
-            focusText = input.val(), pos = checkVal(), caretTimeoutId = setTimeout(function () {
-              input.get(0) === document.activeElement && (writeBuffer(), pos == mask.replace("?", "").length ? input.caret(0, pos) : input.caret(pos));
-            }, 10);
-          }
-        }).on("blur.mask", blurEvent).on("keydown.mask", keydownEvent).on("keypress.mask", keypressEvent).on("input.mask paste.mask", function () {
-          input.prop("readonly") || setTimeout(function () {
-            var pos = checkVal(!0);
-            input.caret(pos), tryFireCompleted();
-          }, 0);
-        }), chrome && android && input.off("input.mask").on("input.mask", androidInputEvent),
-          checkVal();
-      });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[name=quantity]').bind("change keyup input click", function() {
+    if (this.value.match(/[^а-яА-Яa-zA-Z\s]/g)) {
+      this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s]/g, '');
     }
   });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[name=letNum]').bind("change keyup input click", function() {
+    if (this.value.match(/[^а-яА-Яa-zA-Z\s0-9]/g)) {
+      this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s0-9]/g, '');
+    }
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[name=quantityNum]').bind("change keyup input click", function() {
+    if (this.value.match(/[^\d]/g)) {
+      this.value = this.value.replace(/[^\d]/g, '');
+    }
+  });
+
+  /* End Disable number input */
+
 });
 
-(function () {
+/* Start Validation Bootstrap*/
+
+(function() {
   'use strict';
-  window.addEventListener('load', function () {
+  window.addEventListener('load', function() {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener('submit', function (event) {
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
@@ -26748,11 +26384,13 @@ function fixStepIndicator(n) {
   }, false);
 })();
 
+/* End Validation Bootstrap*/
+
 /* Start Datepicker*/
 
-var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('#datepicker', {
+let picker = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('#datepicker', {
   formatter: (input, date, instance) => {
-    const value = date.toLocaleDateString()
+    const value = date.toLocaleDateString();
     input.value = value // => '1/1/2099'
   },
   startDay: 1,
@@ -26765,9 +26403,9 @@ var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('#datepicker',
   id: 1
 });
 
-var start = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('.start', {
+let start = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('.start', {
   formatter: (input, date, instance) => {
-    const value = date.toLocaleDateString()
+    const value = date.toLocaleDateString();
     input.value = value // => '1/1/2099'
   },
   startDay: 1,
@@ -26780,8 +26418,21 @@ var start = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('.start', {
   id: 2
 });
 
+let end = js_datepicker__WEBPACK_IMPORTED_MODULE_3___default()('.end', {
+  formatter: (input, date, instance) => {
+    const value = date.toLocaleDateString();
+    input.value = value // => '1/1/2099'
+  },
+  startDay: 1,
+  customDays: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  overlayButton: "Показать",
+  overlayPlaceholder: 'Введите год',
+  customMonths: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+  showAllDates: true,
+  id: 2
+});
 /* End Datepicker */
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

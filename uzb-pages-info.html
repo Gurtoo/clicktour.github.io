@@ -506,7 +506,7 @@
           <div class="content_tours_pad">
             <div class="content_tours_block">
               <div class="content_tours_block_left">
-                <img src="./img/uzb-tours-img.png" alt="hot-tours-img">
+                <img src="./img/uzb-tours-img.jpg" alt="hot-tours-img">
                 <div class="content_tours_block_left_absol">
                   <span class="icon-added"></span>
                   <div class="position-relative">
@@ -599,7 +599,7 @@
           <div class="content_tours_pad">
             <div class="content_tours_block">
               <div class="content_tours_block_left">
-                <img src="./img/uzb-tours-img-second.png" alt="hot-tours-img-second">
+                <img src="./img/uzb-tours-img-second.jpg" alt="hot-tours-img-second">
                 <div class="content_tours_block_left_absol">
                   <span class="icon-added"></span>
                   <div class="position-relative">
@@ -696,7 +696,7 @@
           <div class="content_tours_pad">
             <div class="content_tours_block">
               <div class="content_tours_block_left">
-                <img src="./img/uzb-tours-img-third.png" alt="hot-tours-img-second">
+                <img src="./img/uzb-tours-img-third.jpg" alt="hot-tours-img-second">
                 <div class="content_tours_block_left_absol">
                   <span class="icon-added"></span>
                   <div class="position-relative">
@@ -947,13 +947,12 @@
           <p>Отправить запрос на рассчет стоимости индивидуального тура</p>
         </div>
         <div class="modal-body send_message_individ_body">
-          <form id="regForm" class="needs-validation" action="/" novalidate>
-            <div class="needs-validation send_message_individ_body_form" novalidate>
+          <form class="needs-validation" novalidate>
+            <div class="send_message_individ_body_form">
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Ваше ФИО"
-                           oninput="this.className = ''" name="name" required>
+                    <input type="text" class="form-control" placeholder="Ваше ФИО" name="quantity" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -961,8 +960,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Ваш E-Mail"
-                           oninput="this.className = ''" name="email" required>
+                    <input type="email" class="form-control" placeholder="Ваш E-Mail"
+                           name="email" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -972,9 +971,13 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-12 mb-3">
                   <div class="send_message_individ_body_control">
-                    <button class="dropdown send_message_individ_body_dropdown" type="button" data-toggle="dropdown">
-                      Цель поездки
+                    <button class="dropdown send_message_individ_body_dropdown" type="button"
+                            data-toggle="dropdown">
+                      <span>Цель поездки </span>
                     </button>
+                    <div class="invalid-feedback">
+                      Заполните поля
+                    </div>
                     <ul class="dropdown-menu send_message_individ_body_dropdown_menu">
                       <li class="dropdown-input send_message_individ_body_dropdown_menu_input">
                         <div class="form-check custom-control custom-checkbox">
@@ -1167,11 +1170,15 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control">
-                    <select class="tours-pages-select js-individ-select-where js-states form-control" required>
+                    <select class="tours-pages-select js-individ-select-where js-states form-control" multiple required>
                       <option hidden></option>
-                      <option>Горящие туры</option>
-                      <option>Туры в Узбекистан</option>
-                      <option>Совместные путешествия</option>
+                      <option>Абхазия</option>
+                      <option>Австралия</option>
+                      <option>Австрия</option>
+                      <option>Азербайджан</option>
+                      <option>Албания</option>
+                      <option>Алжир</option>
+                      <option>Ангилья</option>
                     </select>
                     <div class="invalid-feedback">
                       Выберите один пункт
@@ -1180,8 +1187,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
-                    <input type="text" class="form-control" placeholder="Длительность путешествия"
-                           oninput="this.className = ''" name="duration" required>
+                    <input type="number" class="form-control" placeholder="Длительность путешествия"
+                           name="duration" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -1194,9 +1201,10 @@
                     <div class="send_message_individ_body_control">
                       <select class="tours-pages-select js-individ-select-money js-states form-control" required>
                         <option hidden></option>
-                        <option>Горящие туры</option>
-                        <option>Туры в Узбекистан</option>
-                        <option>Совместные путешествия</option>
+                        <option>Эконом</option>
+                        <option>Стандарт</option>
+                        <option>Бизнес</option>
+                        <option>Люкс</option>
                       </select>
                       <div class="invalid-feedback">
                         Выберите один пункт
@@ -1204,9 +1212,8 @@
                     </div>
                     <div class="send_message_individ_body_control form-input-log">
                       <input type="text"
-                             class="form-control" name="calendar" id="datepicker"
-                             autocomplete="off"
-                             name="date-data" placeholder="Предложение актуально до" required>
+                             class="form-control" name="quantityNum" id="datepicker"
+                             autocomplete="off" placeholder="Предложение актуально до" required>
                       <div class="invalid-feedback">
                         Заполните поля
                       </div>
@@ -1221,12 +1228,12 @@
               </div>
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
-                  <div class="send_message_individ_body_control">
+                  <div class="send_message_individ_body_control js-individ-disabled-active">
                     <select class="tours-pages-select js-individ-select-call js-states form-control" required>
                       <option hidden></option>
-                      <option>Горящие туры</option>
-                      <option>Туры в Узбекистан</option>
-                      <option>Совместные путешествия</option>
+                      <option>Звонок</option>
+                      <option>Телеграм</option>
+                      <option>Email</option>
                     </select>
                     <div class="invalid-feedback">
                       Выберите один пункт
@@ -1236,7 +1243,7 @@
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control form-input-log">
                     <input type="text" class="form-control text-box" placeholder="Введите телефон номер"
-                           oninput="this.className = ''" name="duration"  disabled="disabled" required>
+                           name="duration"  disabled="disabled" required>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
@@ -1248,7 +1255,6 @@
                   и туроператорам сушествующих на базе CLICKTOUR.UZ</p>
                 <button class="btn btn-orange" type="submit">Отправить</button>
               </div>
-              <span class="step"></span>
             </div>
           </form>
         </div>
