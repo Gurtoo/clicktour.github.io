@@ -106,8 +106,8 @@
           </div>
           <div class="add-page_pad">
             <div class="add-page_content">
-              <form id="regForm" class="needs-validation" action="/" novalidate>
-                <div class="needs-validation add-page_content_form" novalidate>
+              <form class="needs-validation" novalidate>
+                <div class="add-page_content_form">
                   <div class="row align-items-center">
                     <div class="col-md-2 mb-md-4 mb-2">
                       <div class="add-page_content_header">
@@ -381,7 +381,7 @@
                       </div>
                     </div>
                     <div class="col-md-10 mb-md-3 mb-2">
-                      <div class="add-page_content_group add-page_content_group_route">
+                      <div class="add-page_content_group add-page_content_group_route add-page_content_other">
                         <div class="add-page_content_select add-page_content_group_route_child">
                           <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
                             <option hidden></option>
@@ -424,10 +424,52 @@
                           </div>
                         </div>
                       </div>
+                      <div class="add-page_content_group add-page_content_group_route add-page_content_uzb">
+                        <div class="add-page_content_select add-page_content_group_route_child">
+                          <div class="add-page_content_input add-page_content_group_route_input">
+                            <div class="add-page_content_uzb_block">
+                              <p>Узбекистан</p>
+                            </div>
+                          </div>
+                          <div class="add-page_content_input add-page_content_group_route_input">
+                            <select class="tours-pages-select js-add-pages-select-towns-uzb js-states form-control">
+                              <option hidden></option>
+                              <option>Ташкент</option>
+                              <option>Самарканд</option>
+                              <option>Хива</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="add-page_content_form_row_input add-page_content_dash"></div>
+                        <div class="add-page_content_select add-page_content_group_route_child">
+                          <div class="add-page_content_input add-page_content_group_route_input">
+                            <div class="add-page_content_uzb_block">
+                              <p>Узбекистан</p>
+                            </div>
+                          </div>
+                          <div class="add-page_content_input add-page_content_group_route_input">
+                            <select class="tours-pages-select js-add-pages-select-towns-uzb js-states form-control">
+                              <option hidden></option>
+                              <option>Ташкент</option>
+                              <option>Самарканд</option>
+                              <option>Хива</option>
+                            </select>
+                          </div>
+                          <div class="add-page_info">
+                            <span class="icon-info"></span>
+                            <div class="add-page_info_text">
+                              <p>Можно выбрать сразу
+                                несколько стран что бы
+                                откликнулись как можно
+                                много людей</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-10 mb-md-4 mb-2">
-                      <div class="add-page_content_group add-page_content_group_route">
+                      <div class="add-page_content_group add-page_content_group_route add-page_content_other">
                         <div class="add-page_content_select add-page_content_group_route_child">
                           <select class="tours-pages-select js-registr-pages-select-towns js-states form-control">
                             <option hidden></option>
@@ -441,6 +483,27 @@
                             <div class="invalid-feedback">
                               Заполните поля
                             </div>
+                          </div>
+                        </div>
+                        <div class="add-page_content_form_row_input add-page_content_dash"></div>
+                        <div class="add-page_content_select add-page_content_group_route_child">
+                          <a href="#" class="add-page_content_group_route_child_btn">Добавить еще</a>
+                        </div>
+                      </div>
+                      <div class="add-page_content_group add-page_content_group_route add-page_content_uzb">
+                        <div class="add-page_content_select add-page_content_group_route_child">
+                          <div class="add-page_content_input add-page_content_group_route_input">
+                            <div class="add-page_content_uzb_block">
+                              <p>Узбекистан</p>
+                            </div>
+                          </div>
+                          <div class="add-page_content_input add-page_content_group_route_input">
+                            <select class="tours-pages-select js-add-pages-select-towns-uzb js-states form-control">
+                              <option hidden></option>
+                              <option>Ташкент</option>
+                              <option>Самарканд</option>
+                              <option>Хива</option>
+                            </select>
                           </div>
                         </div>
                         <div class="add-page_content_form_row_input add-page_content_dash"></div>
@@ -576,7 +639,7 @@
                           </div>
                         </div>
                         <div class="add-page_content_input add-page_content_group_duration_info_input">
-                          <input type="number" class="form-control"
+                          <input type="text" class="form-control"
                                   name="nameTours" required>
                           <div class="invalid-feedback">
                             Заполните поля
@@ -1207,7 +1270,7 @@
               </div>
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
-                  <div class="send_message_individ_body_control">
+                  <div class="send_message_individ_body_control multiselect_block">
                     <select class="tours-pages-select js-individ-select-where js-states form-control" multiple required>
                       <option hidden></option>
                       <option>Абхазия</option>

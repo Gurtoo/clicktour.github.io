@@ -24535,12 +24535,12 @@ S2.define('select2/i18n/en',[],function () {
   // English
   return {
     errorLoading: function () {
-      return 'The results could not be loaded.';
+      return 'Не удалось загрузить результаты.';
     },
     inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = 'Please delete ' + overChars + ' character';
+      var message = 'Пожалуйста, удалите ' + overChars + ' символов';
 
       if (overChars != 1) {
         message += 's';
@@ -24551,30 +24551,30 @@ S2.define('select2/i18n/en',[],function () {
     inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = 'Please enter ' + remainingChars + ' or more characters';
+      var message = 'Пожалуйста, введите ' + remainingChars + ' или больше символов';
 
       return message;
     },
     loadingMore: function () {
-      return 'Loading more results…';
+      return 'Загрузка дополнительных результатов…';
     },
     maximumSelected: function (args) {
-      var message = 'You can only select ' + args.maximum + ' item';
+      var message = 'Вы можете выбрать только ' + args.maximum + ' предмет';
 
       if (args.maximum != 1) {
-        message += 's';
+        message += 'ов';
       }
 
       return message;
     },
     noResults: function () {
-      return 'No results found';
+      return 'Результаты не найдены';
     },
     searching: function () {
-      return 'Searching…';
+      return 'Поиск…';
     },
     removeAllItems: function () {
-      return 'Remove all items';
+      return 'Удалить все предметы';
     }
   };
 });
@@ -26103,6 +26103,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     placeholder: "Страна",
     minimumResultsForSearch: -1,
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-towns-uzb").select2({
+    placeholder: "Город",
+    minimumResultsForSearch: -1,
+    width: '100%',
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-registr-pages-select-sex").select2({
     placeholder: "Пол",
     minimumResultsForSearch: -1,
@@ -26120,7 +26125,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-where").select2({
     placeholder: "Направление",
-    maximumSelectionSize: 7,
+    maximumSelectionLength: 7,
+    closeOnSelect: false,
+    width: '100%',
+    theme: 'default multiselect_block'
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-money").select2({
     placeholder: "Фин. возможности",
@@ -26152,6 +26160,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     }
   });
 
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-example-basic-single").on("change", function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__rendered').is('[title="Туры в Узбекистан"]')) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".add-page_content_other").hide();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".add-page_content_uzb").addClass('active');
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".add-page_content_other").show();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".add-page_content_uzb").removeClass('active');
+    }
+  });
   /* END Disable call */
 
   /* Download file Start */
@@ -26247,6 +26264,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.dropdown-input').click(function (event) {
     event.stopPropagation();
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__rendered').each(function (i) {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".select2-selection__choice");
+    let line = [];
+    if (i >= 2 && i+1 < checkbox.length){
+      line.push('...');
+      return false;
+    }
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__choice').text(line);
   });
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-add-menu input[type=checkbox]").change(function () {
