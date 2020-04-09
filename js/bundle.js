@@ -26123,13 +26123,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-add-pages-select-disable").select2({
     disabled: true,
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-where").select2({
-    placeholder: "Направление",
-    maximumSelectionLength: 7,
-    closeOnSelect: false,
-    width: '100%',
-    theme: 'default multiselect_block'
-  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-individ-select-money").select2({
     placeholder: "Фин. возможности",
     minimumResultsForSearch: -1,
@@ -26266,16 +26259,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     event.stopPropagation();
   });
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__rendered').each(function (i) {
-    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".select2-selection__choice");
-    let line = [];
-    if (i >= 2 && i+1 < checkbox.length){
-      line.push('...');
-      return false;
-    }
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.select2-selection__choice').text(line);
-  });
-
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-add-menu input[type=checkbox]").change(function () {
     let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-add-menu input[type=checkbox]:checked");
     let line = [];
@@ -26306,8 +26289,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-lang-add").text(line);
   });
 
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]").change(function () {
-    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown_menu input[type=checkbox]:checked");
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-modal-individ-dropdown-tours-menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-modal-individ-dropdown-tours-menu input[type=checkbox]:checked");
     let line = [];
     checkbox.each(function(i) {
       let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
@@ -26318,7 +26301,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       line.push(text);
     });
     line.join(',');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".send_message_individ_body_dropdown").text(line);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-modal-individ-dropdown-tours").text(line);
   });
 
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-type-menu input[type=checkbox]").change(function () {
@@ -26349,6 +26332,21 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     });
     line.join(',');
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-top-tours-town").text(line);
+  });
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-modal-individ-menu input[type=checkbox]").change(function () {
+    let checkbox = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-modal-individ-menu input[type=checkbox]:checked");
+    let line = [];
+    checkbox.each(function(i) {
+      let text = jquery__WEBPACK_IMPORTED_MODULE_0___default()("+ label", this).text();
+      if(i >= 2 && i+1 < checkbox.length){
+        line.push(text + '...');
+        return false;
+      }
+      line.push(text);
+    });
+    line.join(',');
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-town-modal-individ").text(line);
   });
 
   /* END Dropdown Checkbox */

@@ -971,14 +971,14 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-12 mb-3">
                   <div class="send_message_individ_body_control">
-                    <button class="dropdown send_message_individ_body_dropdown" type="button"
+                    <button class="dropdown send_message_individ_body_dropdown js-modal-individ-dropdown-tours" type="button"
                             data-toggle="dropdown">
                       <span>Цель поездки </span>
                     </button>
                     <div class="invalid-feedback">
                       Заполните поля
                     </div>
-                    <ul class="dropdown-menu send_message_individ_body_dropdown_menu">
+                    <ul class="dropdown-menu send_message_individ_body_dropdown_menu js-modal-individ-dropdown-tours-menu">
                       <li class="dropdown-input send_message_individ_body_dropdown_menu_input">
                         <div class="form-check custom-control custom-checkbox">
                           <input type="checkbox" class="custom-control-input" id="checkBeach"
@@ -1170,16 +1170,40 @@
               <div class="form-row send_message_individ_body_form_row">
                 <div class="col-md-6 mb-3">
                   <div class="send_message_individ_body_control multiselect_block">
-                    <select class="tours-pages-select js-individ-select-where js-states form-control" multiple required>
-                      <option hidden></option>
-                      <option>Абхазия</option>
-                      <option>Австралия</option>
-                      <option>Австрия</option>
-                      <option>Азербайджан</option>
-                      <option>Албания</option>
-                      <option>Алжир</option>
-                      <option>Ангилья</option>
-                    </select>
+                    <div class="content_top_tours_pages_control_select">
+                      <button class="dropdown send_message_individ_body_dropdown js-town-modal-individ" type="button" data-toggle="dropdown">
+                        <span>Направление</span>
+                      </button>
+                      <ul class="dropdown-menu top_tours_pages_dropdown_menu js-town-modal-individ-menu">
+                        <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                          <div class="form-check custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="checkModalAustria"
+                                   name="customCheckbox">
+                            <label class="custom-control-label" for="checkModalAustria">
+                              Австрия
+                            </label>
+                          </div>
+                        </li>
+                        <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                          <div class="form-check custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="checkModalAustralia"
+                                   name="customCheckbox">
+                            <label class="custom-control-label" for="checkModalAustralia">
+                              Алжир
+                            </label>
+                          </div>
+                        </li>
+                        <li class="dropdown-input top_tours_pages_dropdown_menu_input">
+                          <div class="form-check custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="checkModalAljir"
+                                   name="customCheckbox">
+                            <label class="custom-control-label" for="checkModalAljir">
+                              Австралия
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                     <div class="invalid-feedback">
                       Выберите один пункт
                     </div>
