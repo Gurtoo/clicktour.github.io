@@ -26387,6 +26387,127 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
   /* End Disable number input */
 
+  /* Start Add Page New Block */
+
+  let $addBlock = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add-page-new-block_other').clone();
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add-page-new-btn_other').click(function() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add-page-new-bloc_other').before($addBlock.clone());
+  });
+
+  let $addBlockUzb = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add-page-new-block_uzb').clone();
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add-page-new-btn_uzb').click(function() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add-page-new-bloc_uzb').before($addBlockUzb.clone());
+  });
+
+  /* End Add Page New Block */
+
+  /* Start Add Page Onload File */
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }// else console.log('is not image mime type');
+    }// else console.log('not isset files data or files API not supordet');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files2').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview2').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files3').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview3').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files4').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview4').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files5').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview5').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files6').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview6').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files7').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview7').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files8').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview8').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files9').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview9').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_files10').change(function() {
+    let input = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this)[0];
+    if ( input.files && input.files[0] ) {
+      if ( input.files[0].type.match('image.*') ) {
+        let reader = new FileReader();
+        reader.onload = function(e) { jquery__WEBPACK_IMPORTED_MODULE_0___default()('.add_image_preview10').attr('src', e.target.result); };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  });
+
+  /* End Add Page Onload File */
+
 });
 
 /* Start Validation Bootstrap*/
